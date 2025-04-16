@@ -1,0 +1,74 @@
+.connect-section-container {
+  position: relative;
+  height: min-content;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 1px solid red; */
+  /* overflow: hidden; */
+  margin-top: -5px;
+  /* overflow: hidden; */
+}
+
+.connect-sec1,
+.connect-sec2 {
+  /* border: 1px solid green; */
+  height: 100%;
+  position: relative;
+  top: -100px !important;
+  z-index: -1;
+  /* width: 100%; */
+}
+
+.connect-sec1 img,
+.connect-sec2 img {
+  /* position: relative; */
+  /* top: -150px; */
+  height: 450px;
+  width: 350px;
+}
+
+/*! text */
+
+.connect-sec-text {
+  /* border: 1px solid blue; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.connect-sec-text h1 {
+  font-size: 50px;
+  text-align: center;
+  font-weight: 400;
+  font-family: "Nunito Sans";
+}
+
+.connect-sec-text p {
+  font-size: 20px;
+  color: #111e57;
+  text-align: center;
+  font-family: "Nunito Sans";
+  font-size: 21px;
+  font-weight: 500;
+  width: 55%;
+}
+.connect-sec-talk {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  gap: 15px;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  transition: all 0.25s ease;
+}
+.connect-sec-talk:hover {
+  border-bottom: 1px solid #111e57;
+}
+.connect-sec-text span {
+  font-family: "Nunito Sans";
+  text-transform: capitalize;
+  font-size: 25px;
+  color: #111e57;
+  font-weight: 300;
+}

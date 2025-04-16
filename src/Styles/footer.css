@@ -1,0 +1,127 @@
+.footer {
+  background: #111e57;
+  color: #fff;
+  height: 50dvh;
+  padding: 65px 45px;
+  /* border: 1px solid red; */
+}
+
+.footer-top {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 1px solid green; */
+}
+.footer-text p {
+  font-size: 19px;
+  font-weight: 300;
+  font-family: "Nunito Sans";
+}
+.footer-top-left {
+  width: 40%;
+  height: 100%;
+  /* border: 1px solid paleturquoise; */
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.footer-button {
+  /* border: 1px solid #fff; */
+  display: flex;
+  align-items: center;
+  font-family: "Nunito Sans";
+}
+
+.footer-button button {
+  font-size: 18px;
+  padding: 7px 41px;
+  border-radius: 50px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+.footer-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+/* footer top right */
+.footer-top-right {
+  width: auto;
+  height: 100%;
+  /* border: 1px solid palevioletred; */
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  font-family: "Nunito Sans";
+}
+.footer-top-right p {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Nunito Sans";
+  margin-right: 15px;
+}
+.footer-top-right span {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Nunito Sans";
+}
+/*! bottom */
+.footer-bottom {
+  width: 100%;
+  /* height: 100px !important; */
+  display: flex;
+  padding-block: 10px;
+  margin-top: 5px;
+  align-items: center;
+  justify-content: space-between !important;
+  /* border: 1px solid peru !important; */
+}
+
+.footer-bottom-left {
+  /* width: 50%; */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-bottom-left h4 {
+  margin-left: 75px;
+  font-size: 20px;
+  font-family: "Nunito Sans";
+}
+.footer-bottom-right {
+  /* width: 50%; */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-bottom-right a {
+  margin-left: 75px;
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  font-family: "Nunito Sans";
+}
+
+/*! last */
+.footer-last {
+  margin-top: 60px;
+  color: #bababa;
+  font-family: "Nunito Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
