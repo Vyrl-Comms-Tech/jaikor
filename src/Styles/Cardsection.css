@@ -1,0 +1,210 @@
+.cardsection {
+  width: 100%;
+  height: 100vh;
+  background: var(--whitebg);
+  /* border: 1px solid black; */
+  padding-inline: 50px;
+}
+
+.belowtoprow {
+  width: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  /* align-items: start;
+    white-space: nowrap !important; */
+}
+.belowtoprow span {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  /* border: 1px solid black; */
+  gap: 5px;
+  width: min-content;
+  white-space: nowrap;
+  position: relative;
+  top: -15px;
+}
+.belowtoprow img {
+  width: 100%;
+}
+.belowtoprow h6 {
+  color: #000;
+  font-family: "Nunito Sans";
+  font-size: 1.35rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+  position: relative;
+  bottom: 1px;
+}
+.belowtoprow p {
+  color: #000;
+
+  font-family: "Nunito Sans";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.cardholder {
+  /* border: 1px solid black; */
+  /* height: 100%; */
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  padding-top: 10vh;
+}
+.cardrow1 {
+  /* border: 1px solid black; */
+  width: 50%;
+  height: 100%;
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.cardrow2 {
+  /* border: 1px solid black; */
+  width: 50%;
+  height: 100%;
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.card1,
+.card2 {
+  width: 100%;
+  height: 35vh;
+  background-color: var(--cardcolor);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 20px 25px;
+  justify-content: center;
+  flex-direction: row-reverse;
+}
+.card h2 {
+  color: #000;
+  font-family: "Nunito Sans";
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.card p {
+  color: #111e57;
+  font-family: "Nunito Sans";
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  white-space: nowrap;
+  /* width: 50%; */
+  text-transform: capitalize;
+  position: relative;
+  z-index: 3;
+}
+.cardcontent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+}
+.cardimage {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  height: 100%;
+  align-items: end;
+}
+.card2 .cardimage img {
+  position: relative;
+  top: 25px;
+  left: 30px;
+}
+.card1 .cardimage img {
+  position: relative;
+  top: 25px;
+  left: 30px;
+}
+.card3 {
+  width: 100%;
+  height: 30vh;
+  display: flex;
+}
+.card3 img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  left: 0;
+}
+.card2 img {
+  width: 19.46875rem;
+  height: 13.15625rem;
+  flex-shrink: 0;
+}
+.card1 img {
+  width: 23.46875rem;
+  height: 19.15625rem;
+  flex-shrink: 0;
+}
+.card4 {
+  width: 100%;
+  height: 40vh;
+  background-color: var(--cardcolor);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card3 h2 {
+  color: #f5f5f5;
+  font-family: "Nunito Sans";
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+  position: relative;
+  z-index: 3;
+}
+.card3 p {
+  color: #f5f5f5;
+  font-family: "Nunito Sans";
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  text-transform: capitalize;
+}
+/* .a */
+.card4row2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  /* border: 1px solid black; */
+}
+.card4row1{
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: end;
+}
+.card4row1 img{
+    position: relative;
+    top: -20px;
+    right: 30px;
+}

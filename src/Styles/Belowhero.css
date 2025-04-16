@@ -1,0 +1,148 @@
+.belowhero {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--whitebg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-inline: 50px;
+}
+.belowtoprow {
+  width: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  /* align-items: start;
+  white-space: nowrap !important; */
+}
+.belowtoprow span {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  /* border: 1px solid black; */
+  gap: 5px;
+  width: min-content;
+  white-space: nowrap;
+  position: relative;
+  top: -15px;
+}
+.belowtoprow img {
+  width: 100%;
+}
+.belowtoprow h6 {
+  color: #000;
+  font-family: "Nunito Sans";
+  font-size: 1.35rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.belowtoprow p {
+  color: #000;
+
+  font-family: "Nunito Sans";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.belowcenter {
+  width: 100%;
+  height: 70vh;
+  /* border: 1px solid black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.belowleft {
+  /* border: 1px solid black; */
+  width: 40%;
+  height: 100%;
+  /* padding: 30px 50px; */
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+}
+.belowright {
+  height: 100%;
+  /* border: 1px solid black; */
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+justify-content: center;
+}
+.belowleft h3 {
+  color: #111e57;
+  font-family: "Nunito Sans";
+  font-size: 1.125rem;
+  font-style: normal;
+  width: 80%;
+  font-weight: 400;
+  margin-bottom: 50px;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.textbold {
+  color: #111e57 !important;
+  font-family: "Nunito Sans" !important;
+  font-size: 1.3125rem !important;
+  font-weight: 500 !important;
+}
+.aboutbox img {
+  width: 330px;
+  height: 370px;
+}
+.aboutbox{
+    /* margin-bottom: 15px; */
+}
+.aboutbox2 {
+    border: 0.5px solid rgba(195, 195, 195, 0.80);
+    /* margin-top: 35px; */
+    position: relative;
+    top: 50px;
+    /* border: 1px solid black; */
+}
+.belowright h1 {
+  color: #111e57;
+  font-family: "Nunito Sans";
+  font-size: 3.0625rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.aboutbox h4 {
+  color: #111e57;
+  font-family: "Nunito Sans";
+  font-size: 2.1875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.aboutbox p {
+  color: #111e57;
+  font-family: "Nunito Sans";
+  font-size: 1.0625rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.25rem; /* 117.647% */
+  text-transform: capitalize;
+}
+.belowright .flex{
+    margin-top: 30px;
+    margin-left: 40px;
+    display: flex;
+    font-display: auto;
+}
+.belowright .flex .aboutbox2{
+    margin-left: 60px;
+    padding: 20px 30px;
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
