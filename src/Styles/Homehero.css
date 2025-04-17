@@ -1,11 +1,13 @@
+@import url("./Navbar.css");
+
 .homehero {
   width: 100%;
   height: 100dvh;
   position: relative;
   overflow: hidden;
   cursor: none;
-  
 }
+
 #heroimg {
   position: absolute;
   top: 0;
@@ -23,19 +25,7 @@
   justify-content: center;
   padding-inline: 70px;
 }
-.herocircle {
-  width: 100px;
-  height: 100px;
-  left: 45%;
-  border-radius: 4.75rem;
-  border: 0.4px solid #f5f5f5;
-  background: rgba(217, 217, 217, 0.05);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-  transition: opacity 0.3s ease, scale 0.3s ease;
-}
+
 .heroleft {
   width: 100%;
   display: flex;
@@ -47,7 +37,7 @@
 .heroleft h4 {
   color: #fff;
   font-family: "Nunito Sans";
-  font-size: 1.25rem;
+  font-size: clamp(0.8125rem, 1.5vw, 1.25rem);
   font-style: normal;
   font-weight: 300 !important;
   line-height: normal;
@@ -57,7 +47,7 @@
 .heroleft h1 {
   color: #fff;
   font-family: "Nunito Sans";
-  font-size: 4.6875rem;
+  font-size: clamp(1.875rem, 4vw, 4.6875rem);
   font-style: normal;
   white-space: nowrap;
   font-weight: 400;
@@ -93,6 +83,7 @@
   font-weight: 400;
   line-height: normal;
   text-transform: capitalize;
+  white-space: nowrap !important;
 }
 
 .herocircle {
@@ -108,12 +99,25 @@
   -webkit-backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
-
   justify-content: center;
   z-index: 100;
-  transform: translate(-50%,-50%);
-  
-  transition: transform 0.1s ease-out; /* Smooth animation */
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.herocircle.small-circle {
+  width: 15px;
+  height: 15px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.herocircle.small-circle p {
+  display: none !important;
+}
+
+.lets-talk {
+  padding: 3px 10px;
 }
 .bbox h6 {
   color: #fff;
@@ -193,3 +197,7 @@
   top: 30px;
   right: 50px;
 }
+/* Remove this unused style */
+/* #home:hover {
+  background-color: yellow !important;
+} */

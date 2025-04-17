@@ -7,17 +7,17 @@ import ConnectSection from "../Components/ConnectSection";
 import Footer from "../Components/Footer";
 
 
-function Home() {
+const Home = ({ lenis }) => {
   return (
     <>
       <Homehero />
       <Belowhero />
       <Cardsection/>
-      <LargeSection/>
+      <LargeSection lenis={lenis} />
       <ConnectSection/>
       <Footer/>
     </>
   );
-}
+};
 
 export default Home;
