@@ -6,6 +6,7 @@ import { About } from "./pages/About";
 import Projects from "./pages/Projects";
 import Services from "./pages/Services";
 import { useGSAP } from "@gsap/react";
+import "./Styles/Global.css"
 
 const App = () => {
   const lenisRef = useRef(null);
