@@ -1,6 +1,14 @@
 import React from "react";
 import "../Styles/Cardsection.css";
+import { useGSAP } from "@gsap/react";
 function Cardsection() {
+
+
+
+  useGSAP(() => {
+    
+  }
+  )
   return (
     <>
       <div className="cardsection">

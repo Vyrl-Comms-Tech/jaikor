@@ -49,15 +49,15 @@ function Homehero() {
     gsap.fromTo(
       bottomTextRef.current,
       {
-        x: 100,
+        x: 150,
         opacity: 0,
       },
       {
         x: 0,
         opacity: 1,
-        duration: 1,
+        duration: 0.8,
         delay: 0.5,
-        ease: "power2.out",
+        ease: "ease",
       }
     );
 
@@ -81,7 +81,7 @@ function Homehero() {
 
     const animateCounter = (index, target) => {
       let current = 0;
-      const increment = target / 50;
+      const increment = target / 70;
       const interval = setInterval(() => {
         current += increment;
         if (current >= target) {
@@ -282,9 +282,9 @@ function Homehero() {
                 </p>
               </div>
             </div>
-            <div className="bright">
+            <div className="bright" ref={bottomTextRef}>
               <img src="/Assets/Rectangle 15.png" alt="" />
-              <h6 ref={bottomTextRef}>
+              <h6 >
                 Since our inception in 2000, Jeikor has earned
                 <br /> its place as a premier contracting company in <br />
                 the UAE.
