@@ -12,6 +12,9 @@ const OurProjetcs = () => {
               <div></div>
               <h6>Our Projects</h6>
             </span>
+            <div className="op-carousel">
+                
+            </div>
           </div>
         </div>
       </div>
