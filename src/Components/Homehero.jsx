@@ -5,7 +5,9 @@ import "../Styles/Navbar.css";
 import { NavLink } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 
-function Homehero2() {
+function Homehero2({ Herottesxt }) {
+  const { paragraph, mainheading, btntext } = Herottesxt.HomeText;
+  console.log(Herottesxt);
   const linksRef = useRef([]);
   const counters = useRef([]);
   const logoRef = useRef(null);
@@ -265,6 +267,7 @@ function Homehero2() {
                 </linearGradient>
               </defs>
             </svg>
+            {/* Navbar */}
             <NavLink ref={(el) => (linksRef.current[0] = el)} id="home" to="/">
               home
             </NavLink>
@@ -284,28 +287,32 @@ function Homehero2() {
             >
               let's connect
             </NavLink>
+
+            {/* Navbar */}
           </div>
         </div>
         <img src="/Assets/Rectangle 1.png" id="heroimg" alt="" />
         <div className="herosection">
           <div className="heroleft">
-            <h4 ref={(el) => (heroTextRefs.current[0] = el)}>
-              Building lasting legacies since 2000 — from iconic high-rises and
-              modern villas to complex industrial and <br />
-              hospitality projects.
-            </h4>
-            <h1 ref={(el) => (heroTextRefs.current[1] = el)}>
-              Leaders in Quality Construction <br /> & Infrastructure
-            </h1>
+            <h4
+              ref={(el) => (heroTextRefs.current[0] = el)}
+              dangerouslySetInnerHTML={{ __html: paragraph }}
+            ></h4>
+
+            <h1
+              ref={(el) => (heroTextRefs.current[1] = el)}
+              dangerouslySetInnerHTML={{ __html: mainheading }}
+            ></h1>
             <h3
               className="lets-talk"
               ref={(el) => (heroTextRefs.current[2] = el)}
             >
-              let's talk
+              {btntext}
               <span id="arrow">
                 <img src="Assets/Vector.svg" alt="" />
               </span>
             </h3>
+            
           </div>
           <div className="heroright"></div>
           <div className="bottomhomerow">

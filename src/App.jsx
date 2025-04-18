@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { Routes, Route } from "react-router-dom";
 import Lenis from "lenis";
 import gsap from "gsap";
+import Group from "./pages/Grouppage";
 import Home from "./pages/Home";
 import { About } from "./pages/About";
 import Projects from "./pages/Projects";
@@ -37,6 +38,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home lenis={lenisRef.current} />} />
         <Route path="/about" element={<About />} />
+        <Route path="/group" element={<Group />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Services />} /> {/* Updated from /contact-us */}

@@ -7,10 +7,13 @@ import ConnectSection from "../Components/ConnectSection";
 import Footer from "../Components/Footer";
 
 
+import Herottesxt from "../Utils/Herotext";
+
+
 const Home = ({ lenis }) => {
   return (
     <>
-      <Homehero />
+      <Homehero Herottesxt={Herottesxt}/>
       <Belowhero />
       <Cardsection/>
       <LargeSection lenis={lenis} />
