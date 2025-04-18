@@ -197,7 +197,8 @@
   top: 30px;
   right: 50px;
 }
-/* Remove this unused style */
-/* #home:hover {
-  background-color: yellow !important;
-} */
+
+#link-lines path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

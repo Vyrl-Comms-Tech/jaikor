@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { Routes, Route } from "react-router-dom";
 import Lenis from "lenis";
+import gsap from "gsap";
 import Home from "./pages/Home";
 import { About } from "./pages/About";
 import Projects from "./pages/Projects";

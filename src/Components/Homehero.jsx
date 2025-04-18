@@ -5,76 +5,76 @@ import "../Styles/Navbar.css";
 import { NavLink } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 
-function Homehero() {
+function Homehero2() {
   const linksRef = useRef([]);
   const counters = useRef([]);
   const logoRef = useRef(null);
-  // Add refs for hero text elements
   const heroTextRefs = useRef([]);
   const bottomTextRef = useRef([]);
 
   useGSAP(() => {
-    // GSAP animation for nav links
-    gsap.fromTo(
-      linksRef.current,
-      {
-        y: 50,
-        opacity: 0,
+    // Create a GSAP timeline
+    const tl = gsap.timeline();
+
+    // First, set initial state for all SVG paths
+    gsap.set("#link-lines path", {
+      strokeDasharray: function (index, element) {
+        return element.getTotalLength();
       },
+      strokeDashoffset: function (index, element) {
+        return element.getTotalLength();
+      },
+      fill: "none",
+      stroke: function (index, element) {
+        return element.getAttribute("fill");
+      },
+      strokeWidth: 2,
+    });
+
+    // Animate each path
+    tl.to("#link-lines path", {
+      strokeDashoffset: 0,
+      duration: 1.5,
+      stagger: 0.2,
+      ease: "power2.inOut",
+      yoyo: true,
+      repeat: -1,
+    }).to(
+      "#link-lines path",
       {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
+        fill: function (index, element) {
+          return element.getAttribute("fill");
+        },
+        duration: 0.5,
         stagger: 0.2,
-        ease: "power2.out",
-      }
+      },
+      "-=1"
     );
 
-    // Add animation for hero text elements
-    gsap.fromTo(
-      heroTextRefs.current,
-      {
-        y: 110,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        stagger: 0.3,
-        ease: "power3.out",
-      }
-    );
-    // Add animation for bottom text
-    gsap.fromTo(
-      bottomTextRef.current,
-      {
-        x: 150,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 0.8,
-        delay: 0.5,
-        ease: "ease",
-      }
-    );
-
-    //! Modified animation for link-lines => not working
-    gsap.fromTo(
-      logoRef, // Changed selector to be more specific
-      {
-        y: 50,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power2.out",
-      }
-    );
+    // Continue with your existing animations
+    tl.fromTo(
+      logoRef.current,
+      { y: 50, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: "power2.out" }
+    )
+      .fromTo(
+        linksRef.current,
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: "power2.out" },
+        "-=0.4"
+      )
+      .fromTo(
+        heroTextRefs.current,
+        { y: 100, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, stagger: 0.3, ease: "power2.out" },
+        "-=1.2" // Overlap with previous animation
+      )
+      .fromTo(
+        bottomTextRef.current,
+        { x: 150, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.8, ease: "ease" },
+        "-=1" // Overlap with previous animation
+      );
 
     // Add counter animation
     const targetNumbers = [150, 500, 23]; // Projects, Workforce, Years
@@ -206,15 +206,65 @@ function Homehero() {
         </div>
         <div className="Navbar">
           <div className="logo">
-            <img src="Assets/logo.png" alt="" />
+            <img src="Assets/logo.png" alt="" ref={logoRef} />
           </div>
           <div className="links">
-            <img
-              ref={logoRef}
-              src="/Assets/Group 19.png"
-              alt=""
+            <svg
               id="link-lines"
-            />
+              xmlns="http://www.w3.org/2000/svg"
+              width="529"
+              height="435"
+              viewBox="0 0 529 435"
+              fill="none"
+            >
+              <path
+                d="M118.5 -145.5H670.5V312.5H148C131.708 312.5 118.5 299.292 118.5 283V-145.5Z"
+                stroke="url(#paint0_linear_10_243)"
+              />
+              <path
+                d="M59.5 -84.5H611.5V373.5H89C72.7076 373.5 59.5 360.292 59.5 344V-84.5Z"
+                stroke="url(#paint1_linear_10_243)"
+              />
+              <path
+                d="M0.5 -23.5H552.5V434.5H30C13.7076 434.5 0.5 421.292 0.5 405V-23.5Z"
+                stroke="url(#paint2_linear_10_243)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_10_243"
+                  x1="394.5"
+                  y1="-146"
+                  x2="394.5"
+                  y2="313"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="white" />
+                  <stop offset="1" stop-color="#273A8C" />
+                </linearGradient>
+                <linearGradient
+                  id="paint1_linear_10_243"
+                  x1="335.5"
+                  y1="-85"
+                  x2="335.5"
+                  y2="374"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="white" />
+                  <stop offset="1" stop-color="#273A8C" />
+                </linearGradient>
+                <linearGradient
+                  id="paint2_linear_10_243"
+                  x1="276.5"
+                  y1="-24"
+                  x2="276.5"
+                  y2="435"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="white" />
+                  <stop offset="1" stop-color="#273A8C" />
+                </linearGradient>
+              </defs>
+            </svg>
             <NavLink ref={(el) => (linksRef.current[0] = el)} id="home" to="/">
               home
             </NavLink>
@@ -284,7 +334,7 @@ function Homehero() {
             </div>
             <div className="bright" ref={bottomTextRef}>
               <img src="/Assets/Rectangle 15.png" alt="" />
-              <h6 >
+              <h6>
                 Since our inception in 2000, Jeikor has earned
                 <br /> its place as a premier contracting company in <br />
                 the UAE.
@@ -297,4 +347,4 @@ function Homehero() {
   );
 }
 
-export default Homehero;
+export default Homehero2;
