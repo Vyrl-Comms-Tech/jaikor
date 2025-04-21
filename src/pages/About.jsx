@@ -1,17 +1,25 @@
 import React from "react";
+<<<<<<< Updated upstream
 import Homehero from "../Components/Homehero";
 import Herottesxt from "../Utils/Herotext";
 import Aboutcounter from "../Components/Aboutcounter";
 import TeamSlider from "../Components/TeamSlider";
+=======
+import AboutCards from "../Components/AboutCards";
+>>>>>>> Stashed changes
 
 export const About = () => {
   return (
     <>
+<<<<<<< Updated upstream
       <div className="aboutpage">
         <Homehero Herottesxt={Herottesxt.AboutText} />
         <Aboutcounter/>
         <TeamSlider/>
       </div>
+=======
+      <AboutCards />
+>>>>>>> Stashed changes
     </>
   );
 };

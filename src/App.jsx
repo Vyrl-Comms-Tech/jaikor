@@ -8,7 +8,10 @@ import { About } from "./pages/About";
 import Projects from "./pages/Projects";
 import Services from "./pages/Services";
 import { useGSAP } from "@gsap/react";
-import "./Styles/Global.css"
+import "./Styles/Global.css";
+import Contact from "./pages/Contact";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
   const lenisRef = useRef(null);
@@ -17,9 +20,25 @@ const App = () => {
   useGSAP(() => {
     lenisRef.current = new Lenis({
       duration: 1.2,
-      easing: (t) => 1 - Math.pow(1 - t, 2),
+      easing: (t) => Math.min(1, 1.001 - Math.pow(1.6, -7 * t)),
       smooth: true,
+      wheelMultiplier: 0.8,
+      touchMultiplier: 0.8,
+      smoothTouch: true,
+      touchInertiaMultiplier: 0.6,
+      infinite: false,
     });
+
+    // Sync Lenis with GSAP ScrollTrigger
+    lenisRef.current.on("scroll", ScrollTrigger.update);
+
+    // Create a more precise RAF loop
+    gsap.ticker.add((time) => {
+      lenisRef.current.raf(time * 1000);
+    });
+
+    // Disable GSAP lag smoothing
+    gsap.ticker.lagSmoothing(0);
 
     function raf(time) {
       lenisRef.current?.raf(time);
@@ -41,7 +60,8 @@ const App = () => {
         <Route path="/group" element={<Group />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/contact" element={<Services />} /> {/* Updated from /contact-us */}
+        <Route path="/contact" element={<Contact />} />{" "}
+        {/* Updated from /contact-us */}
       </Routes>
     </>
   );

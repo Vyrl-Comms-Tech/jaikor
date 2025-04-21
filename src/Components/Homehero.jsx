@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import gsap from "gsap";
 import "../Styles/Homehero.css";
 import "../Styles/Navbar.css";
@@ -42,12 +42,17 @@ function Homehero2({ Herottesxt }) {
       ease: "power2.inOut",
       yoyo: true,
       repeat: -1,
-    }).to(
-      "#link-lines path",
-      {
-        fill: function (index, element) {
-          return element.getAttribute("fill");
+    })
+      .to(
+        "#link-lines path",
+        {
+          fill: function (index, element) {
+            return element.getAttribute("fill");
+          },
+          duration: 0.5,
+          stagger: 0.2,
         },
+<<<<<<< Updated upstream
         duration: 0.5,
         stagger: 0.2,
       },
@@ -93,6 +98,16 @@ function Homehero2({ Herottesxt }) {
       { y: 50, opacity: 0 },
       { y: 0, opacity: 1, duration: 1, ease: "power2.out" }
     )
+=======
+        "-=1"
+      )
+      .fromTo(
+        logoRef.current,
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
+        "-=0.8"
+      )
+>>>>>>> Stashed changes
       .fromTo(
         linksRef.current,
         { y: 50, opacity: 0 },

@@ -1,5 +1,6 @@
 .connect-section-container {
   position: relative;
+  /* height: min-content; */
   height: min-content;
   width: 100%;
   display: flex;
@@ -21,8 +22,8 @@
   /* width: 100%; */
 }
 
-.connect-sec1 img,
-.connect-sec2 img {
+.connect-sec1 svg,
+.connect-sec2 svg {
   /* position: relative; */
   /* top: -150px; */
   height: 450px;

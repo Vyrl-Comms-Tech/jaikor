@@ -1,10 +1,12 @@
 import React from "react";
-import OurProjetcs from "../Components/OurProjetcs";
+import OurProjects from "../Components/OurProjects";
+import HoverImage from "../Components/HoverImage";
 
 const Projects = () => {
   return (
     <>
-      <OurProjetcs />
+      <OurProjects />
+      <HoverImage/>
     </>
   );
 };

@@ -1,14 +1,26 @@
 import React from "react";
 import "../Styles/Cardsection.css";
 import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 function Cardsection() {
-
-
-
   useGSAP(() => {
-    
-  }
-  )
+    gsap.from([".card1", ".card2", ".card3", ".card4"], {
+      opacity: 0,
+      y: 100,
+      duration: 0.8,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: ".cardsection",
+        start: "top center",
+        toggleActions: "play none none reverse"
+      }
+    });
+  });
+
   return (
     <>
       <div className="cardsection">
