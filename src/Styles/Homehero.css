@@ -156,6 +156,8 @@
   display: flex;
   gap: 12rem;
   position: relative;
+  height: 10vh;
+  /* border: 1px solid wheat; */
   /* justify-content: space-evenly; */
 }
 .bright {
@@ -199,6 +201,10 @@
 }
 
 #link-lines path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+#link-lines2 path {
   stroke-linecap: round;
   stroke-linejoin: round;
 }

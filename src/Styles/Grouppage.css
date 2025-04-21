@@ -1,0 +1,9 @@
+.grouppage .bottomhomerow{
+    border: none;
+}
+.grouppage .bottomhomerow .bleft .bbox h6,.grouppage .bottomhomerow .bleft .bbox p{
+    display: none;
+}
+.grouppage{
+    height: min-content;
+}

@@ -3,6 +3,7 @@
   height: 150px;
   margin-bottom: -150px;
   position: relative;
+  /* border: 1px solid #fff; */
   z-index: 2;
   padding: 30px 50px !important;
   display: flex;
@@ -39,9 +40,18 @@
     border-bottom: 1px solid #fff;
 }
 #link-lines{
-  position:absolute ;
-  right: -60px !important;
-  top: -60px !important;
-  width: 65%;
+  position:absolute  !important;
+  right: 0% !important;
+  top: -12dvh !important;
+  width: 30vw;
+  height: 60vh;
+  top: 0;
+}
+#link-lines2{
+  position:absolute  !important;
+  right: 0% !important;
+  top: 39dvh !important;
+  width: 30vw;
+  height: 60vh;
   top: 0;
 }

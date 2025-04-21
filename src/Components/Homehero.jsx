@@ -2,19 +2,20 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import "../Styles/Homehero.css";
 import "../Styles/Navbar.css";
-import { NavLink } from "react-router-dom";
-import { useGSAP } from "@gsap/react";
+import { NavLink, useLocation } from "react-router-dom";
 
 function Homehero2({ Herottesxt }) {
-  const { paragraph, mainheading, btntext } = Herottesxt.HomeText;
-  console.log(Herottesxt);
+  const { paragraph, mainheading, btntext } = Herottesxt;
+  const location = useLocation();
+
   const linksRef = useRef([]);
   const counters = useRef([]);
   const logoRef = useRef(null);
   const heroTextRefs = useRef([]);
   const bottomTextRef = useRef([]);
+  // console.log(location.pathname);
 
-  useGSAP(() => {
+  useEffect(() => {
     // Create a GSAP timeline
     const tl = gsap.timeline();
 
@@ -43,6 +44,39 @@ function Homehero2({ Herottesxt }) {
       repeat: -1,
     }).to(
       "#link-lines path",
+      {
+        fill: function (index, element) {
+          return element.getAttribute("fill");
+        },
+        duration: 0.5,
+        stagger: 0.2,
+      },
+      "-=1"
+    );
+    gsap.set("#link-lines2 path", {
+      strokeDasharray: function (index, element) {
+        return element.getTotalLength();
+      },
+      strokeDashoffset: function (index, element) {
+        return element.getTotalLength();
+      },
+      fill: "none",
+      stroke: function (index, element) {
+        return element.getAttribute("fill");
+      },
+      strokeWidth: 2,
+    });
+
+    // Animate each path
+    tl.to("#link-lines2 path", {
+      strokeDashoffset: 0,
+      duration: 1.5,
+      stagger: 0.2,
+      ease: "power2.inOut",
+      yoyo: true,
+      repeat: -1,
+    }).to(
+      "#link-lines2 path",
       {
         fill: function (index, element) {
           return element.getAttribute("fill");
@@ -100,6 +134,7 @@ function Homehero2({ Herottesxt }) {
     targetNumbers.forEach((target, index) => {
       animateCounter(index, target);
     });
+    
     const homeHero = document.querySelector(".homehero");
     const mouseFollower = document.querySelector(".herocircle");
     const letsTalk = document.querySelector(".lets-talk");
@@ -210,12 +245,11 @@ function Homehero2({ Herottesxt }) {
           <div className="logo">
             <img src="Assets/logo.png" alt="" ref={logoRef} />
           </div>
-          <div className="links">
+          {location.pathname !== "/services" ? (
+            // Default SVG
             <svg
               id="link-lines"
               xmlns="http://www.w3.org/2000/svg"
-              width="529"
-              height="435"
               viewBox="0 0 529 435"
               fill="none"
             >
@@ -267,6 +301,67 @@ function Homehero2({ Herottesxt }) {
                 </linearGradient>
               </defs>
             </svg>
+          ) : (
+            // SVG for service page
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="299"
+              height="581"
+              viewBox="0 0 299 581"
+              fill="none"
+              id="link-lines2"
+            >
+              <path
+                d="M118.5 30C118.5 13.7076 131.708 0.5 148 0.5H670.5V458.5H148C131.708 458.5 118.5 445.292 118.5 429V30Z"
+                stroke="url(#paint0_linear_84_40)"
+              />
+              <path
+                d="M59.5 91C59.5 74.7076 72.7076 61.5 89 61.5H611.5V519.5H89C72.7076 519.5 59.5 506.292 59.5 490V91Z"
+                stroke="url(#paint1_linear_84_40)"
+              />
+              <path
+                d="M0.5 152C0.5 135.708 13.7076 122.5 30 122.5H552.5V580.5H30C13.7076 580.5 0.5 567.292 0.5 551V152Z"
+                stroke="url(#paint2_linear_84_40)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_84_40"
+                  x1="394.5"
+                  y1="0"
+                  x2="394.5"
+                  y2="459"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="white" />
+                  <stop offset="1" stop-color="#273A8C" />
+                </linearGradient>
+                <linearGradient
+                  id="paint1_linear_84_40"
+                  x1="335.5"
+                  y1="61"
+                  x2="335.5"
+                  y2="520"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="white" />
+                  <stop offset="1" stop-color="#273A8C" />
+                </linearGradient>
+                <linearGradient
+                  id="paint2_linear_84_40"
+                  x1="276.5"
+                  y1="122"
+                  x2="276.5"
+                  y2="581"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="white" />
+                  <stop offset="1" stop-color="#273A8C" />
+                </linearGradient>
+              </defs>
+            </svg>
+          )}
+
+          <div className="links">
             {/* Navbar */}
             <NavLink ref={(el) => (linksRef.current[0] = el)} id="home" to="/">
               home
@@ -277,11 +372,14 @@ function Homehero2({ Herottesxt }) {
             <NavLink ref={(el) => (linksRef.current[2] = el)} to="/projects">
               projects
             </NavLink>
-            <NavLink ref={(el) => (linksRef.current[3] = el)} to="/services">
+            <NavLink ref={(el) => (linksRef.current[3] = el)} to="/group">
+              group
+            </NavLink>
+            <NavLink ref={(el) => (linksRef.current[4] = el)} to="/services">
               services
             </NavLink>
             <NavLink
-              ref={(el) => (linksRef.current[4] = el)}
+              ref={(el) => (linksRef.current[5] = el)}
               id="border"
               to="/contact"
             >
@@ -312,7 +410,6 @@ function Homehero2({ Herottesxt }) {
                 <img src="Assets/Vector.svg" alt="" />
               </span>
             </h3>
-            
           </div>
           <div className="heroright"></div>
           <div className="bottomhomerow">

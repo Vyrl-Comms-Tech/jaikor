@@ -13,7 +13,7 @@ import Herottesxt from "../Utils/Herotext";
 const Home = ({ lenis }) => {
   return (
     <>
-      <Homehero Herottesxt={Herottesxt}/>
+      <Homehero Herottesxt={Herottesxt.HomeText}/>
       <Belowhero />
       <Cardsection/>
       <LargeSection lenis={lenis} />

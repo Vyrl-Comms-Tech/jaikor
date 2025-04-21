@@ -1,0 +1,94 @@
+.companyholder {
+  width: 100%;
+  height: min-content;
+  /* border: 2px solid yellow; */
+  padding: 70px 50px;
+  margin-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#blue {
+  color: #273a8c;
+  font-family: "Nunito Sans";
+  font-size: 2.75rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.companyholder h1 {
+  margin-bottom: 20px;
+  color: #000;
+  font-family: "Nunito Sans";
+  font-size: 2.75rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.aboutp {
+  color: #000;
+  font-family: "Nunito Sans" !important;
+  font-size: 1.625rem !important;
+  font-style: normal;
+  font-weight: 500 !important;
+  line-height: normal !important;
+  text-transform: capitalize;
+}
+.companycard {
+  width: 100%;
+  height: min-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.cardleft,
+.cardright {
+  height: 50vh;
+  /* border: 1px solid #273a8c; */
+  /* width: 100%; */
+}
+.belowtoprow {
+  margin-top: 60px;
+}
+.cardleft {
+  width: 45%;
+}
+.cardright {
+  width: 55%;
+}
+.cardright img {
+  width: 100%;
+  height: 100%;
+}
+.cardleft h5 {
+  color: #000;
+  font-family: "Nunito Sans";
+  font-size: 1.0625rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.cardleft h1 {
+  color: #000;
+  font-family: "Nunito Sans";
+  font-size: 3.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.cardleft {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 10px;
+}
+.cardright img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

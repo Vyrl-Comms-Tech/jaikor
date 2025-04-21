@@ -1,0 +1,83 @@
+.Servicetrust {
+  width: 100%;
+  height: 100vh;
+  margin: 100px 0px;
+  position: relative;
+  overflow: hidden;
+}
+.Servicetrust img {
+  width: 100%;
+  height: 100%;
+}
+#right-corner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24.75rem;
+  height: 4.8125rem;
+  flex-shrink: 0;
+  z-index: 15;
+}
+#left-corner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 24.75rem;
+  height: 4.8125rem;
+  flex-shrink: 0;
+  z-index: 15;
+}
+.scard {
+  display: flex;
+  width: 41.5rem;
+  height: 11.1875rem;
+  padding: 2.6875rem 1.25rem;
+  justify-content: center;
+  align-items: start;
+  gap: 0.625rem;
+  flex-shrink: 0;
+  border-radius: 0.625rem;
+  border: 1px solid #b4b4b4;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(13.050000190734863px);
+}
+.servicecards {
+  position: absolute;
+  right: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  bottom: 30px;
+  z-index: 10;
+}
+#white-circle {
+  width: 0.775rem;
+  height: 0.775rem;
+  flex-shrink: 0;
+  background-color: #fff;
+  border-radius: 50%;
+  position: relative;
+  top: 7px;
+}
+.scard h5 {
+  color: #fff;
+  font-family: "Nunito Sans";
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.Servicetrust h1 {
+  position: absolute;
+  left: 3%;
+  top: 20%;
+  z-index: 10;
+  color: #fff;
+  font-family: "Nunito Sans";
+  font-size: 2.6875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}
