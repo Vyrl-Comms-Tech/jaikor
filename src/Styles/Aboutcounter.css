@@ -31,7 +31,7 @@
   color: #fff;
   text-align: center;
   font-family: "Nunito Sans";
-  font-size: 5.8125rem;
+  font-size:clamp(4.5rem,1.57vw, 5.9125rem);
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -45,6 +45,6 @@
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 300;
-  line-height: 2rem; /* 133.333% */
+  line-height: 1.5;
   text-transform: capitalize;
 }

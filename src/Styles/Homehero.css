@@ -20,6 +20,7 @@
   height: 100%;
   position: relative;
   z-index: 1;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,7 +38,7 @@
 .heroleft h4 {
   color: #fff;
   font-family: "Nunito Sans";
-  font-size: clamp(0.8125rem, 1.5vw, 1.25rem);
+  font-size: clamp(0.9125rem, 1.25vw, 1.25rem);
   font-style: normal;
   font-weight: 300 !important;
   line-height: normal;
@@ -57,7 +58,7 @@
 .heroleft h3 {
   color: #fff;
   font-family: "Nunito Sans";
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 1.3vw, 1.5rem);
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -103,7 +104,8 @@
   z-index: 100;
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
-  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .herocircle.small-circle {
@@ -122,7 +124,7 @@
 .bbox h6 {
   color: #fff;
   font-family: "Nunito Sans";
-  font-size: 2.1rem;
+  font-size: clamp(1.75rem,1.8vw,2.1rem);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -189,7 +191,7 @@
   color: #111e57;
   text-align: right;
   font-family: "Nunito Sans";
-  font-size: 1.3rem;
+  font-size: clamp(0.9rem,1.3vw,1.3rem);
   font-style: normal;
   font-weight: 300;
   position: relative;
@@ -208,3 +210,42 @@
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+@media (max-width: 1560px) {
+  .herosection {
+    padding-inline: 30px;
+  }
+  #arrow img {
+    width: 13px !important;
+    height: 17px !important;
+  }
+  .bleft {
+    gap: 6rem;
+  }
+  .heroleft {
+    gap: 20px;
+  }
+}
+
+
+@media(max-width: 1200px) {
+  /* .herosection {
+    padding-inline: 20px;
+  }
+  .heroleft h1 {
+    font-size: clamp(1.875rem, 5vw, 4.6875rem);
+  }
+  .heroleft h3 {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+  }
+  .heroleft h4 {
+    font-size: clamp(0.9125rem, 2vw, 1.25rem);
+  }
+  #arrow img {
+    width: 11px !important;
+    height: 15px !important;
+  } */
+  .bleft {
+    gap: 0rem !important;
+  }
+}
+

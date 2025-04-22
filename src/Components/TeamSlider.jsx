@@ -149,7 +149,6 @@ function TeamSlider() {
       <div className="TeamSlider">
         <div className="rak-plus-header">
           <div className="header-left">
-            {/* <span className="green-dot" data-aos="fade-right"></span> */}
             <h2 data-aos="fade-right">
             lorem ipsum
             </h2>

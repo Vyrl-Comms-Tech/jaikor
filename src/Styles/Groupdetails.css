@@ -12,8 +12,6 @@
   /* border: 1px solid black; */
   display: flex;
   flex-direction: column;
-  /* align-items: start;
-    white-space: nowrap !important; */
 }
 .belowtoprow span {
   display: flex;
@@ -56,7 +54,7 @@
 .detailscenter h1 {
   color: #273a8c;
   font-family: "Nunito Sans";
-  font-size: 2.6875rem;
+  font-size: clamp(1.5rem, 2.5vw, 2.6875rem);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -93,9 +91,26 @@
   /* font-size: 20px !important; */
   color: #5b5b5b;
   font-family: "Nunito Sans";
-  font-size: 1.375rem;
+  font-size: clamp(1.1rem, 1.3vw, 1.375rem);
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   text-transform: capitalize;
+}
+
+@media (max-width: 1500px) {
+  .groupdetails {
+    padding: 70px 30px;
+  }
+  #groupimg {
+    width: 20vw;
+    height: 45vh;
+    flex-shrink: 0;
+    position: absolute;
+    right: -60px;
+    top: -15dvh;
+  }
+  #rectangelholder {
+    width: 75%;
+  }
 }
