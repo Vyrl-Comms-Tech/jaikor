@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import gsap from "gsap";
 import "../Styles/about-cards.css";
 import { useGSAP } from "@gsap/react";
@@ -94,8 +94,7 @@ const AboutCards = () => {
             </h6>
           </span>
         </div>
-        <div className="about-cards-main-container" ref={cardsContainerRef}>
-          <div className="about-cards-main">
+          <div className="about-cards-main" ref={cardsContainerRef}>
             {cardContents.map((content, index) => (
               <div
                 key={index}
@@ -122,7 +121,6 @@ const AboutCards = () => {
               </div>
             ))}
           </div>
-        </div>
       </div>
     </>
   );

@@ -1,19 +1,20 @@
 .about-cards {
   position: relative;
   width: 100%;
-  height: 100dvh;
+  height: min-content;
+  min-height: 100dvh;
   overflow: hidden;
   background-color: #f5f5f5;
-  /* border: 1px solid red; */
-  padding: 100px 50px;
-  padding-top: 200px;
+  border: 1px solid red;
+  margin-top: 200px;
+  padding-inline: 50px;
 }
 
 /*  */
 .about-cards-top {
   width: 100%;
   height: fit-content;
-  /* border: 1px solid black; */
+  /* border: 1px solid black;   */
   display: flex;
   flex-direction: column;
   margin-bottom: 140px;
@@ -56,15 +57,19 @@
 .about-cards-main {
   position: relative;
   width: 100%;
-  height: 100%;
-  /* border: 1px solid black; */
+  height: 100% !important;
+  border: 1px solid black;
   margin-inline: auto !important;
   display: flex;
+  align-items: center;
+  justify-content: start;
+  right: 100px;
+  /* padding-inline: 135px; */
 }
 
 .about-card {
-  position: absolute;
-  width: 440px !important;
+  position: relative;
+  width: 440px;
   height: 500px !important;
   padding: 35px 20px;
   display: flex;
@@ -134,22 +139,22 @@
 
 .card-color-1 {
   top: 0;
-  left: 10%;
+  left: 15%;
   z-index: 40;
 }
 .card-color-2 {
-  top: 0%;
-  left: 30%;
+  /* top: 0%; */
+  left: 10%;
   z-index: 30;
 }
 .card-color-3 {
-  top: 0%;
-  left: 50%;
+  /* top: 0%; */
+  left: 4.5%;
   z-index: 20;
 }
 .card-color-4 {
-  top: 0%;
-  left: 70%;
+  /* top: 0%; */
+  /* left: 70%; */
   z-index: 10;
 }
 .card-color-1,
@@ -173,40 +178,34 @@
   color: #1a237e !important;
   fill: #1a237e;
 }
-@media (max-width: 1200px) {
-  .card {
-    width: 250px;
-  }
 
-  .card:nth-child(1) {
-    transform: translateX(-180px);
-  }
-
-  .card:nth-child(2) {
-    transform: translateX(-60px);
-  }
-
-  .card:nth-child(3) {
-    transform: translateX(60px);
-  }
-
-  .card:nth-child(4) {
-    transform: translateX(180px);
-  }
+@media (max-width: 1300px){
+.about-card{
+  height: 450px !important;
 }
-
-@media (max-width: 768px) {
-  .cards-container {
-    flex-direction: column;
-    height: auto;
-    padding: 100px 20px;
-  }
-
-  .card {
-    position: relative;
-    width: 90%;
-    max-width: 350px;
-    margin-bottom: 20px;
-    transform: none !important;
-  }
+ 
 }
+/* .card-color-1 {
+  top: 0;
+  left: 10%;
+  z-index: 40;
+}
+.card-color-2 {
+  top: 0%;
+  left: 30%;
+  z-index: 30;
+}
+.card-color-3 {
+  top: 0%;
+  left: 50%;
+  z-index: 20;
+}
+.card-color-4 {
+  top: 0%;
+  left: 65%;
+  z-index: 10;
+} */
+
+
+
+

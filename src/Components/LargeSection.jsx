@@ -122,7 +122,7 @@ const LargeSection = ({ lenis }) => {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="86"
-              height="1905"
+              // height="1905"
               viewBox="0 0 86 1905"
               fill="none"
             >
@@ -167,8 +167,7 @@ const LargeSection = ({ lenis }) => {
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
             viewBox="0 0 1800 876"
-            width="1050"
-            height="850"
+     
           >
             <path
               transform="translate(744,210)"

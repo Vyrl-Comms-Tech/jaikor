@@ -12,10 +12,17 @@ export const About = () => {
     <>
       <div className="aboutpage">
         <Homehero Herottesxt={Herottesxt.AboutText} />
+<<<<<<< Updated upstream
         {/* <AboutCards /> */}
         <Aboutcounter />
         {/* <CoreValues /> */}
         <TeamSlider/>
+=======
+        <AboutCards />
+        <Aboutcounter />
+        <CoreValues />
+        <TeamSlider />
+>>>>>>> Stashed changes
         <Footer />
       </div>
     </>

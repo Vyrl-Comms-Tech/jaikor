@@ -6,7 +6,7 @@ const ContactUs = () => {
   return (
     <>
       <div className="contact-us">
-        <div className="contact-us-main">
+        {/* <div className="contact-us-main"> */}
           <div className="Navbar">
             <div className="logo">
               <img src="Assets/logo.png" alt="" />
@@ -53,7 +53,7 @@ const ContactUs = () => {
               </div>
             </div>
           </div>
-        </div>
+        {/* </div> */}
       </div>
     </>
   );

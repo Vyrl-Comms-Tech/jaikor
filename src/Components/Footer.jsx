@@ -9,16 +9,16 @@ const Footer = () => {
     gsap.registerPlugin(ScrollTrigger);
 
     // Footer container animation
-    gsap.from(".footer", {
-      scrollTrigger: {
-        trigger: ".footer",
-        start: "top bottom",
-        toggleActions: "play none none reverse"
-      },
-      opacity: 0,
-      y: 50,
-      duration: 1
-    });
+    // gsap.from(".footer", {
+    //   scrollTrigger: {
+    //     trigger: ".footer",
+    //     start: "top bottom",
+    //     toggleActions: "play none none reverse"
+    //   },
+    //   opacity: 0,
+    //   y: 50,
+    //   duration: 1
+    // });
 
     // Footer elements stagger animation
     gsap.from([
