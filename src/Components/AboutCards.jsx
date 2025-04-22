@@ -1,84 +1,15 @@
-import React, {  useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import "../Styles/about-cards.css";
 import { useGSAP } from "@gsap/react";
 
 const AboutCards = () => {
-  const cardsRef = useRef(null);
-
-  useGSAP(() => {
-    if (!cardsRef.current) return;
-
-    const cards = cardsRef.current.querySelectorAll(".about-card");
-
-    cards.forEach((card, index) => {
-      card.addEventListener("mouseenter", () => {
-        const enterTl = gsap.timeline();
-        const nextCard = cards[index + 1];
-
-        // First move right and increase z-index
-        enterTl
-          .set(card, { zIndex: 100 }) // Immediately set high z-index
-          .to(card, {
-            x: "20%",
-            duration: 0.3,
-            ease: "power2.out",
-          })
-          .to(card, {
-            x: "0%",
-            boxShadow: "0 25px 35px rgba(0, 0, 0, 0.3)",
-            duration: 0.4,
-            ease: "power3.out",
-          });
-
-        // Handle next card animation
-        if (nextCard) {
-          gsap.timeline()
-            .set(nextCard, { zIndex: 1 }) // Lower z-index for overlapped card
-            .to(nextCard, {
-              x: "-15%",
-              duration: 0.3,
-              ease: "power2.out",
-            })
-            .to(nextCard, {
-              x: "0%",
-              duration: 0.4,
-              ease: "power3.out",
-            });
-        }
-      });
-
-      card.addEventListener("mouseleave", () => {
-        const nextCard = cards[index + 1];
-        
-        // Reset current card
-        gsap.timeline()
-          .to(card, {
-            x: "0%",
-            boxShadow: "0 5px 15px rgba(0, 0, 0, 0.1)",
-            duration: 0.4,
-            ease: "power3.inOut",
-          })
-          .set(card, { zIndex: 40 - (index * 10) }); // Reset to original z-index
-
-        // Reset next card if exists
-        if (nextCard) {
-          gsap.timeline()
-            .to(nextCard, {
-              x: "0%",
-              duration: 0.4,
-              ease: "power3.inOut",
-            })
-            .set(nextCard, { zIndex: 40 - ((index + 1) * 10) }); // Reset to original z-index
-        }
-      });
-    });
-  }, []);
+  const cardsContainerRef = useRef(null);
 
   const cardContents = [
     {
       number: "01",
-      text: `“Since 2000, I laid the foundation of what would later become Jeikor Group — not with luxury or certainty, but with deep conviction and relentless effort. My journey began on the ground, among steel and dust, where every challenge was a lesson, and every step forward was earned. Dubai was rising, and I knew I wanted to rise with it — through work that mattered, and a vision that endured.`,
+      text: `"Since 2000, I laid the foundation of what would later become Jeikor Group — not with luxury or certainty, but with deep conviction and relentless effort. My journey began on the ground, among steel and dust, where every challenge was a lesson, and every step forward was earned. Dubai was rising, and I knew I wanted to rise with it — through work that mattered, and a vision that endured.`,
     },
     {
       number: "02",
@@ -93,6 +24,51 @@ const AboutCards = () => {
       text: `Today, Jeikor Group Is More Than A Business. It's A Journey Shared By Those Who Believed, Contributed, And Grew With Us. And The Values Embedded In Our Past Committed To Our Future, And Inspired By The City That Welcomed Our Dream." - Ali At Thurman, Jeikor Group`,
     },
   ];
+
+  useGSAP(() => {
+    // Get all cards
+    const cards = document.querySelectorAll('.about-card');
+    
+    // Initialize card positions
+    gsap.set(cards, { 
+      clearProps: "all" 
+    });
+    
+    // Set up hover animations for each card
+    cards.forEach((card, index) => {
+      // Create hover animation timeline (paused initially)
+      const tl = gsap.timeline({ paused: true });
+      
+      // Animate the hovered card with a swipe motion
+      tl.to(card, {
+        x: 20, // First move slightly right
+        duration: 0.2,
+        ease: "power1.out"
+      }).to(card, {
+        x: -80, // Then swipe to the left (forward)
+        zIndex: 100, // Bring to front
+        scale: 1.05,
+        duration: 0.45,
+        ease: "power2.out"
+      });
+      
+      // Find the card to the left (if it exists)
+      if (index > 0) {
+        const leftCard = cards[index - 1];
+        // Add reverse swipe animation for the left card
+        tl.to(leftCard, {
+          // x: 0, // Swipe right (backward)
+          // zIndex: 10,
+          duration: 0.45,
+          ease: "power2.out"
+        }, "-=0.4"); // Same time as the second animation
+      }
+      
+      // Set up event listeners
+      card.addEventListener('mouseenter', () => tl.play());
+      card.addEventListener('mouseleave', () => tl.reverse());
+    });
+  }, { scope: cardsContainerRef });
 
   return (
     <>
@@ -118,9 +94,8 @@ const AboutCards = () => {
             </h6>
           </span>
         </div>
-        <div className="about-cards-main-container">
-          <div className="about-cards-main" ref={cardsRef}>
-            {/* <div className="cards-container"  */}
+        <div className="about-cards-main-container" ref={cardsContainerRef}>
+          <div className="about-cards-main">
             {cardContents.map((content, index) => (
               <div
                 key={index}
@@ -141,7 +116,6 @@ const AboutCards = () => {
                   >
                     <path
                       d="M3.62871 0.8051L24.484 29.4957L27.9592 8.17653L30.8561 8.43328L26.5536 34.8284L0.118801 30.7764L0.768474 27.9416L22.1196 31.2144L1.2643 2.5238L3.62871 0.8051Z"
-                      // fill="#F5F5F5"
                     />
                   </svg>
                 </div>

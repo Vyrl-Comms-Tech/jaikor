@@ -1,22 +1,29 @@
 .footer {
   background: #111e57;
   color: #fff;
-  height: 50dvh;
+  height: min-content;
   padding: 65px 45px;
-  /* border: 1px solid red; */
+  opacity: 1;
+  will-change: transform, opacity;
+}
+
+.footer-logo{
+  margin-bottom: 3rem;
 }
 
 .footer-top {
   width: 100%;
-  height: 60%;
+  /* height: 60%; */
+  height: min-content;
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: space-between;
   /* border: 1px solid green; */
 }
 .footer-text p {
-  font-size: 19px;
+  font-size: 1.1875rem;
   font-weight: 300;
+  margin-bottom: 2rem;
   font-family: "Nunito Sans";
 }
 .footer-top-left {
@@ -36,7 +43,7 @@
 }
 
 .footer-button button {
-  font-size: 18px;
+  font-size: 1.125rem;
   padding: 7px 41px;
   border-radius: 50px;
   background: transparent;
@@ -65,13 +72,13 @@
   font-family: "Nunito Sans";
 }
 .footer-top-right p {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 400;
   font-family: "Nunito Sans";
   margin-right: 15px;
 }
 .footer-top-right span {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 400;
   font-family: "Nunito Sans";
 }
@@ -80,7 +87,7 @@
   width: 100%;
   /* height: 100px !important; */
   display: flex;
-  padding-block: 10px;
+  padding-block: 15px;
   margin-top: 5px;
   align-items: center;
   justify-content: space-between !important;
@@ -93,12 +100,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* border: 1px solid green; */
 }
 .footer-bottom-left h4 {
-  margin-left: 75px;
-  font-size: 20px;
+  margin-right: 75px;
+  font-size: 1.25rem;
   font-family: "Nunito Sans";
 }
+
+
 .footer-bottom-right {
   /* width: 50%; */
   height: 100%;
@@ -109,7 +119,7 @@
 
 .footer-bottom-right a {
   margin-left: 75px;
-  font-size: 20px;
+  font-size: 1.25rem;
   text-decoration: none;
   color: white;
   font-family: "Nunito Sans";
@@ -120,7 +130,7 @@
   margin-top: 60px;
   color: #bababa;
   font-family: "Nunito Sans";
-  font-size: 20px;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: 300;
   line-height: normal;

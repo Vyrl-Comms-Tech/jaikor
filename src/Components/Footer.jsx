@@ -1,8 +1,45 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../Styles/footer.css";
 import { Link } from "react-router-dom";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Footer = () => {
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Footer container animation
+    gsap.from(".footer", {
+      scrollTrigger: {
+        trigger: ".footer",
+        start: "top bottom",
+        toggleActions: "play none none reverse"
+      },
+      opacity: 0,
+      y: 50,
+      duration: 1
+    });
+
+    // Footer elements stagger animation
+    gsap.from([
+      ".footer-logo",
+      ".footer-text",
+      ".footer-button",
+      ".footer-top-right",
+      ".footer-bottom",
+      ".footer-last"
+    ], {
+      scrollTrigger: {
+        trigger: ".footer",
+        start: "top bottom",
+        toggleActions: "play none none reverse"
+      },
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+      stagger: 0.2
+    });
+  }, []);
   return (
     <>
       <div className="footer">
