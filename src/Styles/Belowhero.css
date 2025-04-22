@@ -111,6 +111,7 @@ justify-content: center;
   font-weight: 400;
   line-height: normal;
   text-transform: capitalize;
+  white-space: nowrap;
 }
 .aboutbox h4 {
   color: #111e57;
@@ -143,4 +144,15 @@ justify-content: center;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+@media(max-width:1560px){
+  .belowhero{
+    padding: 30px;
+  }
+  .belowright h1 {
+    font-size: clamp(1.5rem,3vw,3rem);
+  }
+  .belowtoprow h6 {
+    font-size: clamp(.8rem,8vw,1.1rem) !important;
+  }
 }

@@ -36,22 +36,47 @@
   z-index: 10;
   position: relative;
 }
-#border{
-    border-bottom: 1px solid #fff;
+#border {
+  border-bottom: 1px solid #fff;
 }
-#link-lines{
-  position:absolute  !important;
+#link-lines {
+  position: absolute !important;
   right: 0% !important;
   top: -12dvh !important;
   width: 30vw;
   height: 60vh;
   top: 0;
 }
-#link-lines2{
-  position:absolute  !important;
+#link-lines2 {
+  position: absolute !important;
   right: 0% !important;
   top: 39dvh !important;
   width: 30vw;
   height: 60vh;
   top: 0;
+}
+
+@media (max-width: 1550px) {
+  .Navbar {
+    padding: 30px !important;
+  }
+  .links {
+    gap: 5.5rem;
+  }
+  #link-lines {
+    top: -15dvh !important;
+  }
+}
+
+
+@media(max-width:1200px){
+  .Navbar{
+    padding: 30px 20px !important;
+  }
+  .links{
+    gap: 4rem;
+  }
+  #link-lines {
+    top: -12dvh !important;
+  }
 }

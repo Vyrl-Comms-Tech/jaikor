@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import "../Styles/Homehero.css";
 import "../Styles/Navbar.css";
@@ -52,53 +52,6 @@ function Homehero2({ Herottesxt }) {
           duration: 0.5,
           stagger: 0.2,
         },
-<<<<<<< Updated upstream
-        duration: 0.5,
-        stagger: 0.2,
-      },
-      "-=1"
-    );
-    gsap.set("#link-lines2 path", {
-      strokeDasharray: function (index, element) {
-        return element.getTotalLength();
-      },
-      strokeDashoffset: function (index, element) {
-        return element.getTotalLength();
-      },
-      fill: "none",
-      stroke: function (index, element) {
-        return element.getAttribute("fill");
-      },
-      strokeWidth: 2,
-    });
-
-    // Animate each path
-    tl.to("#link-lines2 path", {
-      strokeDashoffset: 0,
-      duration: 1.5,
-      stagger: 0.2,
-      ease: "power2.inOut",
-      yoyo: true,
-      repeat: -1,
-    }).to(
-      "#link-lines2 path",
-      {
-        fill: function (index, element) {
-          return element.getAttribute("fill");
-        },
-        duration: 0.5,
-        stagger: 0.2,
-      },
-      "-=1"
-    );
-
-    // Continue with your existing animations
-    tl.fromTo(
-      logoRef.current,
-      { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power2.out" }
-    )
-=======
         "-=1"
       )
       .fromTo(
@@ -107,7 +60,6 @@ function Homehero2({ Herottesxt }) {
         { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
         "-=0.8"
       )
->>>>>>> Stashed changes
       .fromTo(
         linksRef.current,
         { y: 50, opacity: 0 },
