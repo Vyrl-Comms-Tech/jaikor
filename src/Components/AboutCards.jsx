@@ -57,7 +57,7 @@ const AboutCards = () => {
         const leftCard = cards[index - 1];
         // Add reverse swipe animation for the left card
         tl.to(leftCard, {
-          // x: 0, // Swipe right (backward)
+          x: "-20", // Swipe right (backward)
           // zIndex: 10,
           duration: 0.45,
           ease: "power2.out"
@@ -75,6 +75,7 @@ const AboutCards = () => {
       <div className="about-cards">
         <div className="about-cards-top">
           <svg
+          
             xmlns="http://www.w3.org/2000/svg"
             width="1816"
             height="49"
@@ -90,7 +91,7 @@ const AboutCards = () => {
           <span>
             <div className="about-cards-top-ball"></div>
             <h6>
-              why choos <br /> jeikor
+              why choose <br /> jeikor
             </h6>
           </span>
         </div>

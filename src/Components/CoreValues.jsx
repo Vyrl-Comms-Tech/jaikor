@@ -19,7 +19,7 @@ const CoreValues = () => {
       scrollTrigger: {
         trigger: sectionRef.current,
         start: "top 0%",
-        end: "bottom 70%",
+        end: "bottom 40%",
         scrub: 1,
         pin: true, // Pin the section while animating
         // markers: true,

@@ -128,15 +128,17 @@
   height: 100%;
   align-items: end;
 }
-.card2 .cardimage img {
+.card2 .cardimage svg {
   position: relative;
   top: 25px;
   left: 30px;
+  width: 19.46875rem;
+  height: 13.15625rem;
 }
-.card1 .cardimage img {
+.card1 .cardimage svg {
   position: relative;
-  top: 25px;
-  left: 30px;
+  top: 50px;
+  left: 50px;
 }
 .card3 {
   width: 100%;
@@ -151,12 +153,12 @@
   z-index: 2;
   left: 0;
 }
-.card2 img {
+.card2 svg {
   width: 19.46875rem;
   height: 13.15625rem;
   flex-shrink: 0;
 }
-.card1 img {
+.card1 svg {
   width: 23.46875rem;
   height: 19.15625rem;
   flex-shrink: 0;
@@ -203,7 +205,7 @@
   align-items: start;
   justify-content: end;
 }
-.card4row1 img {
+.card4row1 svg {
   position: relative;
   top: -20px;
   right: 30px;

@@ -72,7 +72,7 @@
   width: 60%;
   display: flex;
   flex-direction: column;
-justify-content: center;
+  justify-content: center;
 }
 .belowleft h3 {
   color: #111e57;
@@ -91,17 +91,25 @@ justify-content: center;
   font-size: 1.3125rem !important;
   font-weight: 500 !important;
 }
-.aboutbox img {
+
+.aboutbox {
   width: 330px;
   height: 370px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border: 0.5px solid rgba(195, 195, 195, 0.8);
+}
+.aboutbox svg {
+  scale: 2;
 }
 
 .aboutbox2 {
-    border: 0.5px solid rgba(195, 195, 195, 0.80);
-    /* margin-top: 35px; */
-    position: relative;
-    top: 50px;
-    /* border: 1px solid black; */
+  border: 0.5px solid rgba(195, 195, 195, 0.8);
+  /* margin-top: 35px; */
+  position: relative;
+  top: 50px;
+  /* border: 1px solid black; */
 }
 .belowright h1 {
   color: #111e57;
@@ -113,7 +121,7 @@ justify-content: center;
   text-transform: capitalize;
   white-space: nowrap;
 }
-.aboutbox h4 {
+.aboutbox3 h4 {
   color: #111e57;
   font-family: "Nunito Sans";
   font-size: 2.1875rem;
@@ -122,7 +130,7 @@ justify-content: center;
   line-height: normal;
   text-transform: capitalize;
 }
-.aboutbox p {
+.aboutbox3 p {
   color: #111e57;
   font-family: "Nunito Sans";
   font-size: 1.0625rem;
@@ -131,28 +139,28 @@ justify-content: center;
   line-height: 1.25rem; /* 117.647% */
   text-transform: capitalize;
 }
-.belowright .flex{
-    margin-top: 30px;
-    margin-left: 40px;
-    display: flex;
-    font-display: auto;
+.belowright .flex {
+  margin-top: 30px;
+  margin-left: 40px;
+  display: flex;
+  font-display: auto;
 }
-.belowright .flex .aboutbox2{
-    margin-left: 60px;
-    padding: 20px 30px;
-    width: 32%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+.belowright .flex .aboutbox2 {
+  margin-left: 60px;
+  padding: 20px 30px;
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
-@media(max-width:1560px){
-  .belowhero{
+@media (max-width: 1560px) {
+  .belowhero {
     padding: 30px;
   }
   .belowright h1 {
-    font-size: clamp(1.5rem,3vw,3rem);
+    font-size: clamp(1.5rem, 3vw, 3rem);
   }
   .belowtoprow h6 {
-    font-size: clamp(.8rem,8vw,1.1rem) !important;
+    font-size: clamp(0.8rem, 8vw, 1.1rem) !important;
   }
 }

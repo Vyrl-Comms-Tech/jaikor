@@ -22,7 +22,19 @@ export default function HoverImage() {
       });
 
       // Create hover animation
-      item.addEventListener("mouseenter", () => {
+      const handleMouseEnter = () => {
+        // First, ensure all texts are hidden
+        items.forEach((otherItem) => {
+          const otherText = otherItem.querySelector(".hover-image-text");
+          gsap.to(otherText, {
+            opacity: 0,
+            y: 20,
+            duration: 0.2,
+            ease: "power2.in",
+            overwrite: true
+          });
+        });
+
         // Expand the image
         gsap.to(item, {
           width: "40%",
@@ -46,13 +58,14 @@ export default function HoverImage() {
           opacity: 1,
           y: 0,
           duration: 0.6,
-          delay: 0.5,
+          delay: 0.2,
           ease: "power3.out",
+          overwrite: true
         });
-      });
+      };
 
       // Create mouseout animation
-      item.addEventListener("mouseleave", () => {
+      const handleMouseLeave = () => {
         // Reset all images to equal width
         items.forEach((item) => {
           gsap.to(item, {
@@ -68,18 +81,20 @@ export default function HoverImage() {
           y: 20,
           duration: 0.4,
           ease: "power2.in",
+          overwrite: true
         });
-      });
-    });
+      };
 
-    // Cleanup event listeners on component unmount
-    return () => {
-      items.forEach((item) => {
-        item.removeEventListener("mouseenter", () => {});
-        item.removeEventListener("mouseleave", () => {});
-      });
-    };
-  }, []);
+      item.addEventListener("mouseenter", handleMouseEnter);
+      item.addEventListener("mouseleave", handleMouseLeave);
+
+      // Cleanup event listeners on component unmount
+      return () => {
+        item.removeEventListener("mouseenter", handleMouseEnter);
+        item.removeEventListener("mouseleave", handleMouseLeave);
+      };
+    });
+}, []);
 
   return (
     <>

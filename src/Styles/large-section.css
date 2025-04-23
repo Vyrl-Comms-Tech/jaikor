@@ -44,7 +44,8 @@
 /*! left */
 .large-section-content-left {
   width: 50%;
-  height: 100dvh;
+  height: 1040px;
+  /* height: 100dvh; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -80,7 +81,8 @@
 
 .large-section-content-right {
   width: 50%;
-  height: 100dvh;
+  /* height: 100dvh; */
+  height: 1040px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -92,7 +94,8 @@
 
 .large-section-last-content {
   width: 100%;
-  height: 50dvh;
+  /* height: 50dvh; */
+  height: 520px;
   display: flex;
   align-items: center;
   justify-content: center;

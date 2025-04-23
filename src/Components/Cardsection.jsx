@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "../Styles/Cardsection.css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -7,7 +7,52 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 function Cardsection() {
+  const lineRef = useRef(null);
+  const card1PathRef1 = useRef(null);
+  const card1PathRef2 = useRef(null);
+  const card2PathRef = useRef(null);
+  const card4PathRef = useRef(null);
+
   useGSAP(() => {
+    // Original line animation (unchanged)
+    gsap.set(lineRef.current, {
+      strokeDasharray: lineRef.current.getTotalLength(),
+      strokeDashoffset: lineRef.current.getTotalLength(),
+    });
+
+    gsap.to(lineRef.current, {
+      strokeDashoffset: 0,
+      duration: 1.25,
+      ease: "power2.inOut",
+      scrollTrigger: {
+        trigger: ".cardsection",
+        start: "top center",
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    // Card SVGs animation
+    const cardPaths = [card1PathRef1, card1PathRef2, card2PathRef, card4PathRef];
+    
+    cardPaths.forEach(pathRef => {
+      gsap.set(pathRef.current, {
+        strokeDasharray: pathRef.current.getTotalLength(),
+        strokeDashoffset: pathRef.current.getTotalLength(),
+      });
+
+      gsap.to(pathRef.current, {
+        strokeDashoffset: 0,
+        duration: 1.25,
+        ease: "power2.in",
+        scrollTrigger: {
+          trigger: ".cardsection",
+          start: "top center",
+          toggleActions: "play none none reverse",
+        },
+      });
+    });
+
+    // Card animations (unchanged)
     gsap.from([".card1", ".card2", ".card3", ".card4"], {
       opacity: 0,
       y: 100,
@@ -16,8 +61,8 @@ function Cardsection() {
       scrollTrigger: {
         trigger: ".cardsection",
         start: "top center",
-        toggleActions: "play none none reverse"
-      }
+        toggleActions: "play none none reverse",
+      },
     });
   });
 
@@ -25,7 +70,20 @@ function Cardsection() {
     <>
       <div className="cardsection">
         <div className="belowtoprow">
-          <img src="Assets/Line 1.png" alt="" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1787"
+            height="30"
+            viewBox="0 0 1787 30"
+            fill="none"
+          >
+            <path
+              ref={lineRef}
+              d="M0 1.06592L108.837 1.06592L148.226 28.9065L1787 28.9065"
+              stroke="#111E57"
+              strokeWidth="0.4"
+            />
+          </svg>
           <span>
             <p>02</p>
             <h6>Services</h6>
@@ -35,7 +93,10 @@ function Cardsection() {
           <div className="cardrow1">
             <div className="card card1">
               <div className="cardimage">
-                <img src="/Assets/Group 26.png" alt="" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="401" height="362" viewBox="0 0 401 362" fill="none">
+                  <path ref={card1PathRef1} d="M399.5 151H219V269H88V361.5" stroke="#3D3D3D" />
+                  <path ref={card1PathRef2} d="M400.5 1H220V119H89V211.5H0.5V360.5" stroke="#3D3D3D" />
+                </svg>
               </div>
               <div className="cardcontent">
                 <h2>
@@ -50,7 +111,9 @@ function Cardsection() {
             </div>
             <div className="card card2">
               <div className="cardimage">
-                <img src="/Assets/Vector 10.png" alt="" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 312 212" fill="none">
+                  <path ref={card2PathRef} d="M312 1H131.5V119H0.5V211.5" stroke="#3D3D3D" />
+                </svg>
               </div>
               <div className="cardcontent">
                 <h2>
@@ -69,17 +132,30 @@ function Cardsection() {
               <img src="/Assets/Rectangle 23.png" alt="" />
               <div className="cardcontent">
                 <h2>Joinery Works</h2>
-                <p>Expert integration of mechanical, electrical, and <br/> plumbing systems to optimize performance, safety, <br/> and sustainability.</p>
+                <p>
+                  Expert integration of mechanical, electrical, and <br />{" "}
+                  plumbing systems to optimize performance, safety, <br /> and
+                  sustainability.
+                </p>
               </div>
             </div>
             <div className="card card4">
-                <div className="card4row1">
-                    <img src="/Assets/Vector 2.png" alt="" />
-                </div>
-                <div className="card4row2">
-                    <h2>Engineering <br/>Services</h2>
-                    <p>Technical expertise to manage structural<br/>  challenges,safety codes, and value<br/>  engineering for complex builds.</p>
-                </div>
+              <div className="card4row1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="402" height="141" viewBox="0 0 402 141" fill="none">
+                  <path ref={card4PathRef} d="M1 0.5V140.5H168V41.5H401.5V0.5" stroke="black" />
+                </svg>
+              </div>
+              <div className="card4row2">
+                <h2>
+                  Engineering <br />
+                  Services
+                </h2>
+                <p>
+                  Technical expertise to manage structural
+                  <br /> challenges,safety codes, and value
+                  <br /> engineering for complex builds.
+                </p>
+              </div>
             </div>
           </div>
         </div>

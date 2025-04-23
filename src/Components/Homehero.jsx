@@ -16,6 +16,8 @@ function Homehero2({ Herottesxt }) {
   // console.log(location.pathname);
 
   useEffect(() => {
+    console.log(location.pathname);
+
     // Create a GSAP timeline
     const tl = gsap.timeline();
 
@@ -58,13 +60,13 @@ function Homehero2({ Herottesxt }) {
         logoRef.current,
         { y: 50, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
-        "-=0.8"
+        "-=1.5"
       )
       .fromTo(
         linksRef.current,
         { y: 50, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: "power2.out" },
-        "-=0.4"
+        "-=0.5"
       )
       .fromTo(
         heroTextRefs.current,
@@ -101,7 +103,7 @@ function Homehero2({ Herottesxt }) {
     targetNumbers.forEach((target, index) => {
       animateCounter(index, target);
     });
-    
+
     const homeHero = document.querySelector(".homehero");
     const mouseFollower = document.querySelector(".herocircle");
     const letsTalk = document.querySelector(".lets-talk");
@@ -205,6 +207,20 @@ function Homehero2({ Herottesxt }) {
   return (
     <>
       <div className="homehero">
+        {location.pathname === "/" ? (
+          <video
+            autoPlay
+            muted
+            loop
+            src="/Assets/Dubai.mp4"
+            id="heroimg"
+          ></video>
+        ) : (
+          <img src="/Assets/Rectangle 1.png" alt="" id="heroimg" />
+        )}
+
+        {/* <video autoPlay muted loop src="/Assets/Dubai.mp4" id="heroimg"></video> */}
+        {/* <img src="/Assets/Rectangle 1.png"  alt="" id="heroimg"/> */}
         <div className="herocircle">
           <p>Scroll down</p>
         </div>
@@ -212,64 +228,8 @@ function Homehero2({ Herottesxt }) {
           <div className="logo">
             <img src="Assets/logo.png" alt="" ref={logoRef} />
           </div>
-          {location.pathname !== "/services" ? (
-            // Default SVG
-            <svg
-              id="link-lines"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 529 435"
-              fill="none"
-            >
-              <path
-                d="M118.5 -145.5H670.5V312.5H148C131.708 312.5 118.5 299.292 118.5 283V-145.5Z"
-                stroke="url(#paint0_linear_10_243)"
-              />
-              <path
-                d="M59.5 -84.5H611.5V373.5H89C72.7076 373.5 59.5 360.292 59.5 344V-84.5Z"
-                stroke="url(#paint1_linear_10_243)"
-              />
-              <path
-                d="M0.5 -23.5H552.5V434.5H30C13.7076 434.5 0.5 421.292 0.5 405V-23.5Z"
-                stroke="url(#paint2_linear_10_243)"
-              />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_10_243"
-                  x1="394.5"
-                  y1="-146"
-                  x2="394.5"
-                  y2="313"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-color="white" />
-                  <stop offset="1" stop-color="#273A8C" />
-                </linearGradient>
-                <linearGradient
-                  id="paint1_linear_10_243"
-                  x1="335.5"
-                  y1="-85"
-                  x2="335.5"
-                  y2="374"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-color="white" />
-                  <stop offset="1" stop-color="#273A8C" />
-                </linearGradient>
-                <linearGradient
-                  id="paint2_linear_10_243"
-                  x1="276.5"
-                  y1="-24"
-                  x2="276.5"
-                  y2="435"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-color="white" />
-                  <stop offset="1" stop-color="#273A8C" />
-                </linearGradient>
-              </defs>
-            </svg>
-          ) : (
-            // SVG for service page
+          {location.pathname === "/services" ? (
+            // Services page SVG
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="299"
@@ -299,8 +259,8 @@ function Homehero2({ Herottesxt }) {
                   y2="459"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="white" />
-                  <stop offset="1" stop-color="#273A8C" />
+                  <stop stopColor="white" />
+                  <stop offset="1" stopColor="#273A8C" />
                 </linearGradient>
                 <linearGradient
                   id="paint1_linear_84_40"
@@ -310,8 +270,8 @@ function Homehero2({ Herottesxt }) {
                   y2="520"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="white" />
-                  <stop offset="1" stop-color="#273A8C" />
+                  <stop stopColor="white" />
+                  <stop offset="1" stopColor="#273A8C" />
                 </linearGradient>
                 <linearGradient
                   id="paint2_linear_84_40"
@@ -319,6 +279,122 @@ function Homehero2({ Herottesxt }) {
                   y1="122"
                   x2="276.5"
                   y2="581"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="white" />
+                  <stop offset="1" stopColor="#273A8C" />
+                </linearGradient>
+              </defs>
+            </svg> 
+          ): location.pathname === "/" ? (
+            // Home page SVG
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="529"
+              height="435"
+              viewBox="0 0 529 435"
+              fill="none"
+              id="link-lines"
+            >
+              <path
+                d="M118.5 -145.5H670.5V312.5H148C131.708 312.5 118.5 299.292 118.5 283V-145.5Z"
+                stroke="url(#paint0_linear_10_243)"
+              />
+              <path
+                d="M59.5 -84.5H611.5V373.5H89C72.7076 373.5 59.5 360.292 59.5 344V-84.5Z"
+                stroke="url(#paint1_linear_10_243)"
+              />
+              <path
+                d="M0.5 -23.5H552.5V434.5H30C13.7076 434.5 0.5 421.292 0.5 405V-23.5Z"
+                stroke="url(#paint2_linear_10_243)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_10_243"
+                  x1="394.5"
+                  y1="-146"
+                  x2="394.5"
+                  y2="313"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="white" />
+                  <stop offset="1" stop-color="#888888" stop-opacity="0.76" />
+                </linearGradient>
+                <linearGradient
+                  id="paint1_linear_10_243"
+                  x1="335.5"
+                  y1="-85"
+                  x2="335.5"
+                  y2="374"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="white" />
+                  <stop offset="1" stop-color="#888888" stop-opacity="0.76" />
+                </linearGradient>
+                <linearGradient
+                  id="paint2_linear_10_243"
+                  x1="276.5"
+                  y1="-24"
+                  x2="276.5"
+                  y2="435"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="white" />
+                  <stop offset="1" stop-color="#888888" stop-opacity="0.76" />
+                </linearGradient>
+              </defs>
+            </svg>
+          ) : (
+            // Default SVG for other pages
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="529"
+              height="435"
+              viewBox="0 0 529 435"
+              fill="none"
+              id="link-lines"
+            >
+              <path
+                d="M118.5 -145.5H670.5V312.5H148C131.708 312.5 118.5 299.292 118.5 283V-145.5Z"
+                stroke="url(#paint0_linear_250_22)"
+              />
+              <path
+                d="M59.5 -84.5H611.5V373.5H89C72.7076 373.5 59.5 360.292 59.5 344V-84.5Z"
+                stroke="url(#paint1_linear_250_22)"
+              />
+              <path
+                d="M0.5 -23.5H552.5V434.5H30C13.7076 434.5 0.5 421.292 0.5 405V-23.5Z"
+                stroke="url(#paint2_linear_250_22)"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_250_22"
+                  x1="394.5"
+                  y1="-146"
+                  x2="394.5"
+                  y2="313"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="white" />
+                  <stop offset="1" stop-color="#273A8C" />
+                </linearGradient>
+                <linearGradient
+                  id="paint1_linear_250_22"
+                  x1="335.5"
+                  y1="-85"
+                  x2="335.5"
+                  y2="374"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="white" />
+                  <stop offset="1" stop-color="#273A8C" />
+                </linearGradient>
+                <linearGradient
+                  id="paint2_linear_250_22"
+                  x1="276.5"
+                  y1="-24"
+                  x2="276.5"
+                  y2="435"
                   gradientUnits="userSpaceOnUse"
                 >
                   <stop stop-color="white" />
@@ -356,7 +432,7 @@ function Homehero2({ Herottesxt }) {
             {/* Navbar */}
           </div>
         </div>
-        <img src="/Assets/Rectangle 1.png" id="heroimg" alt="" />
+
         <div className="herosection">
           <div className="heroleft">
             <h4

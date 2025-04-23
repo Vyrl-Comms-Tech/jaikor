@@ -1,8 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import "../Styles/our-projects.css";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
+
 export default function OurProjects() {
+  const lineRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const slidesRef = useRef(null);
   const textRef = useRef(null);
@@ -61,6 +67,23 @@ export default function OurProjects() {
       gsap.set(".op-slide", {
         xPercent: (i) => i * 100,
       });
+
+      // Line drawing animation
+      gsap.set(lineRef.current, {
+        strokeDasharray: lineRef.current.getTotalLength(),
+        strokeDashoffset: lineRef.current.getTotalLength(),
+      });
+
+      gsap.to(lineRef.current, {
+        strokeDashoffset: 0,
+        duration: 1.25,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: ".our-projects",
+          start: "top center",
+          toggleActions: "play none none reverse"
+        }
+      });
     });
 
     return () => ctx.revert();
@@ -116,7 +139,20 @@ export default function OurProjects() {
     <div className="our-projects">
       <div className="op-carousel-content">
         <div className="op-top">
-          <img src="Assets/Line 1.png" alt="" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1816"
+            height="34"
+            viewBox="0 0 1816 34"
+            fill="none"
+          >
+            <path
+              ref={lineRef}
+              d="M0 1L110.603 1L150.631 33L1816 33"
+              stroke="#111E57"
+              strokeWidth="0.4"
+            />
+          </svg>
           <span>
             <div className="op-top-ball"></div>
             <h6>Our Projects</h6>

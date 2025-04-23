@@ -127,8 +127,8 @@ const ConnectSection = () => {
                 y2="459"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="white" />
-                <stop offset="1" stop-color="#273A8C" />
+                <stop stopColor="white" />
+                <stop offset="1" stopColor="#273A8C" />
               </linearGradient>
               <linearGradient
                 id="paint1_linear_388_8"
@@ -138,8 +138,8 @@ const ConnectSection = () => {
                 y2="520"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="white" />
-                <stop offset="1" stop-color="#273A8C" />
+                <stop stopColor="white" />
+                <stop offset="1" stopColor="#273A8C" />
               </linearGradient>
               <linearGradient
                 id="paint2_linear_388_8"
@@ -149,8 +149,8 @@ const ConnectSection = () => {
                 y2="581"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="white" />
-                <stop offset="1" stop-color="#273A8C" />
+                <stop stopColor="white" />
+                <stop offset="1" stopColor="#273A8C" />
               </linearGradient>
             </defs>
           </svg>
@@ -212,8 +212,8 @@ const ConnectSection = () => {
                 y2="459"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="white" />
-                <stop offset="1" stop-color="#273A8C" />
+                <stop stopColor="white" />
+                <stop offset="1" stopColor="#273A8C" />
               </linearGradient>
               <linearGradient
                 id="paint1_linear_39_5"
@@ -223,8 +223,8 @@ const ConnectSection = () => {
                 y2="520"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="white" />
-                <stop offset="1" stop-color="#273A8C" />
+                <stop stopColor="white" />
+                <stop offset="1" stopColor="#273A8C" />
               </linearGradient>
               <linearGradient
                 id="paint2_linear_39_5"
@@ -234,8 +234,8 @@ const ConnectSection = () => {
                 y2="581"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="white" />
-                <stop offset="1" stop-color="#273A8C" />
+                <stop stopColor="white" />
+                <stop offset="1" stopColor="#273A8C" />
               </linearGradient>
             </defs>
           </svg>
