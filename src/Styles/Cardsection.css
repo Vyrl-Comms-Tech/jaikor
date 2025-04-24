@@ -4,6 +4,7 @@
   background: var(--whitebg);
   /* border: 1px solid black; */
   padding-inline: 50px;
+  overflow: hidden;
 }
 
 .belowtoprow {
@@ -92,7 +93,7 @@
   justify-content: center;
   flex-direction: row-reverse;
 }
-.card h2 {
+.card h2  {
   color: #000;
   font-family: "Nunito Sans";
   font-size: 3rem;
@@ -221,17 +222,105 @@
   .cardholder {
     gap: 15px;
   }
-  .card1 img,.card2 .cardimage img,.card4row1 img {
-    width: clamp(15.46875rem,3vw, 23.46875rem) !important;
+  .card1 img,
+  .card2 .cardimage img,
+  .card4row1 img {
+    width: clamp(15.46875rem, 3vw, 23.46875rem) !important;
     height: 23dvh;
   }
-  .card4row1 img{
+  .card4row1 img {
     height: 13dvh !important;
   }
-  .card h2{
+  .card h2 {
     font-size: clamp(1.5rem, 3vw, 2.25rem) !important;
   }
-  .card p{
+  .card p {
     font-size: 0.85rem !important;
+  }
+}
+
+@media (max-width: 1400px) {
+  .card {
+    /* border: 2px solid black !important; */
+  }
+  .card1 svg {
+    width: 16.46875rem;
+    height: 19.15625rem;
+  }
+  .card2 .cardimage svg {
+    width: 16.46875rem;
+    height: 10.15625rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .card1 svg {
+    width: 13.46875rem;
+    height: 14.15625rem;
+  }
+  .card2 .cardimage svg {
+    width: 11.66875rem;
+    height: 10.15625rem;
+  }
+  .card2 .cardimage svg {
+    top: 38px;
+  }
+  .card4row1 svg {
+    top: -51px;
+    right: 30px;
+    width: 17rem;
+  }
+}
+
+@media (max-width: 1070px) {
+  .cardholder {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .cardrow1,
+  .cardrow2 {
+    width: 90%;
+  }
+  .cardsection {
+    height: min-content;
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cardsection .belowtoprow svg{
+    position: relative;
+    left: -30px;
+    top: 5px;
+  }
+  .card4 p{
+    width: 55%;
+    position: relative;
+    right: -5px;
+  }
+  .cardsection .belowtoprow span h6{
+    font-size: 1.25rem !important;
+    position: relative;
+    /* right: 2px; */
+    /* bottom: 2px; */
+  }
+  .cardrow1,
+  .cardrow2 {
+    width: 100%;
+  }
+  .cardholder {
+    padding-top: 20px;
+  }
+  .card p {
+    white-space: wrap !important;
+  }
+  .belowtoprow span {
+    white-space: wrap !important;
+  }
+  .card {
+    padding: 20px 12px;
+  }
+  .card h2{
+    font-size: 1.7rem !important;
   }
 }

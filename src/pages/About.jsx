@@ -12,8 +12,7 @@ export const About = () => {
     <>
       <div className="aboutpage">
         <Homehero Herottesxt={Herottesxt.AboutText} />
-        {/* <AboutCards /> */}
-        {/* <CoreValues /> */}
+
         <AboutCards />
         <Aboutcounter />
         <CoreValues />

@@ -14,9 +14,9 @@ function Grouppage() {
       <div className="grouppage">
         <Homehero Herottesxt={Herottesxt.GroupText} />
         <Groupdetails/>
-        <Companyholder/>
+        {/* <Companyholder/>
         <ConnectSection/>
-        <Footer/>
+        <Footer/> */}
       </div>
 
     </>

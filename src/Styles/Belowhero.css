@@ -6,6 +6,7 @@
   flex-direction: column;
   justify-content: center;
   padding-inline: 50px;
+  overflow: hidden;
 }
 .belowtoprow {
   width: 100%;
@@ -162,5 +163,66 @@
   }
   .belowtoprow h6 {
     font-size: clamp(0.8rem, 8vw, 1.1rem) !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  .belowhero {
+    padding: 20px;
+  }
+  .belowhero {
+    height: min-content;
+    padding: 50px 20px 80px 20px;
+  }
+  .belowcenter {
+    flex-direction: column-reverse;
+    height: min-content;
+  }
+  .belowleft {
+    position: relative;
+    top: 100px;
+    width: 100%;
+  }
+  .belowright {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutbox svg {
+    border: 1px solid black;
+    width: 100% !important;
+    height: 300px !important;
+  }
+  .belowtoprow{
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  
+  .belowright h1 {
+
+    white-space: wrap; 
+  }
+  .belowright h1 br{
+    display: none;
+  }
+  .belowright .flex {
+    margin-left: 0px !important;
+    flex-direction: column;
+  }
+  .aboutbox {
+    height: 100% !important;
+  }
+  .belowright .flex .aboutbox2 {
+    margin-left: 50%;
+  }
+  .belowright .flex .aboutbox2 {
+    margin-left: 45%;
+    padding: 30px 30px;
+    width: 50%;
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    justify-content: space-around;
   }
 }

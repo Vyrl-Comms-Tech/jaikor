@@ -104,8 +104,8 @@ function Cardsection() {
                 </h2>
                 <p>
                   Robust end-to-end project execution — from
-                  <br /> excavation to finishing — led by experienced project
-                  <br /> managers and supported by modern machinery.
+                  <br className="rembr" /> excavation to finishing — led by experienced project
+                  <br className="rembr" /> managers and supported by modern machinery.
                 </p>
               </div>
             </div>

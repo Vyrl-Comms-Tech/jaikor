@@ -13,12 +13,12 @@ import Herottesxt from "../Utils/Herotext";
 const Home = ({ lenis }) => {
   return (
     <>
-      <Homehero Herottesxt={Herottesxt.HomeText}/>
+      <Homehero Herottesxt={Herottesxt.ProjectText}/>
       <Belowhero />
       <Cardsection/>
-      <LargeSection lenis={lenis} />
-      <ConnectSection/>
-      <Footer/>
+      {/* <LargeSection lenis={lenis} /> */}
+      {/* <ConnectSection/> */}
+      {/* <Footer/> */}
     </>
   );
 };

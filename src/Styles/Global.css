@@ -33,7 +33,7 @@ body {
     --font-size-h4: 1.4rem;
     --font-size-h5: 1.2rem;
     --font-size-h6: 1rem;
-    --font-size-p: 0.95rem; 
+    --font-size-p: 0.95rem;
   }
 }
 
@@ -46,7 +46,7 @@ body {
     --font-size-h4: 1.3rem;
     --font-size-h5: 1.15rem;
     --font-size-h6: 1rem;
-    --font-size-p: 0.9rem;
+    --font-size-p: .9rem;
   }
 }
 
@@ -107,4 +107,10 @@ p {
 /* Optional: scrollbar corner if used */
 ::-webkit-scrollbar-corner {
   background: #00030c;
+}
+
+@media (max-width: 768px) {
+  .rembr {
+    display: none;
+  }
 }

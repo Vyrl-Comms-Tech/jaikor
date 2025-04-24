@@ -21,5 +21,10 @@ const Herottesxt = {
     mainheading: `A Legacy of Excellence in  <br /> Construction`,
     btntext: `let's talk`,
   },
+  ProjectText:{
+    paragraph:`Welcome to Jeikor GP., a leading heavy civil construction <br/>company dedicated to delivering exceptional infrastructure<br/> solutions`,
+    mainheading:`Our projects`,
+    btntext:`let's talk`,
+  }
 };
 export default Herottesxt;
