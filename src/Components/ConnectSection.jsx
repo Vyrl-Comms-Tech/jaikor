@@ -98,8 +98,8 @@ const ConnectSection = () => {
         <div className="connect-sec1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="437"
-            height="581"
+            // width="437"
+            // height="581"
             viewBox="0 0 437 581"
             fill="none"
           >
@@ -183,8 +183,8 @@ const ConnectSection = () => {
           {/* <img src="/Assets/connect-sec2.png" alt="image" /> */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="437"
-            height="581"
+            // width="437"
+            // height="581"
             viewBox="0 0 345 581"
             fill="none"
           >

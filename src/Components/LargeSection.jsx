@@ -1,7 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../Styles/large-section.css";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,10 +10,134 @@ const LargeSection = ({ lenis }) => {
   const lineRef = useRef(null);
   const pathRef = useRef(null);
   const containerRef = useRef(null);
+  // Add refs for text content
+  const leftContentRef = useRef(null);
+  const rightContentRef = useRef(null);
+  const lastContentRef = useRef(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     const path = pathRef.current;
     const length = path.getTotalLength();
+    // Set initial positions for headings and paragraphs
+    gsap.set(leftContentRef.current.querySelector(".left-h1"), {
+      // x: 100,
+      scale: 0.5,
+      opacity: 0.5,
+    });
+    gsap.set(leftContentRef.current.querySelector(".left-p"), {
+      // x: 100,
+      scale: 0.5,
+      opacity: 0.5,
+    });
+    gsap.set(rightContentRef.current.querySelector(".right-h1"), {
+      // x: "-100",
+      scale: 0.5,
+      opacity: 0.5,
+    });
+    gsap.set(rightContentRef.current.querySelector(".right-p"), {
+      // x: "-100",
+      scale: 0.5,
+      opacity: 0.1,
+    });
+    gsap.set(lastContentRef.current.querySelector(".last-h1"), {
+      // x: 100,
+      scale: 0.5,
+      opacity: 0.5,
+    });
+    gsap.set(lastContentRef.current.querySelector(".last-p"), {
+      // x: "-100",
+      scale: 0.5,
+      opacity: 0.5,
+    });
+
+    // Create a timeline for sequenced animations
+    const textTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 60%",
+        end: "bottom 60%",
+        scrub: 0.5,
+        // markers: true,
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    // Add animations to the timeline in sequence
+    textTimeline
+      // Left content animations
+      .to(leftContentRef.current.querySelector(".left-h1"), {
+        // x: 0,
+        scale: 1,
+        opacity: 1,
+        duration: 0.3,
+        ease: "power2.out",
+      })
+      .to(
+        rightContentRef.current.querySelector(".right-p"),
+        {
+          // x: 0,
+          scale: 1,
+          opacity: 1,
+          duration: 0.3,
+          ease: "power2.out",
+        },
+        "-=0.1"
+      )
+      // Right content animations
+      .to(
+        rightContentRef.current.querySelector(".right-h1"),
+        {
+          // x: 0,
+          scale: 1,
+          opacity: 1,
+          duration: 0.3,
+          ease: "power2.out",
+        },
+        "-=0.1"
+      )
+      .to(
+        leftContentRef.current.querySelector(".left-p"),
+        {
+          // x: 0,
+          scale: 1,
+          opacity: 1,
+          duration: 0.3,
+          ease: "power2.out",
+        },
+        "-=0.1"
+      )
+      // Last content animations
+      .to(
+        lastContentRef.current.querySelector(".last-h1"),
+        {
+          // x: 0,
+          scale: 1,
+          opacity: 1,
+          duration: 0.3,
+          ease: "power2.out",
+        },
+        "-=0.2"
+      )
+      .to(
+        lastContentRef.current.querySelector(".last-p"),
+        {
+          // x: 0,
+          scale: 1,
+          opacity: 1,
+          // delay: "-0.3",
+          duration: 0.3,
+          ease: "power2.out",
+        },
+        "-=0.1"
+      );
+
+    // !
+
+    // Set up the starting position for the path
+    gsap.set(path, {
+      strokeDasharray: length,
+      strokeDashoffset: length, // Start with the line hidden
+    });
 
     // Set up the starting position
     gsap.set(path, {
@@ -111,9 +236,9 @@ const LargeSection = ({ lenis }) => {
       <div className="large-section-container" ref={containerRef}>
         <div className="large-section-blur"></div>
         <div className="large-section-content">
-          <div className="large-section-content-left">
-            <h1>2019</h1>
-            <p>
+          <div className="large-section-content-left" ref={leftContentRef}>
+            <h1 className="left-h1">2019</h1>
+            <p className="left-p">
                Successfully completed key developments including hotels,
               residential buildings, and commercial towers in Dubai.
             </p>
@@ -135,21 +260,21 @@ const LargeSection = ({ lenis }) => {
               />
             </svg>
           </div>
-          <div className="large-section-content-right">
-            <p>
+          <div className="large-section-content-right" ref={rightContentRef}>
+            <p className="right-p">
                Launched new divisions and upgraded capabilities across joinery,
               MEP, and interior works.
             </p>
-            <h1>2020</h1>
+            <h1 className="right-h1">2020</h1>
           </div>
         </div>
 
-        <div className="large-section-last-content">
+        <div className="large-section-last-content" ref={lastContentRef}>
           <div className="large-section-last-content-h1">
-            <h1>2021</h1>
+            <h1 className="last-h1">2021</h1>
           </div>
           <div className="large-section-last-content-p">
-            <p>
+            <p className="last-p">
               Surpassed 500+ employees, bringing diverse skills, innovation, and
               a shared vision for excellence.
             </p>
@@ -167,7 +292,6 @@ const LargeSection = ({ lenis }) => {
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
             viewBox="0 0 1800 876"
-     
           >
             <path
               transform="translate(744,210)"

@@ -125,9 +125,9 @@ function Belowhero() {
       // Add staggered animation for belowleft text elements
       .fromTo(
         belowtop.current,
-        { y: 50, opacity: 0 },
+        { x: "-50", opacity: 0 },
         {
-          y: 0,
+          x: 0,
           opacity: 1,
           duration: 0.8,
           stagger: 0.25,

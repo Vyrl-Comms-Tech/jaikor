@@ -2,8 +2,11 @@ import React, { useRef } from "react";
 import gsap from "gsap";
 import "../Styles/about-cards.css";
 import { useGSAP } from "@gsap/react";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const AboutCards = () => {
+  const lineRef = useRef(null);
   const cardsContainerRef = useRef(null);
 
   const cardContents = [
@@ -25,57 +28,79 @@ const AboutCards = () => {
     },
   ];
 
-  useGSAP(() => {
-    // Get all cards
-    const cards = document.querySelectorAll('.about-card');
-    
-    // Initialize card positions
-    gsap.set(cards, { 
-      clearProps: "all" 
-    });
-    
-    // Set up hover animations for each card
-    cards.forEach((card, index) => {
-      // Create hover animation timeline (paused initially)
-      const tl = gsap.timeline({ paused: true });
-      
-      // Animate the hovered card with a swipe motion
-      tl.to(card, {
-        x: 20, // First move slightly right
-        duration: 0.2,
-        ease: "power1.out"
-      }).to(card, {
-        x: -80, // Then swipe to the left (forward)
-        zIndex: 100, // Bring to front
-        scale: 1.05,
-        duration: 0.45,
-        ease: "power2.out"
+  useGSAP(
+    () => {
+      // Original line animation (unchanged)
+      gsap.set(lineRef.current, {
+        strokeDasharray: lineRef.current.getTotalLength(),
+        strokeDashoffset: lineRef.current.getTotalLength(),
       });
-      
-      // Find the card to the left (if it exists)
-      if (index > 0) {
-        const leftCard = cards[index - 1];
-        // Add reverse swipe animation for the left card
-        tl.to(leftCard, {
-          x: "-20", // Swipe right (backward)
-          // zIndex: 10,
+
+      gsap.to(lineRef.current, {
+        strokeDashoffset: 0,
+        duration: 1.25,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: ".cardsection",
+          start: "top center",
+          toggleActions: "play none none reverse",
+        },
+      });
+      // Get all cards
+      const cards = document.querySelectorAll(".about-card");
+
+      // Initialize card positions
+      gsap.set(cards, {
+        clearProps: "all",
+      });
+
+      // Set up hover animations for each card
+      cards.forEach((card, index) => {
+        // Create hover animation timeline (paused initially)
+        const tl = gsap.timeline({ paused: true });
+
+        // Animate the hovered card with a swipe motion
+        tl.to(card, {
+          x: 20, // First move slightly right
+          duration: 0.2,
+          ease: "power1.out",
+        }).to(card, {
+          x: -80, // Then swipe to the left (forward)
+          zIndex: 100, // Bring to front
+          scale: 1.05,
           duration: 0.45,
-          ease: "power2.out"
-        }, "-=0.4"); // Same time as the second animation
-      }
-      
-      // Set up event listeners
-      card.addEventListener('mouseenter', () => tl.play());
-      card.addEventListener('mouseleave', () => tl.reverse());
-    });
-  }, { scope: cardsContainerRef });
+          ease: "power2.out",
+        });
+
+        // Find the card to the left (if it exists)
+        if (index > 0) {
+          const leftCard = cards[index - 1];
+          // Add reverse swipe animation for the left card
+          tl.to(
+            leftCard,
+            {
+              x: "-20", // Swipe right (backward)
+              // zIndex: 10,
+              duration: 0.45,
+              ease: "power2.out",
+            },
+            "-=0.4"
+          ); // Same time as the second animation
+        }
+
+        // Set up event listeners
+        card.addEventListener("mouseenter", () => tl.play());
+        card.addEventListener("mouseleave", () => tl.reverse());
+      });
+    },
+    { scope: cardsContainerRef }
+  );
 
   return (
     <>
       <div className="about-cards">
         <div className="about-cards-top">
           <svg
-          
             xmlns="http://www.w3.org/2000/svg"
             width="1816"
             height="49"
@@ -83,6 +108,7 @@ const AboutCards = () => {
             fill="none"
           >
             <path
+              ref={lineRef}
               d="M0 1L110.603 1L150.631 48L1816 48"
               stroke="#111E57"
               stroke-width="0.4"
@@ -95,33 +121,31 @@ const AboutCards = () => {
             </h6>
           </span>
         </div>
-          <div className="about-cards-main" ref={cardsContainerRef}>
-            {cardContents.map((content, index) => (
-              <div
-                key={index}
-                className={`about-card card-color-${index + 1}`}
-                data-index={index + 1}
-              >
-                <div className="card-number">{content.number}</div>
-                <div className="card-content">
-                  <p>{content.text}</p>
-                </div>
-                <div className="card-arrow">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="31"
-                    height="35"
-                    viewBox="0 0 31 35"
-                    fill="none"
-                  >
-                    <path
-                      d="M3.62871 0.8051L24.484 29.4957L27.9592 8.17653L30.8561 8.43328L26.5536 34.8284L0.118801 30.7764L0.768474 27.9416L22.1196 31.2144L1.2643 2.5238L3.62871 0.8051Z"
-                    />
-                  </svg>
-                </div>
+        <div className="about-cards-main" ref={cardsContainerRef}>
+          {cardContents.map((content, index) => (
+            <div
+              key={index}
+              className={`about-card card-color-${index + 1}`}
+              data-index={index + 1}
+            >
+              <div className="card-number">{content.number}</div>
+              <div className="card-content">
+                <p>{content.text}</p>
               </div>
-            ))}
-          </div>
+              <div className="card-arrow">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="31"
+                  height="35"
+                  viewBox="0 0 31 35"
+                  fill="none"
+                >
+                  <path d="M3.62871 0.8051L24.484 29.4957L27.9592 8.17653L30.8561 8.43328L26.5536 34.8284L0.118801 30.7764L0.768474 27.9416L22.1196 31.2144L1.2643 2.5238L3.62871 0.8051Z" />
+                </svg>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );

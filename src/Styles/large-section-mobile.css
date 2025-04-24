@@ -1,0 +1,109 @@
+.large-mobile-section {
+  position: relative;
+  width: 100%;
+  height: 1800px;
+  /* border: 1px solid green; */
+  background: url(/Assets/large-mobile.jpg) lightgray 50% / cover no-repeat;
+}
+
+/*! blur */
+.large-mobile-blur {
+  position: absolute;
+  top: -50px;
+  left: 0px;
+  scale: 1.1;
+  width: 100%;
+  height: 100px;
+  /* border: 1px solid red; */
+  background: linear-gradient(0deg, #fff 0%, #fff 100%), #ffffffb6;
+  filter: blur(18.25px);
+}
+
+.large-mobile-blur-last {
+  position: absolute;
+  bottom: -50px;
+  left: 0px;
+  scale: 1.1;
+  width: 100%;
+  height: 100px;
+  /* border: 1px solid red; */
+  background: linear-gradient(0deg, #fff 0%, #fff 100%), #ffffffb6;
+  filter: blur(18.25px);
+}
+
+/*! mobile-large-svg */
+
+.mobile-large-svg {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*! large-mobile-cc */
+
+.large-mobile-cc {
+  /* border: 1px solid red; */
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.large-mobile-con {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 350px !important;
+  /* border: 1px solid red; */
+}
+.large-mobile-con h1 {
+  color: #f5f5f5;
+  text-align: center;
+  font-family: "Nunito Sans";
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.large-mobile-con p {
+  color: #f5f5f5;
+  text-align: center;
+  font-family: "Nunito Sans";
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.large-mobile-last-img {
+  /* position: absolute; */
+  bottom: -10%;
+  left: 0;
+  width: 100%;
+  /* height: 65dvh !important; */
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  /* border-rad; */
+  /* background-color: green; */
+  /* border: 1px solid yellow; */
+  z-index: 9999;
+}
+
+.mobile-large-svg svg path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.large-mobile-con {
+  transform-origin: center;
+}

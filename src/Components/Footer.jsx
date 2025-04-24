@@ -21,24 +21,27 @@ const Footer = () => {
     // });
 
     // Footer elements stagger animation
-    gsap.from([
-      ".footer-logo",
-      ".footer-text",
-      ".footer-button",
-      ".footer-top-right",
-      ".footer-bottom",
-      ".footer-last"
-    ], {
-      scrollTrigger: {
-        trigger: ".footer",
-        start: "top bottom",
-        toggleActions: "play none none reverse"
-      },
-      opacity: 0,
-      y: 30,
-      duration: 0.8,
-      stagger: 0.2
-    });
+    gsap.from(
+      [
+        ".footer-logo",
+        ".footer-text",
+        ".footer-button",
+        ".footer-top-right",
+        ".footer-bottom",
+        ".footer-last",
+      ],
+      {
+        scrollTrigger: {
+          trigger: ".footer",
+          start: "top bottom",
+          toggleActions: "play none none reverse",
+        },
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        stagger: 0.2,
+      }
+    );
   }, []);
   return (
     <>
@@ -88,14 +91,18 @@ const Footer = () => {
             <h4>Twitter</h4>
           </div>
           <div className="footer-bottom-right">
-            <Link>Home</Link>
-            <Link>About</Link>
-            <Link>Projects</Link>
-            <Link>Services</Link>
+            <Link to={"/"}>Home</Link>
+            <Link to={"/about"}>About</Link>
+            <Link to={"/projects"}>Projects</Link>
+            <Link to={"/services"}>Services</Link>
           </div>
         </div>
         <div className="footer-last">
           <p>Privacy policy</p>
+        </div>
+        <div className="footer-top-right-lst">
+          <p>Address:</p>
+          <span>P.O. Box 40454, Dubai, UAE</span>
         </div>
       </div>
     </>

@@ -151,3 +151,8 @@ width: 200px;
     font-size: 12px;
   }
 }
+.core-l svg path,
+.core-r svg path {
+  stroke-width: 1;
+  will-change: stroke-dashoffset;
+}

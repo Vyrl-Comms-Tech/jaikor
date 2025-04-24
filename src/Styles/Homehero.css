@@ -25,7 +25,13 @@
   width: 100%;
   height: 100%;
   scale: 1.05;
+<<<<<<< Updated upstream
   object-fit: cover !important ;
+=======
+  object-fit: cover !important;
+  /* z-index: 0; */
+  filter: brightness(0.8);
+>>>>>>> Stashed changes
 }
 .herosection {
   width: 100%;

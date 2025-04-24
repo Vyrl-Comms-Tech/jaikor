@@ -8,22 +8,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Cardsection() {
   const lineRef = useRef(null);
+  const belowtop = useRef([]);
   const card1PathRef1 = useRef(null);
   const card1PathRef2 = useRef(null);
   const card2PathRef = useRef(null);
   const card4PathRef = useRef(null);
 
   useGSAP(() => {
-    // Original line animation (unchanged)
-    gsap.set(lineRef.current, {
-      strokeDasharray: lineRef.current.getTotalLength(),
-      strokeDashoffset: lineRef.current.getTotalLength(),
-    });
-
-    gsap.to(lineRef.current, {
-      strokeDashoffset: 0,
-      duration: 1.25,
-      ease: "power2.inOut",
+    // Create a timeline for synchronized animations
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".cardsection",
         start: "top center",
@@ -31,10 +24,39 @@ function Cardsection() {
       },
     });
 
+    // Line animation
+    gsap.set(lineRef.current, {
+      strokeDasharray: lineRef.current.getTotalLength(),
+      strokeDashoffset: lineRef.current.getTotalLength(),
+    });
+
+    // Add animations to the timeline
+    tl.to(lineRef.current, {
+        strokeDashoffset: 0,
+        duration: 1.25,
+        ease: "power2.inOut",
+      }, 0)
+      .fromTo(
+        belowtop.current,
+        { x: "-50", opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.25,
+          ease: "power2.out",
+        },
+        0  // This '0' makes it start at the same time as the line animation
+      );
     // Card SVGs animation
-    const cardPaths = [card1PathRef1, card1PathRef2, card2PathRef, card4PathRef];
-    
-    cardPaths.forEach(pathRef => {
+    const cardPaths = [
+      card1PathRef1,
+      card1PathRef2,
+      card2PathRef,
+      card4PathRef,
+    ];
+
+    cardPaths.forEach((pathRef) => {
       gsap.set(pathRef.current, {
         strokeDasharray: pathRef.current.getTotalLength(),
         strokeDashoffset: pathRef.current.getTotalLength(),
@@ -85,17 +107,31 @@ function Cardsection() {
             />
           </svg>
           <span>
-            <p>02</p>
-            <h6>Services</h6>
+            <p ref={(el) => (belowtop.current[0] = el)}>02</p>
+            <h6 ref={(el) => (belowtop.current[1] = el)}>Services</h6>
           </span>
         </div>
         <div className="cardholder">
           <div className="cardrow1">
             <div className="card card1">
               <div className="cardimage">
-                <svg xmlns="http://www.w3.org/2000/svg" width="401" height="362" viewBox="0 0 401 362" fill="none">
-                  <path ref={card1PathRef1} d="M399.5 151H219V269H88V361.5" stroke="#3D3D3D" />
-                  <path ref={card1PathRef2} d="M400.5 1H220V119H89V211.5H0.5V360.5" stroke="#3D3D3D" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="401"
+                  height="362"
+                  viewBox="0 0 401 362"
+                  fill="none"
+                >
+                  <path
+                    ref={card1PathRef1}
+                    d="M399.5 151H219V269H88V361.5"
+                    stroke="#3D3D3D"
+                  />
+                  <path
+                    ref={card1PathRef2}
+                    d="M400.5 1H220V119H89V211.5H0.5V360.5"
+                    stroke="#3D3D3D"
+                  />
                 </svg>
               </div>
               <div className="cardcontent">
@@ -111,8 +147,16 @@ function Cardsection() {
             </div>
             <div className="card card2">
               <div className="cardimage">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 312 212" fill="none">
-                  <path ref={card2PathRef} d="M312 1H131.5V119H0.5V211.5" stroke="#3D3D3D" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 312 212"
+                  fill="none"
+                >
+                  <path
+                    ref={card2PathRef}
+                    d="M312 1H131.5V119H0.5V211.5"
+                    stroke="#3D3D3D"
+                  />
                 </svg>
               </div>
               <div className="cardcontent">
@@ -141,8 +185,18 @@ function Cardsection() {
             </div>
             <div className="card card4">
               <div className="card4row1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="402" height="141" viewBox="0 0 402 141" fill="none">
-                  <path ref={card4PathRef} d="M1 0.5V140.5H168V41.5H401.5V0.5" stroke="black" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="402"
+                  height="141"
+                  viewBox="0 0 402 141"
+                  fill="none"
+                >
+                  <path
+                    ref={card4PathRef}
+                    d="M1 0.5V140.5H168V41.5H401.5V0.5"
+                    stroke="black"
+                  />
                 </svg>
               </div>
               <div className="card4row2">

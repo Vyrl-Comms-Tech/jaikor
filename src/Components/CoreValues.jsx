@@ -12,6 +12,8 @@ const CoreValues = () => {
   const centerBoxRef = useRef(null);
   const leftBoxRef = useRef(null);
   const rightBoxRef = useRef(null);
+  const leftSvgRef = useRef(null);
+  const rightSvgRef = useRef(null);
 
   useGSAP(() => {
     // Create a timeline for the animation
@@ -30,6 +32,46 @@ const CoreValues = () => {
     gsap.set(centerBoxRef.current.querySelector("img"), { rotate: "-45" });
     gsap.set(leftBoxRef.current, { rotate: "-45" });
     gsap.set(rightBoxRef.current, { rotate: "-45" });
+
+    // Add flowing animation for SVG paths
+    // Get all SVG paths and set up initial state
+    const leftPaths = leftSvgRef.current.querySelectorAll("path");
+    const rightPaths = rightSvgRef.current.querySelectorAll("path");
+
+    // Initialize paths
+    [...leftPaths, ...rightPaths].forEach((path) => {
+      const length = path.getTotalLength();
+      gsap.set(path, {
+        strokeDasharray: length,
+        strokeDashoffset: length,
+      });
+    });
+
+    // Animate left SVG paths
+    leftPaths.forEach((path, index) => {
+      const length = path.getTotalLength();
+      gsap.to(path, {
+        strokeDashoffset: -length * 1,
+        duration: 6,
+        repeat: -1,
+        delay: index * 0.5,
+        ease: "linear",
+        stagger: 0.2,
+      });
+    });
+
+    // Animate right SVG paths
+    rightPaths.forEach((path, index) => {
+      const length = path.getTotalLength();
+      gsap.to(path, {
+        strokeDashoffset: -length * 1,
+        duration: 6,
+        repeat: -1,
+        delay: index * 0.5,
+        ease: "linear",
+        stagger: 0.2,
+      });
+    });
 
     // Animation sequence
     tl.to(
@@ -89,9 +131,8 @@ const CoreValues = () => {
     <section ref={sectionRef} className="core-values-section">
       <div className="core-l">
         <svg
+          ref={leftSvgRef}
           xmlns="http://www.w3.org/2000/svg"
-          // width="222"
-          // height="797"
           viewBox="0 0 222 797"
           fill="none"
         >
@@ -180,9 +221,8 @@ const CoreValues = () => {
       </div>
       <div className="core-r">
         <svg
+          ref={rightSvgRef}
           xmlns="http://www.w3.org/2000/svg"
-          // width="285"
-          // height="777"
           viewBox="0 0 285 777"
           fill="none"
         >

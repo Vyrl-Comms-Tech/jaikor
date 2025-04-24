@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import "../Styles/our-projects.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import { useGSAP } from "@gsap/react";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -60,7 +60,7 @@ export default function OurProjects() {
     },
   ];
 
-  useEffect(() => {
+  useGSAP(() => {
     // Initialize GSAP context
     const ctx = gsap.context(() => {
       // Initial positioning of slides
@@ -98,41 +98,39 @@ export default function OurProjects() {
         ? (currentSlide + 1) % totalSlides
         : (currentSlide - 1 + totalSlides) % totalSlides;
 
-    // Animate slides horizontally
-    gsap.to(".op-slide", {
-      xPercent: (i) => (i - newIndex) * 100,
-      duration: 0.8,
-      ease: "sine.in",
-    });
-
-    // Animate text vertically
     const textDirection = direction === "next" ? -1 : 1;
 
-    // First move current text out
-    gsap.to(".op-slide-text-content", {
+    // Timeline for coordinated animations
+    const tl = gsap.timeline();
+
+    // First animate current text out
+    tl.to(".op-slide-text-content", {
       yPercent: textDirection * 100,
       opacity: 0,
-      duration: 0.5,
-      ease: "sine.in",
-      onComplete: () => {
-        // Then bring new text in
-        gsap.fromTo(
-          ".op-slide-text-content",
-          {
-            yPercent: textDirection * -100,
-            opacity: 0,
-          },
-          {
-            yPercent: 0,
-            opacity: 1,
-            duration: 0.5,
-            ease: "sine.in",
-          }
-        );
+      duration: 0.4,
+      ease: "power2.in"
+    })
+    // Update the slide index
+    .call(() => setCurrentSlide(newIndex))
+    // Then bring new text in
+    .fromTo(".op-slide-text-content",
+      {
+        yPercent: textDirection * -100,
+        opacity: 0,
       },
-    });
-
-    setCurrentSlide(newIndex);
+      {
+        yPercent: 0,
+        opacity: 1,
+        duration: 0.4,
+        ease: "power2.out"
+      }
+    )
+    // Finally animate the slides horizontally
+    .to(".op-slide", {
+      xPercent: (i) => (i - newIndex) * 100,
+      duration: 0.6,
+      ease: "power2.out"
+    }, "-=0.8"); // Slight overlap with text animation
   };
 
   return (
@@ -166,8 +164,8 @@ export default function OurProjects() {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="13"
-              height="23"
+              // width="13"
+              // height="23"
               viewBox="0 0 13 23"
               fill="none"
             >
@@ -183,8 +181,8 @@ export default function OurProjects() {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="13"
-              height="23"
+              // width="13"
+              // height="23"
               viewBox="0 0 13 23"
               fill="none"
             >
@@ -218,8 +216,51 @@ export default function OurProjects() {
       </div>
 
       <div className="op-pagination">
+
+      <div className="op-navigation-btm">
+          <button
+            className="op-nav-button prev"
+            onClick={() => goToSlide("prev")}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              // width="13"
+              // height="23"
+              viewBox="0 0 13 23"
+              fill="none"
+            >
+              <path
+                d="M12.5 20.702L10.7153 22.5L0.994453 12.7009C0.837758 12.5439 0.713403 12.3572 0.628545 12.1515C0.543686 11.9459 0.5 11.7253 0.5 11.5025C0.5 11.2798 0.543686 11.0592 0.628545 10.8536C0.713403 10.6479 0.837758 10.4612 0.994453 10.3042L10.7153 0.5L12.4983 2.298L3.37462 11.5L12.5 20.702Z"
+                // fill="#"
+              />
+            </svg>
+          </button>
+          <button
+            className="op-nav-button next"
+            onClick={() => goToSlide("next")}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              // width="13"
+              // height="23"
+              viewBox="0 0 13 23"
+              fill="none"
+            >
+              <path
+                d="M0.5 2.29799L2.28471 0.5L12.0055 10.2991C12.1622 10.4561 12.2866 10.6428 12.3715 10.8485C12.4563 11.0541 12.5 11.2747 12.5 11.4975C12.5 11.7202 12.4563 11.9408 12.3715 12.1464C12.2866 12.3521 12.1622 12.5388 12.0055 12.6958L2.28471 22.5L0.501681 20.702L9.62538 11.5L0.5 2.29799Z"
+                // fill="white"
+              />
+            </svg>
+          </button>
+        </div>
+
+
+
         {currentSlide + 1}/{slides.length}
       </div>
+
+
+
     </div>
   );
 }
