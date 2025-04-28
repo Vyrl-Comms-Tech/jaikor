@@ -120,6 +120,12 @@ function Groupdetails() {
             multi-disciplinary powerhouse with operations <br /> spanning the
             UAE Iraq, Turkey, and Europe.
           </h1>
+          <h5 ref={detailsCenterRef}>
+              With deep roots in construction, a strong focus on innovation, and
+              an eye on the future, each company under the Jeikor banner brings
+              unique value, expertise, and capabilities — all working in synergy
+              to deliver world-class solutions.
+            </h5>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 529 435"
@@ -176,7 +182,9 @@ function Groupdetails() {
           </svg>
         </div>
         <div className="detailsbottom">
-          <img src="/Assets/Rectangle 210.png" ref={groupImgRef} alt="" />
+          <img src="/Assets/Rectangle 210.png" id='lapimg'  ref={groupImgRef} alt="" />
+          <img src="/Assets/Rectangle 211.png" id='mobimg' alt="" />
+          
           <div id="rectangelholder">
             <img src="/Assets/Rectangle 16.png" alt="" />
             <h5 ref={detailsCenterRef}>

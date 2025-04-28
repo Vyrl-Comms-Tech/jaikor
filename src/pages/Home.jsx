@@ -23,14 +23,10 @@ const Home = ({ lenis }) => {
 
   return (
     <>
-      <Homehero Herottesxt={Herottesxt.ProjectText}/>
+      <Homehero Herottesxt={Herottesxt.HomeText}/>
       <Belowhero />
       <Cardsection/>
-<<<<<<< Updated upstream
-      {/* <LargeSection lenis={lenis} /> */}
-      {/* <ConnectSection/> */}
-      {/* <Footer/> */}
-=======
+    
       {isMobile ? (
         <LargeSectionMobile />
       ) : (
@@ -38,7 +34,6 @@ const Home = ({ lenis }) => {
       )}
       <ConnectSection/>
       <Footer/>
->>>>>>> Stashed changes
     </>
   );
 };

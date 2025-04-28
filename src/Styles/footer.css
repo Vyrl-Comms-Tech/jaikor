@@ -5,6 +5,7 @@
   padding: 65px 45px;
   opacity: 1;
   will-change: transform, opacity;
+  overflow: hidden;
 }
 
 .footer-logo {

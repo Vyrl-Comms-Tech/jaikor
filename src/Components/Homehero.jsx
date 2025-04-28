@@ -115,30 +115,30 @@ function Homehero2({ Herottesxt }) {
       },
       "-=1"
     )
-      .fromTo(
-        logoRef.current,
-        { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
-        "-=1.5"
-      )
-      .fromTo(
-        linksRef.current,
-        { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: "power2.out" },
-        "-=0.5"
-      )
-      .fromTo(
-        heroTextRefs.current,
-        { y: 100, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, stagger: 0.3, ease: "power2.out" },
-        "-=1.2" // Overlap with previous animation
-      )
-      .fromTo(
-        bottomTextRef.current,
-        { x: 150, opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.8, ease: "ease" },
-        "-=1" // Overlap with previous animation
-      );
+      // .fromTo(
+      //   logoRef.current,
+      //   { y: 50, opacity: 0 },
+      //   { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
+      //   "-=1.5"
+      // )
+      // .fromTo(
+      //   linksRef.current,
+      //   { y: 50, opacity: 0 },
+      //   { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: "power2.out" },
+      //   "-=0.5"
+      // )
+      // .fromTo(
+      //   heroTextRefs.current,
+      //   { y: 100, opacity: 0 },
+      //   { y: 0, opacity: 1, duration: 0.8, stagger: 0.3, ease: "power2.out" },
+      //   "-=1.2" // Overlap with previous animation
+      // )
+      // .fromTo(
+      //   bottomTextRef.current,
+      //   { x: 150, opacity: 0 },
+      //   { x: 0, opacity: 1, duration: 0.8, ease: "ease" },
+      //   "-=1" // Overlap with previous animation
+      // );
 
     // Add counter animation
     const targetNumbers = [150, 500, 23]; // Projects, Workforce, Years
@@ -464,8 +464,6 @@ function Homehero2({ Herottesxt }) {
           <div className="logo">
             <img src="Assets/logo.png" alt="" ref={logoRef} />
           </div>
-<<<<<<< Updated upstream
-=======
           {location.pathname === "/services" ? (
             // Services page SVG
             <svg
@@ -641,7 +639,6 @@ function Homehero2({ Herottesxt }) {
               </defs>
             </svg>
           )}
->>>>>>> Stashed changes
 
           <div className="links">
             {/* Navbar */}
