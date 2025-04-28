@@ -662,7 +662,7 @@ const renderServicesSVG = () => {
             >
               let's connect
             </NavLink>           
-            <MobileNavbar isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
+            {/* <MobileNavbar isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} /> */}
             {/* Navbar */}
           </div>
         </div>
