@@ -4,9 +4,10 @@ import "../Styles/Homehero.css";
 import "../Styles/Navbar.css";
 import { NavLink, useLocation } from "react-router-dom";
 import MobileNavbar from "./MobileNavbar";
-// import MobileNavbar from "./MobileNavbar";
+import { useState } from 'react';
 
 function Homehero2({ Herottesxt }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { paragraph, mainheading, btntext } = Herottesxt;
   const location = useLocation();
 
@@ -663,7 +664,12 @@ const renderServicesSVG = () => {
               let's connect
             </NavLink>
 
+<<<<<<< Updated upstream
             <MobileNavbar />
+=======
+           
+            <MobileNavbar isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
+>>>>>>> Stashed changes
             {/* Navbar */}
           </div>
         </div>

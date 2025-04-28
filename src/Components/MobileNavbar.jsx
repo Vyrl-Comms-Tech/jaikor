@@ -4,8 +4,7 @@ import gsap from "gsap";
 import "../Styles/mobile-navbar.css";
 import { useGSAP } from "@gsap/react";
 
-const MobileNavbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const MobileNavbar = ({ isOpen, setIsOpen }) => {
   const menuRef = useRef(null);
   const timelineRef = useRef(null);
   const logoRef = useRef(null);
@@ -13,9 +12,7 @@ const MobileNavbar = () => {
   useGSAP(() => {
     timelineRef.current = gsap.timeline({ paused: true });
 
-    // Opening animation sequence
     timelineRef.current
-      // First animate the menu background
       .to(".mobile-menu", {
         duration: 0.6,
         opacity: 1,
@@ -23,20 +20,9 @@ const MobileNavbar = () => {
         visibility: "visible",
         ease: "power3.inOut",
       })
-      // Then animate the logo
+      // First animate the menu links
       .fromTo(
-        ".mobile-logo-menu",
-        { y: -20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" },
-        "-=0.2"
-      )
-      // Then animate all text elements
-      .fromTo(
-        [
-          ".mobile-menu-links .mobile-menu-link",
-          ".mobile-contact-info-f",
-          ".contact-text"
-        ],
+        ".mobile-menu-links .mobile-menu-link",
         { y: 50, opacity: 0 },
         {
           y: 0,
@@ -45,9 +31,57 @@ const MobileNavbar = () => {
           duration: 0.5,
           ease: "power2.out",
         },
+        "-=0.3"
+      )
+      // Then animate the contact info section
+      .fromTo(
+        ".mobile-contact-info-f",
+        { y: 50, opacity: 0, visibility: "hidden" },
+        {
+          y: 0,
+          opacity: 1,
+          visibility: "visible",
+          duration: 0.5,
+          ease: "power2.out",
+        },
+        "-=0.2"
+      )
+      // Animate individual contact items
+      .fromTo(
+        ".mobile-contact-info-f .contact-item",
+        { y: 20, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.1,
+          duration: 0.3,
+          ease: "power2.out",
+        },
+        "-=0.3"
+      )
+      .fromTo(
+        ".mobile-contact-info",
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.4,
+          ease: "power2.out",
+        },
+        "-=0.2"
+      )
+      .fromTo(
+        ".contact-text",
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.3,
+          ease: "power2.out",
+        },
         "-=0.2"
       );
-    
+
     // Create reverse timeline for closing
     const reverseTimeline = gsap.timeline({ paused: true });
     reverseTimeline
@@ -56,7 +90,7 @@ const MobileNavbar = () => {
         [
           ".mobile-menu-links .mobile-menu-link",
           ".mobile-contact-info-f",
-          ".contact-text"
+          ".contact-text",
         ],
         {
           y: 50,
@@ -81,36 +115,36 @@ const MobileNavbar = () => {
         visibility: "hidden",
         ease: "power3.inOut",
       });
-    
+
     // Store reverse timeline
     timelineRef.current.reverseTimeline = reverseTimeline;
   }, []);
 
-  // Update the toggleMenu function
+  // Add the toggleMenu function
   const toggleMenu = () => {
     if (!isOpen) {
       // Opening
       setIsOpen(true);
-      timelineRef.current.progress(0); // Reset timeline progress
+      timelineRef.current.progress(0);
       timelineRef.current.play();
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
       // Closing
-      timelineRef.current.reverseTimeline.progress(0); // Reset reverse timeline progress
+      timelineRef.current.reverseTimeline.progress(0);
       timelineRef.current.reverseTimeline.play();
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
       setTimeout(() => {
         setIsOpen(false);
       }, 800);
     }
   };
 
-  // Update the closeMenu function
+  // Update the closeMenu function to use setIsOpen
   const closeMenu = () => {
     if (isOpen) {
-      timelineRef.current.reverseTimeline.progress(0); // Reset reverse timeline progress
+      timelineRef.current.reverseTimeline.progress(0);
       timelineRef.current.reverseTimeline.play();
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
       setTimeout(() => {
         setIsOpen(false);
       }, 800);
@@ -123,6 +157,7 @@ const MobileNavbar = () => {
         <div className="mobile-logo">
           {/* <img src="/Assets/logo.png" alt="Jeikor Group" /> */}
         </div>
+        {/* Add back the hamburger menu */}
         <div className="mobile-hamburger" onClick={toggleMenu}>
           <div className={`hamburger-bar ${isOpen ? "open" : ""}`}>
             <span className="top"></span>
@@ -130,14 +165,6 @@ const MobileNavbar = () => {
             <span className="bottom"></span>
           </div>
         </div>
-
-        {/* <label class="bar" id="hamburger" for="check">
-              <input type="checkbox" id="check" />
-
-              <span class="top"></span>
-              <span class="middle"></span>
-              <span class="bottom"></span>
-            </label> */}
       </div>
 
       <div className={`mobile-menu ${isOpen ? "active" : ""}`} ref={menuRef}>
@@ -145,19 +172,29 @@ const MobileNavbar = () => {
           <img src="/Assets/logo.png" alt="Jeikor Group" />
         </div>
         <div className="mobile-menu-links">
-          <NavLink 
-            to="/" 
-            className="mobile-menu-link" 
-            onClick={closeMenu} 
-            style={{opacity: 1, display: 'block', color: 'inherit', visibility: 'visible'}}
+          <NavLink
+            to="/"
+            className="mobile-menu-link"
+            onClick={closeMenu}
+            style={{
+              opacity: 1,
+              display: "block",
+              color: "inherit",
+              visibility: "visible",
+            }}
           >
             Home
           </NavLink>
-          <NavLink 
-            to="/about" 
-            className="mobile-menu-link" 
-            onClick={closeMenu} 
-            style={{opacity: 1, display: 'block', color: 'inherit', visibility: 'visible'}}
+          <NavLink
+            to="/about"
+            className="mobile-menu-link"
+            onClick={closeMenu}
+            style={{
+              opacity: 1,
+              display: "block",
+              color: "inherit",
+              visibility: "visible",
+            }}
           >
             About
           </NavLink>
@@ -165,7 +202,12 @@ const MobileNavbar = () => {
             to="/projects"
             className="mobile-menu-link"
             onClick={closeMenu}
-            style={{opacity: 1, display: 'block', color: 'inherit', visibility: 'visible'}}
+            style={{
+              opacity: 1,
+              display: "block",
+              color: "inherit",
+              visibility: "visible",
+            }}
           >
             Projects
           </NavLink>
@@ -173,7 +215,12 @@ const MobileNavbar = () => {
             to="/services"
             className="mobile-menu-link"
             onClick={closeMenu}
-            style={{opacity: 1, display: 'block', color: 'inherit', visibility: 'visible'}}
+            style={{
+              opacity: 1,
+              display: "block",
+              color: "inherit",
+              visibility: "visible",
+            }}
           >
             Services
           </NavLink>
@@ -185,19 +232,44 @@ const MobileNavbar = () => {
             Let's Connect
           </NavLink>
         </div>
-        <div className="mobile-contact-info-f" style={{opacity: 1, visibility: 'visible'}}>
-          <div className="contact-item" style={{opacity: 1, visibility: 'visible'}}>
-            <a href="tel:+97143262777" style={{opacity: 1, visibility: 'visible'}}>+971 4 326 2777</a>
+        <div className="mobile-contact-info-f">
+          <div className="contact-item">
+            <a
+              href="tel:+97143262777"
+              style={{
+                opacity: 1,
+                display: "block",
+                color: "inherit",
+                visibility: "visible",
+              }}
+            >
+              +971 4 326 2777
+            </a>
           </div>
-          <div className="contact-item" style={{opacity: 1, visibility: 'visible'}}>
-            <a href="mailto:info@jeikor.com" style={{opacity: 1, visibility: 'visible'}}>info@jeikor.com</a>
+          <div className="contact-item">
+            <a
+              href="mailto:info@jeikor.com"
+              style={{
+                opacity: 1,
+                display: "block",
+                color: "inherit",
+                visibility: "visible",
+              }}
+            >
+              info@jeikor.com
+            </a>
           </div>
-          <div className="contact-item" style={{opacity: 1, visibility: 'visible'}}>
+          <div className="contact-item">
             <a
               href="https://twitter.com/jeikorgroup"
               target="_blank"
               rel="noopener noreferrer"
-              style={{opacity: 1, visibility: 'visible'}}
+              style={{
+                opacity: 1,
+                display: "block",
+                color: "inherit",
+                visibility: "visible",
+              }}
             >
               Twitter
             </a>

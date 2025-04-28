@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 9999;
 }
 
 .mobile-logo {
@@ -84,7 +84,7 @@
   background-color: #111e57;
   overflow: hidden;
   opacity: 0;
-  z-index: 999999;
+  z-index: 9998;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -117,40 +117,56 @@
   /* border: 1px solid green; */
   margin-top: 25px;
   margin-bottom: 25px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .mobile-menu-link {
   color: #fff !important;
   text-decoration: none;
   font-family: "Nunito Sans", sans-serif;
-  font-size: 50px !important;
+  font-size: 3.125rem !important;
+  /* margin-bottom: 2.3rem; */
   font-weight: 300;
   text-transform: capitalize;
   z-index: 1000;
   display: block;
-  opacity: 0;  /* Changed to 0 by default */
-  transform: translateY(20px);  /* Added initial position */
+  opacity: 0; /* Changed to 0 by default */
+  transform: translateY(20px); /* Added initial position */
 }
 
 .mobile-contact-info-f {
-  padding: 0 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid pink;
   flex-wrap: wrap;
   gap: 10px;
-  opacity: 0;  /* Changed to 0 by default */
-  z-index: 1000;
+  padding: 0 30px;
+  margin-top: 2rem;
+  /* visibility: hidden; Start hidden, GSAP will handle visibility */
+  opacity: 1;
+  /* border: 1px solid red; */
+  height: 100px;
+}
+
+.mobile-contact-info-f .contact-item {
+  margin-bottom: 10px;
+  opacity: 1;
+  /* border: 1px solid green; */
   position: relative;
-  transform: translateY(20px);  /* Added initial position */
+  z-index: 1000;
+  height: min-content;
+}
+
+.mobile-contact-info-f .contact-item a {
+  color: #fff !important;
+  text-decoration: none;
+  font-size: 1.0625rem !important;
 }
 
 .contact-text {
   color: #fff;
   margin-top: 20px;
-  opacity: 0;  /* Changed to 0 by default */
+  opacity: 0;
   padding: 0 30px;
   font-family: "Nunito Sans";
   font-size: 1.25rem;
@@ -158,7 +174,7 @@
   font-weight: 300;
   line-height: normal;
   text-transform: capitalize;
-  transform: translateY(20px);  /* Added initial position */
+  transform: translateY(20px); /* Added initial position */
 }
 
 .mobile-logo-menu {
