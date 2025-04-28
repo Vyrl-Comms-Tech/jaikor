@@ -26,38 +26,48 @@ function Mobileprojects() {
     {
       id: 2,
       image: "/Assets/img22.jpg",
-      title: "Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna",
+      title: "Sed Do Eiusmod Tempor",
       description:
         "Specializing In Large-Scale Infrastructure Projects With A Focus On Quality, Safety, And Innovation",
+        description2:
+        "As the flagship division of Jeikor Group, Jeikor Contracting UAE has completed 200+ projects across the residential, commercial, industrial, and hospitality sectors.",
     },
     {
       id: 3,
       image: "/Assets/img23.jpg",
-      title: "Duis Aute Irure Dolor In Reprehenderit In Voluptate",
+      title: "Duis Aute Irure Dolor",
       description:
         "Building The Future With Excellence And Integrity Since 1985, Committed To Sustainable Development",
+        description2:
+        "As the flagship division of Jeikor Group, Jeikor Contracting UAE has completed 200+ projects across the residential, commercial, industrial, and hospitality sectors.",
     },
     {
       id: 4,
       image: "/Assets/carousel-img.png",
       title:
-        "Lorem Ipsum Dolor Sit Amet, Consectetur Ullamco Laboris Nisi Ut Aliqu",
+        "Lorem Ipsum Dolor Sit Amet,",
       description:
         "Welcome To Isikor GP, A Leading Heavy Civil Construction Company Dedicated To Delivering Exceptional Infrastructure Solutions",
+        description2:
+        "As the flagship division of Jeikor Group, Jeikor Contracting UAE has completed 200+ projects across the residential, commercial, industrial, and hospitality sectors.",
     },
     {
       id: 5,
       image: "/Assets/img22.jpg",
-      title: "Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna",
+      title: "Sed Do Eiusmod Tempor",
       description:
         "Specializing In Large-Scale Infrastructure Projects With A Focus On Quality, Safety, And Innovation",
+        description2:
+        "As the flagship division of Jeikor Group, Jeikor Contracting UAE has completed 200+ projects across the residential, commercial, industrial, and hospitality sectors.",
     },
     {
       id: 6,
       image: "/Assets/img23.jpg",
-      title: "Duis Aute Irure Dolor In Reprehenderit In Voluptate",
+      title: "Duis Aute Irure Dolor",
       description:
         "Building The Future With Excellence And Integrity Since 1985, Committed To Sustainable Development",
+        description2:
+        "As the flagship division of Jeikor Group, Jeikor Contracting UAE has completed 200+ projects across the residential, commercial, industrial, and hospitality sectors.",
     },
   ];
 
@@ -261,9 +271,6 @@ function Mobileprojects() {
             </svg>
           </button>
         </div>
-
-
-
         {currentSlide + 1}/{slides.length}
       </div>
 

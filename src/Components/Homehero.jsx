@@ -4,6 +4,7 @@ import "../Styles/Homehero.css";
 import "../Styles/Navbar.css";
 import { NavLink, useLocation } from "react-router-dom";
 import MobileNavbar from "./MobileNavbar";
+// import MobileNavbar from "./MobileNavbar";
 
 function Homehero2({ Herottesxt }) {
   const { paragraph, mainheading, btntext } = Herottesxt;
