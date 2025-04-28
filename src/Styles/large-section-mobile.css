@@ -1,6 +1,7 @@
 .large-mobile-section {
   position: relative;
   width: 100%;
+  overflow: hidden;
   height: 1800px;
   /* border: 1px solid green; */
   background: url(/Assets/large-mobile.jpg) lightgray 50% / cover no-repeat;
