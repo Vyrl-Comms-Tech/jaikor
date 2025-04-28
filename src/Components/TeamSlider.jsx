@@ -2,128 +2,127 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
-import '../Styles/TeamSlider.css';
+import "../Styles/TeamSlider.css";
 import "swiper/css/pagination";
 import { useRef } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 
-
 function TeamSlider() {
   const swiperRef1 = useRef(null);
-//   const swiperRef2 = useRef(null);
-//   const swiperRef3 = useRef(null);
+  //   const swiperRef2 = useRef(null);
+  //   const swiperRef3 = useRef(null);
 
   // Array of slide data
   const slides = [
     {
       id: 1,
-      
+
       image: "/Assets/Rectangle 301.png",
       title: "Ceo - founder",
       description: "“lorem ipsum lorem ipsum”",
     },
     {
-        id: 2,
-        image: "/Assets/Rectangle 301.png",
-        
-        title: "Ceo - founder",
-        description: "“lorem ipsum lorem ipsum”",
-    },
-    {
-        id: 3,
-        image: "/Assets/Rectangle 301.png",
-        
-        title: "Ceo - founder",
-        description: "“lorem ipsum lorem ipsum”",
-    },
-    {
-        id: 4,
-        image: "/Assets/Rectangle 301.png",
-        
-        title: "Ceo - founder",
-        description: "“lorem ipsum lorem ipsum”",
-    },
-    {
-        id: 5,
-        image: "/Assets/Rectangle 301.png",
-      
+      id: 2,
+      image: "/Assets/Rectangle 301.png",
+
       title: "Ceo - founder",
       description: "“lorem ipsum lorem ipsum”",
     },
     {
-        id: 5,
-        image: "/Assets/Rectangle 301.png",
-      
+      id: 3,
+      image: "/Assets/Rectangle 301.png",
+
       title: "Ceo - founder",
       description: "“lorem ipsum lorem ipsum”",
     },
     {
-        id: 5,
-        image: "/Assets/Rectangle 301.png",
-      
+      id: 4,
+      image: "/Assets/Rectangle 301.png",
+
       title: "Ceo - founder",
       description: "“lorem ipsum lorem ipsum”",
     },
     {
-        id: 5,
-        image: "/Assets/Rectangle 301.png",
-      
+      id: 5,
+      image: "/Assets/Rectangle 301.png",
+
       title: "Ceo - founder",
       description: "“lorem ipsum lorem ipsum”",
     },
     {
-        id: 5,
-        image: "/Assets/Rectangle 301.png",
-      
+      id: 5,
+      image: "/Assets/Rectangle 301.png",
+
       title: "Ceo - founder",
       description: "“lorem ipsum lorem ipsum”",
     },
     {
-        id: 5,
-        image: "/Assets/Rectangle 301.png",
-      
+      id: 5,
+      image: "/Assets/Rectangle 301.png",
+
       title: "Ceo - founder",
       description: "“lorem ipsum lorem ipsum”",
     },
     {
-        id: 5,
-        image: "/Assets/Rectangle 301.png",
-      
+      id: 5,
+      image: "/Assets/Rectangle 301.png",
+
       title: "Ceo - founder",
       description: "“lorem ipsum lorem ipsum”",
     },
     {
-        id: 5,
-        image: "/Assets/Rectangle 301.png",
-      
+      id: 5,
+      image: "/Assets/Rectangle 301.png",
+
       title: "Ceo - founder",
       description: "“lorem ipsum lorem ipsum”",
     },
     {
-        id: 5,
-        image: "/Assets/Rectangle 301.png",
-      
+      id: 5,
+      image: "/Assets/Rectangle 301.png",
+
       title: "Ceo - founder",
       description: "“lorem ipsum lorem ipsum”",
     },
     {
-        id: 5,
-        image: "/Assets/Rectangle 301.png",
-      
+      id: 5,
+      image: "/Assets/Rectangle 301.png",
+
       title: "Ceo - founder",
       description: "“lorem ipsum lorem ipsum”",
     },
     {
-        id: 5,
-        image: "/Assets/Rectangle 301.png",
-      
+      id: 5,
+      image: "/Assets/Rectangle 301.png",
+
       title: "Ceo - founder",
       description: "“lorem ipsum lorem ipsum”",
     },
     {
-        id: 5,
-        image: "/Assets/Rectangle 301.png",
-      
+      id: 5,
+      image: "/Assets/Rectangle 301.png",
+
+      title: "Ceo - founder",
+      description: "“lorem ipsum lorem ipsum”",
+    },
+    {
+      id: 5,
+      image: "/Assets/Rectangle 301.png",
+
+      title: "Ceo - founder",
+      description: "“lorem ipsum lorem ipsum”",
+    },
+    {
+      id: 5,
+      image: "/Assets/Rectangle 301.png",
+
+      title: "Ceo - founder",
+      description: "“lorem ipsum lorem ipsum”",
+    },
+    {
+      id: 5,
+      image: "/Assets/Rectangle 301.png",
+
       title: "Ceo - founder",
       description: "“lorem ipsum lorem ipsum”",
     },
@@ -142,20 +141,16 @@ function TeamSlider() {
     }
   };
 
-
-
   return (
     <>
       <div className="TeamSlider">
         <div className="rak-plus-header">
           <div className="header-left">
-            <h2 data-aos="fade-right">
-            lorem ipsum
-            </h2>
+            <h2 data-aos="fade-right">Core Values</h2>
           </div>
           <div className="header-right">
             <p data-aos="fade-left">
-            Lorem ipsum dolor sit amet, consectetur ullamco laboris nisi ut aliqu
+              Our Foundation: Values that Build Beyond Concrete
             </p>
           </div>
         </div>
@@ -189,7 +184,7 @@ function TeamSlider() {
               spaceBetween: 30,
             },
             1400: {
-              slidesPerView:    5,
+              slidesPerView: 5,
               spaceBetween: 30,
             },
             1900: {

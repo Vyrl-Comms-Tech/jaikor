@@ -10,7 +10,7 @@ function Aboutcounter() {
   const aboutCounterRef = useRef(null);
 
   useEffect(() => {
-    const targetNumbers = [150, 500, 23];
+    const targetNumbers = [150, 200, 23];
 
     const animateCounter = (index, target) => {
       let current = 0;
