@@ -28,9 +28,9 @@ export const About = () => {
         <Homehero Herottesxt={Herottesxt.AboutText} />
         {isMobile ? <AboutCardMobile /> : <AboutCards />}
         <Aboutcounter />
-        <CoreValues />
+        {/* <CoreValues />
         <TeamSlider />
-        <Footer />
+        <Footer /> */}
       </div>
     </>
   );

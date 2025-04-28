@@ -81,3 +81,33 @@
   line-height: normal;
   text-transform: capitalize;
 }
+
+@media (max-width: 1000px) {
+  .servicecards {
+    bottom: 100px;
+  }
+}
+
+@media (max-width: 700px) {
+  #main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  #left-corner,
+  #right-corner {
+    width: 10.75rem;
+  }
+  .scard {
+    width: 100%;
+    padding: 1.5rem 1rem;
+  }
+  .servicecards {
+    right: 2%;
+    bottom: 150px;
+    left: 2%;
+  }
+  .Servicetrust h1 {
+    font-size: 2.1rem;
+  }
+}

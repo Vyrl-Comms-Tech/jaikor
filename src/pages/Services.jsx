@@ -12,9 +12,9 @@ const Services = () => {
       <div className="service">
         <Homehero Herottesxt={Herottesxt.ServicesText} />
         <Servicedetais/>
-        {/* <Servicetrust/>
+        <Servicetrust/>
         <ConnectSection/>
-        <Footer/> */}
+        <Footer/>
       </div>
     </>
   );

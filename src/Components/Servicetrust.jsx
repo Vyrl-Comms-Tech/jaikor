@@ -70,7 +70,7 @@ function Servicetrust() {
   }, []);
   return (
     <div className="Servicetrust">
-      <img src="/Assets/Rectangle 291.png" alt="" />
+      <img src="/Assets/Rectangle 291.png" id="main-img" alt="" />
       <img id="right-corner" src="/Assets/Rectangle 35.png" alt="" />
       <img id="left-corner" src="/Assets/Rectangle 31.png" alt="" />
       <h1>More Than Services — A Promise Delivered</h1>
