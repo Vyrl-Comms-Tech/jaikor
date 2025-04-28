@@ -55,7 +55,7 @@ const App = () => {
 
   return (
     <>
-    <MobileNavbar />
+    {/* Removing MobileNavbar from here */}
       <Routes>
         <Route path="/" element={<Home lenis={lenisRef.current} />} />
         <Route path="/about" element={<About />} />

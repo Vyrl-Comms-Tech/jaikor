@@ -17,9 +17,11 @@ function Mobileprojects() {
       id: 1,
       image: "/Assets/carousel-img.png",
       title:
-        "Lorem Ipsum Dolor Sit Amet, Consectetur Ullamco Laboris Nisi Ut Aliqu",
+        "Jeikor Contracting – UAE",
       description:
-        "Welcome To Isikor GP, A Leading Heavy Civil Construction Company Dedicated To Delivering Exceptional Infrastructure Solutions",
+        "As the flagship division of Jeikor Group, Jeikor Contracting UAE has completed 200+ projects across the residential, commercial, industrial, and hospitality sectors.",
+      description2:
+        "As the flagship division of Jeikor Group, Jeikor Contracting UAE has completed 200+ projects across the residential, commercial, industrial, and hospitality sectors.",
     },
     {
       id: 2,
@@ -157,8 +159,8 @@ function Mobileprojects() {
             />
           </svg>
           <span>
-            <div className="op-top-ball"></div>
-            <h6>Our Projects</h6>
+            {/* <div className="op-top-ball"></div> */}
+            <h6>01</h6>
           </span>
         </div>
 
@@ -204,6 +206,7 @@ function Mobileprojects() {
             <div className="op-slide-text-content">
               <h2>{slides[currentSlide].title}</h2>
               <p>{slides[currentSlide].description}</p>
+              <p>{slides[currentSlide].description2}</p>
             </div>
           </div>
 

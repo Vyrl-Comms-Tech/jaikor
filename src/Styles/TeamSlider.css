@@ -324,11 +324,6 @@
     position: absolute;
     right: 40px;
   }
-  .custom-prev-arrow,
-  .custom-next-arrow {
-    /* width: 40px;
-      height: 40px; */
-  }
 }
 
 @media (max-width: 768px) {

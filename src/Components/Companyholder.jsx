@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, {  } from "react";
 import "../Styles/Companyholder.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,7 +38,7 @@ function Companyholder() {
     },
   ];
 
-  useEffect(() => {
+  useGSAP(() => {
     // Select all `.gsapholder` elements
     const cards = gsap.utils.toArray(".gsapholder");
 

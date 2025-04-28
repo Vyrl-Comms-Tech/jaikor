@@ -663,9 +663,11 @@ function Homehero2({ Herottesxt }) {
             >
               let's connect
             </NavLink>
-
-           
-            <MobileNavbar />
+            {/* Removing MobileNavbar from inside the links div */}
+          </div>
+          
+          {/* Moving MobileNavbar outside the links div but still within the Navbar */}
+          <MobileNavbar />
             {/* Navbar */}
           </div>
         </div>
@@ -726,7 +728,6 @@ function Homehero2({ Herottesxt }) {
             </div>
           </div>
         </div>
-      </div>
     </>
   );
 }
