@@ -42,8 +42,6 @@ function Belowhero() {
           start: "top-=8% bottom",
           end: "bottom center",
           toggleActions: "play none none reverse",
-          markers: false,
-          markers:true
         },
       });
 

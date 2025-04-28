@@ -2,14 +2,15 @@ import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import "../Styles/Homehero.css";
 import "../Styles/Navbar.css";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import MobileNavbar from "./MobileNavbar";
+import { useGSAP } from "@gsap/react";
 
 function Homehero2({ Herottesxt }) {
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { paragraph, mainheading, btntext } = Herottesxt;
   const location = useLocation();
-
   const linksRef = useRef([]);
   const counters = useRef([]);
   const logoRef = useRef(null);
@@ -29,7 +30,7 @@ function Homehero2({ Herottesxt }) {
     };
   }, []);
 
-  useEffect(() => {
+  useGSAP(() => {
     // Create a GSAP timeline
     const tl = gsap.timeline();
 
@@ -662,7 +663,7 @@ const renderServicesSVG = () => {
             >
               let's connect
             </NavLink>           
-            {/* <MobileNavbar isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} /> */}
+            <MobileNavbar isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
             {/* Navbar */}
           </div>
         </div>
@@ -681,6 +682,8 @@ const renderServicesSVG = () => {
             <h3
               className="lets-talk"
               ref={(el) => (heroTextRefs.current[2] = el)}
+              onClick={() => navigate('/contact')}
+              style={{ cursor: 'pointer' }}
             >
               {btntext}
               <span id="arrow">

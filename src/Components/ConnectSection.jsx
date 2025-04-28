@@ -2,8 +2,10 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import "../Styles/connect-section.css";
+import { useNavigate } from "react-router-dom";
 
 const ConnectSection = () => {
+  const navigate = useNavigate();
   const sectionRef = useRef(null);
   const h1Ref = useRef(null);
   const pRef = useRef(null);
@@ -54,16 +56,19 @@ const ConnectSection = () => {
     });
 
     flowingLines
-      .fromTo(path1Ref.current, 
+      .fromTo(
+        path1Ref.current,
         { strokeDasharray: 1000, strokeDashoffset: 1000 },
         { strokeDashoffset: 0, duration: 1.5, ease: "power2.inOut" }
       )
-      .fromTo(path2Ref.current,
+      .fromTo(
+        path2Ref.current,
         { strokeDasharray: 1000, strokeDashoffset: 1000 },
         { strokeDashoffset: 0, duration: 1.5, ease: "power2.inOut" },
         "-=1"
       )
-      .fromTo(path3Ref.current,
+      .fromTo(
+        path3Ref.current,
         { strokeDasharray: 1000, strokeDashoffset: 1000 },
         { strokeDashoffset: 0, duration: 1.5, ease: "power2.inOut" },
         "-=1"
@@ -76,16 +81,19 @@ const ConnectSection = () => {
     });
 
     flowingLines2
-      .fromTo(path4Ref.current, 
+      .fromTo(
+        path4Ref.current,
         { strokeDasharray: 1000, strokeDashoffset: 1000 },
         { strokeDashoffset: 0, duration: 1.5, ease: "power2.inOut" }
       )
-      .fromTo(path5Ref.current,
+      .fromTo(
+        path5Ref.current,
         { strokeDasharray: 1000, strokeDashoffset: 1000 },
         { strokeDashoffset: 0, duration: 1.5, ease: "power2.inOut" },
         "-=1"
       )
-      .fromTo(path6Ref.current,
+      .fromTo(
+        path6Ref.current,
         { strokeDasharray: 1000, strokeDashoffset: 1000 },
         { strokeDashoffset: 0, duration: 1.5, ease: "power2.inOut" },
         "-=1"
@@ -164,7 +172,7 @@ const ConnectSection = () => {
             industrial facility — Jeikor is ready to deliver.
           </p>
           <div className="connect-sec-talk" ref={buttonRef}>
-            <span>Let's Talk</span>
+            <span onClick={() => navigate("/contact")}>Let's Talk</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="21"
