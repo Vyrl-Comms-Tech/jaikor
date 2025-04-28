@@ -28,7 +28,7 @@
 
 .mobile-hamburger {
   cursor: pointer;
-  z-index: 1001;
+  z-index: 9999999999;
 }
 
 .hamburger-bar {
@@ -84,19 +84,26 @@
   background-color: #111e57;
   overflow: hidden;
   opacity: 0;
-  z-index: 999;
-  /* padding-top: 150px !important; */
+  z-index: 999999;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly; /* Changed from space-between */
-  max-height: 100vh; /* Added max-height */
-  overflow-y: auto; /* Added scroll if content exceeds height */
+  justify-content: space-evenly;
+  max-height: 100vh;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .mobile-menu.active {
-  display: flex;
-  height: 100vh; /* Ensure it takes full height when active */
-  overflow-y: auto; /* Allow scrolling if needed */
+  visibility: visible;
+  height: 100vh;
+  opacity: 1;
+  overflow-y: auto;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-hamburger {
+  cursor: pointer;
+  z-index: 9999999; /* Ensure hamburger stays above menu */
 }
 
 .mobile-menu-links {
@@ -110,32 +117,20 @@
   /* border: 1px solid green; */
   margin-top: 25px;
   margin-bottom: 25px;
+  border: 1px solid red;
 }
 
 .mobile-menu-link {
-  color: #fff;
+  color: #fff !important;
   text-decoration: none;
-  /* margin-bottom: 15px; */
   font-family: "Nunito Sans", sans-serif;
-  font-size: clamp(3.125rem, 2vw, 4rem);
+  font-size: 50px !important;
   font-weight: 300;
-  /* padding: 15px 0; */
-  /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
   text-transform: capitalize;
-}
-
-.mobile-menu-link.contact-link {
-  border-bottom: 2px solid #fff;
-  display: inline-block;
-  width: fit-content;
-  margin-top: 10px;
-}
-
-.mobile-contact-info {
-  /* border: 1px solid orange; */
-  padding: 30px;
-  margin-top: 2rem; /* Changed from auto to fixed margin */
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1000;
+  display: block;
+  opacity: 0;  /* Changed to 0 by default */
+  transform: translateY(20px);  /* Added initial position */
 }
 
 .mobile-contact-info-f {
@@ -143,27 +138,27 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* border: 1px solid pink; */
-  flex-wrap: wrap; /* Added to allow wrapping on smaller screens */
-  gap: 10px; /* Added gap for wrapped items */
-}
-
-.contact-item {
-  margin-bottom: 10px;
-}
-
-.contact-item a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1rem;
+  border: 1px solid pink;
+  flex-wrap: wrap;
+  gap: 10px;
+  opacity: 0;  /* Changed to 0 by default */
+  z-index: 1000;
+  position: relative;
+  transform: translateY(20px);  /* Added initial position */
 }
 
 .contact-text {
   color: #fff;
-  font-size: 0.9rem;
   margin-top: 20px;
-  opacity: 0.8;
-  /* max-width: 80%; */
+  opacity: 0;  /* Changed to 0 by default */
+  padding: 0 30px;
+  font-family: "Nunito Sans";
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  text-transform: capitalize;
+  transform: translateY(20px);  /* Added initial position */
 }
 
 .mobile-logo-menu {
