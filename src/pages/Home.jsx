@@ -3,11 +3,11 @@ import Homehero from "../Components/Homehero";
 import Belowhero from "../Components/Belowhero";
 import Cardsection from "../Components/Cardsection";
 import LargeSection from "../Components/LargeSection";
-import LargeSectionMobile from "../Styles/LargeSectionMobile";
 import ConnectSection from "../Components/ConnectSection";
 import Footer from "../Components/Footer";
 
 import Herottesxt from "../Utils/Herotext";
+import LargeSectionMobile from "../Components/LargeSectionMobile";
 
 const Home = ({ lenis }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 680);
@@ -26,7 +26,13 @@ const Home = ({ lenis }) => {
       <Homehero Herottesxt={Herottesxt.HomeText}/>
       <Belowhero />
       <Cardsection/>
+<<<<<<< Updated upstream
     
+=======
+      {/* <LargeSection lenis={lenis} /> */}
+      {/* <ConnectSection/> */}
+      {/* <Footer/> */}
+>>>>>>> Stashed changes
       {isMobile ? (
         <LargeSectionMobile />
       ) : (

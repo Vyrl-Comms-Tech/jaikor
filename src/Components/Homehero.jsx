@@ -3,6 +3,7 @@ import gsap from "gsap";
 import "../Styles/Homehero.css";
 import "../Styles/Navbar.css";
 import { NavLink, useLocation } from "react-router-dom";
+import MobileNavbar from "./MobileNavbar";
 
 function Homehero2({ Herottesxt }) {
   const { paragraph, mainheading, btntext } = Herottesxt;
@@ -266,7 +267,6 @@ function Homehero2({ Herottesxt }) {
   return (
     <>
       <div className="homehero">
-
         {/* Svg starts */}
         {location.pathname === "/services" ? (
           // Services page SVG
@@ -454,7 +454,6 @@ function Homehero2({ Herottesxt }) {
         ) : (
           <img src="/Assets/Rectangle 1.png" alt="" id="heroimg" />
         )}
-
 
         {/* Svg ends */}
         <div className="herocircle">
@@ -665,14 +664,8 @@ function Homehero2({ Herottesxt }) {
               let's connect
             </NavLink>
 
-            <label class="bar" id="hamburger" for="check">
-              <input type="checkbox" id="check" />
-
-              <span class="top"></span>
-              <span class="middle"></span>
-              <span class="bottom"></span>
-            </label>
-
+           
+            <MobileNavbar />
             {/* Navbar */}
           </div>
         </div>

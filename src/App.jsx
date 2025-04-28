@@ -11,6 +11,7 @@ import { useGSAP } from "@gsap/react";
 import "./Styles/Global.css";
 import Contact from "./pages/Contact";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import MobileNavbar from "./Components/MobileNavbar";
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
@@ -54,6 +55,7 @@ const App = () => {
 
   return (
     <>
+    <MobileNavbar />
       <Routes>
         <Route path="/" element={<Home lenis={lenisRef.current} />} />
         <Route path="/about" element={<About />} />

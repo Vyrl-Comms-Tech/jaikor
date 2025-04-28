@@ -101,14 +101,37 @@ const CoreValues = () => {
           ease: "power2.inOut",
         },
         "a"
-      )
-      .to(leftBoxRef.current, {
+      );
+    // Create media query context
+    const mm = gsap.matchMedia();
+
+    //! Desktop animation (default)
+    mm.add("(min-width: 1301px)", () => {
+      tl.to(leftBoxRef.current, {
+        x: -500,
+        opacity: 1,
+        duration: 2,
+        ease: "ease",
+      }).to(
+        rightBoxRef.current,
+        {
+          x: 500,
+          opacity: 1,
+          duration: 2,
+          ease: "ease",
+        },
+        "<"
+      );
+    });
+
+    //! laptop screens animation
+    mm.add("(min-width: 981px) and (max-width: 1300px)", () => {
+      tl.to(leftBoxRef.current, {
         x: -450,
         opacity: 1,
         duration: 2,
         ease: "ease",
-      })
-      .to(
+      }).to(
         rightBoxRef.current,
         {
           x: 450,
@@ -118,12 +141,86 @@ const CoreValues = () => {
         },
         "<"
       );
+    });
+    // ! mobile screens animation
+    mm.add("(max-width: 980px)", () => {
+      // Kill the main timeline's ScrollTrigger for mobile
+      if (tl.scrollTrigger) {
+        tl.scrollTrigger.kill();
+      }
+
+      const mobileTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current, // Changed trigger to section
+          start: "top -30%",
+          end: "bottom 40%",
+          // end: "+=200%", // Adjust end point to accommodate all animations
+          scrub: 1,
+          pin: true,
+          // markers: true,
+          // pinSpacing: true,
+        },
+      });
+
+      gsap.set(centerBoxRef.current.querySelector("img"), { rotate: "-45" });
+      gsap.set(leftBoxRef.current, { rotate: "-45" });
+      gsap.set(rightBoxRef.current, { rotate: "-45" });
+      // Animation sequence
+      mobileTl
+        .to(
+          centerBoxRef.current.querySelector("img"),
+          {
+            rotation: 0,
+            duration: 1.5,
+            ease: "power2.inOut",
+          },
+          "a"
+        )
+
+        .to(
+          leftBoxRef.current,
+          {
+            rotation: 0,
+            duration: 1.5,
+            ease: "power2.inOut",
+          },
+          "a"
+        )
+        .to(
+          rightBoxRef.current,
+          {
+            rotation: 0,
+            duration: 1.5,
+            ease: "power2.inOut",
+          },
+          "a"
+        );
+
+      mobileTl
+        .to(leftBoxRef.current, {
+          y: -375,
+          opacity: 1,
+          duration: 2,
+          ease: "ease",
+        })
+        .to(
+          rightBoxRef.current,
+          {
+            y: 375,
+            opacity: 1,
+            duration: 2,
+            ease: "ease",
+          },
+          "<"
+        );
+    });
 
     return () => {
       if (tl.scrollTrigger) {
         tl.scrollTrigger.kill();
       }
       tl.kill();
+      mm.revert(); // Clean up media queries
     };
   }, []);
 

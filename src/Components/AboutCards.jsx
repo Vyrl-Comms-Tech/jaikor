@@ -128,7 +128,7 @@ const AboutCards = () => {
               className={`about-card card-color-${index + 1}`}
               data-index={index + 1}
             >
-              <div className="card-number">{content.number}</div>
+              <h2 className="card-number">{content.number}</h2>
               <div className="card-content">
                 <p>{content.text}</p>
               </div>

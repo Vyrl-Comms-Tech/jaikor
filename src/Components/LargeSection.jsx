@@ -139,12 +139,7 @@ const LargeSection = ({ lenis }) => {
       strokeDashoffset: length, // Start with the line hidden
     });
 
-    // Set up the starting position
-    gsap.set(path, {
-      strokeDasharray: length,
-      strokeDashoffset: length, // Start with the line hidden
-    });
-
+ 
     // Create the animation
     const tl = gsap.to(path, {
       strokeDashoffset: 0, // Animate to fully visible

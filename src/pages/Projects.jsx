@@ -25,10 +25,16 @@ const Projects = () => {
     <>
       <Homehero Herottesxt={Herottesxt.ProjectText}/>
       <OurProjects />
+<<<<<<< Updated upstream
       <HoverImage/>
       <ConnectSection/>
       <Footer/>
       {isMobile ? <HoverImageMobile /> : <HoverImage />}
+=======
+      <ConnectSection/>
+      {isMobile ? <HoverImageMobile /> : <HoverImage />}
+      <Footer/>
+>>>>>>> Stashed changes
     </>
   );
 };

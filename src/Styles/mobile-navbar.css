@@ -1,0 +1,146 @@
+.mobile-navbar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.mobile-navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #111E57;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-logo img {
+  width: 120px;
+  height: auto;
+}
+
+.mobile-hamburger {
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger-bar {
+  position: relative;
+  width: 30px;
+  height: 24px;
+}
+
+.hamburger-bar span {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-bar .top {
+  top: 0;
+}
+
+.hamburger-bar .middle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger-bar .bottom {
+  bottom: 0;
+}
+
+/* Hamburger animation */
+.hamburger-bar.open .top {
+  transform: rotate(45deg);
+  top: 11px;
+}
+
+.hamburger-bar.open .middle {
+  opacity: 0;
+}
+
+.hamburger-bar.open .bottom {
+  transform: rotate(-45deg);
+  bottom: 11px;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #111E57;
+  overflow: hidden;
+  opacity: 0;
+  z-index: 999;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mobile-menu.active {
+  display: flex;
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
+}
+
+.mobile-menu-link {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-transform: capitalize;
+}
+
+.mobile-menu-link.contact-link {
+  border-bottom: 2px solid #fff;
+  display: inline-block;
+  width: fit-content;
+  margin-top: 10px;
+}
+
+.mobile-contact-info {
+  padding: 30px;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-item {
+  margin-bottom: 10px;
+}
+
+.contact-item a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.contact-text {
+  color: #fff;
+  font-size: 0.9rem;
+  margin-top: 20px;
+  opacity: 0.8;
+  max-width: 80%;
+}
+
+/* Show mobile navbar only on mobile devices */
+@media (max-width: 1000px) {
+  .mobile-navbar {
+    display: block;
+  }
+}

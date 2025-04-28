@@ -41,7 +41,7 @@ const ContactUs = () => {
                   Ut enim
                 </p>
                 <div className="contact-us-input">
-                  <input type="text" placeholder="name" />
+                  <input type="text" placeholder="name" className="name-input" />
                   <input type="text" placeholder="email" />
                 </div>
                 <input className="input" type="text" placeholder="phone" />
