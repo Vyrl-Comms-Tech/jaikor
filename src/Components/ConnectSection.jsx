@@ -3,6 +3,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import "../Styles/connect-section.css";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useGSAP } from "@gsap/react";
 
 const ConnectSection = () => {
   const location = useLocation();
@@ -21,7 +22,7 @@ const ConnectSection = () => {
   const path5Ref = useRef(null);
   const path6Ref = useRef(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
     const tl = gsap.timeline({
       scrollTrigger: {

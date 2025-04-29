@@ -20,7 +20,19 @@ const MobileNavbar = ({ isOpen, setIsOpen }) => {
         visibility: "visible",
         ease: "power3.inOut",
       })
-      // First animate the menu links
+      // First animate the logo
+      .fromTo(
+        ".mobile-logo-menu",
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          ease: "power2.out",
+        },
+        "-=0.3"
+      )
+      // Then animate the menu links
       .fromTo(
         ".mobile-menu-links .mobile-menu-link",
         { y: 50, opacity: 0 },
@@ -91,6 +103,7 @@ const MobileNavbar = ({ isOpen, setIsOpen }) => {
           ".mobile-menu-links .mobile-menu-link",
           ".mobile-contact-info-f",
           ".contact-text",
+          ".mobile-logo-menu", // Add logo to the reverse animation
         ],
         {
           y: 50,
@@ -100,13 +113,6 @@ const MobileNavbar = ({ isOpen, setIsOpen }) => {
           ease: "power2.in",
         }
       )
-      // Then animate out the logo
-      .to(".mobile-logo-menu", {
-        y: -20,
-        opacity: 0,
-        duration: 0.3,
-        ease: "power2.in",
-      })
       // Finally close the menu
       .to(".mobile-menu", {
         duration: 0.5,

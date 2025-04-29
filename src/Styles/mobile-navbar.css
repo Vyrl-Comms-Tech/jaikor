@@ -31,10 +31,30 @@
   z-index: 9999999999;
 }
 
+
+.mobile-logo-menu {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  /* background-color: orange; */
+  /* opacity: 1 !important; */
+  position: absolute;
+  width: 100%;
+  height: min-content;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  padding: 20px;
+}
+.mobile-logo-menu img {
+  width: 11rem;
+  height: 2.7rem;
+}
+
 .hamburger-bar {
   position: relative;
   width: 30px;
   height: 24px;
+  /* background-color: red; */
 }
 
 .hamburger-bar span {
@@ -74,6 +94,8 @@
   bottom: 11px;
 }
 
+
+
 /* Mobile menu */
 .mobile-menu {
   position: fixed;
@@ -87,7 +109,7 @@
   z-index: 9998;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   max-height: 100vh;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -101,11 +123,6 @@
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.mobile-hamburger {
-  cursor: pointer;
-  z-index: 9999999; /* Ensure hamburger stays above menu */
-}
-
 .mobile-menu-links {
   display: flex;
   flex-direction: column;
@@ -113,10 +130,10 @@
   justify-content: space-between;
   padding: 0 30px;
   height: min-content; /* Changed from min-content */
-  gap: 1.2rem; /* Reduced gap slightly */
-  border: 1px solid green;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  gap: 1rem; /* Reduced gap slightly */
+  /* border: 1px solid green; */
+  margin-top: 10px;
+  margin-bottom: 10px;
   /* border: 1px solid red; */
 }
 
@@ -125,6 +142,7 @@
   text-decoration: none;
   font-family: "Nunito Sans", sans-serif;
   font-size: 3.125rem !important;
+  font-size: clamp(2.5rem, 5vw, 3.125rem)!important;
   /* margin-bottom: 2.3rem; */
   font-weight: 300;
   text-transform: capitalize;
@@ -161,6 +179,7 @@
   color: #fff !important;
   text-decoration: none;
   font-size: 1.0625rem !important;
+  font-size: clamp(1rem, 1vw, 1.0625rem)!important ;
 }
 
 .contact-text {
@@ -170,6 +189,7 @@
   padding: 0 30px;
   font-family: "Nunito Sans";
   font-size: 1.25rem;
+  font-size: clamp(1rem, 1vw, 1.25rem);
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -177,15 +197,6 @@
   transform: translateY(20px); /* Added initial position */
 }
 
-.mobile-logo-menu {
-  position: absolute;
-  top: 15px;
-  left: 10px;
-}
-.mobile-logo-menu img {
-  width: 11rem;
-  height: 2.7rem;
-}
 
 /* Show mobile navbar only on mobile devices */
 @media (max-width: 1000px) {
