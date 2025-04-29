@@ -5,10 +5,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: 20dvh;
+  padding-bottom: 20vh;
 }
 .Aboutcounter {
-  height: 50dvh;
+  height: 50vh;
   width: 100%;
   position: relative;
   display: flex;
@@ -54,7 +54,7 @@
 @media (max-width: 1000px) {
   .Aboutcounter {
     flex-direction: column !important;
-    height: 95dvh;
+    height: 95vh;
   }
   .Aboutcounter img {
     object-fit: cover;

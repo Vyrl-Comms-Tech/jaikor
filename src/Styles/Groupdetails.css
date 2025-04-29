@@ -68,7 +68,7 @@
   flex-shrink: 0;
   position: absolute;
   right: -120px;
-  top: -26dvh;
+  top: -26vh;
 }
 .detailsbottom {
   position: relative;
@@ -117,7 +117,7 @@
     flex-shrink: 0;
     position: absolute;
     right: -60px;
-    top: -15dvh;
+    top: -15vh;
   }
   #rectangelholder {
     width: 75%;

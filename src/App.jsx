@@ -11,7 +11,6 @@ import { useGSAP } from "@gsap/react";
 import "./Styles/Global.css";
 import Contact from "./pages/Contact";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import MobileNavbar from "./Components/MobileNavbar";
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
@@ -22,14 +21,15 @@ const App = () => {
   // Set up Lenis smooth scrolling
   useGSAP(() => {
     lenisRef.current = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(1.6, -7 * t)),
+      duration: 1.5,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // تیز تر اور ہموار ایزنگ
       smooth: true,
-      wheelMultiplier: 0.8,
-      touchMultiplier: 0.8,
+      wheelMultiplier: 1.2, // اسکرول کی رفتار میں معمولی اضافہ
+      touchMultiplier: 1.2,
       smoothTouch: true,
-      touchInertiaMultiplier: 0.6,
+      touchInertiaMultiplier: 0.8,
       infinite: false,
+      stopScroll: true, // اسکرول کے آخر میں جٹر کو روکنے کے لیے
     });
 
     // Sync Lenis with GSAP ScrollTrigger

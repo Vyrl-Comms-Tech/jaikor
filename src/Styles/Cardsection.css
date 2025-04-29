@@ -245,10 +245,10 @@
   .card2 .cardimage img,
   .card4row1 img {
     width: clamp(15.46875rem, 3vw, 23.46875rem) !important;
-    height: 23dvh;
+    height: 23vh;
   }
   .card4row1 img {
-    height: 13dvh !important;
+    height: 13vh !important;
   }
   .card h2 {
     font-size: clamp(1.5rem, 3vw, 2.25rem) !important;

@@ -11,7 +11,7 @@
 #link-lines {
   position: absolute !important;
   right: 0% !important;
-  top: -12dvh !important;
+  top: -12vh !important;
   width: 30vw;
   height: 60vh;
   top: 0;
@@ -286,8 +286,13 @@
 
 @media (max-width: 768px) {
   .herosection{
+<<<<<<< Updated upstream
     height: 106vh !important;
     
+=======
+    height: 105vh !important;
+    /* padding: 0px; */
+>>>>>>> Stashed changes
   }
   .bleft{
     height: 9vh;

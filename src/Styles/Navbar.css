@@ -43,7 +43,7 @@
 #link-lines {
   position: absolute !important;
   right: 0% !important;
-  top: -12dvh !important;
+  top: -12vh !important;
   width: 30vw;
   height: 60vh;
   top: 0;
@@ -52,7 +52,7 @@
 #link-lines2 {
   position: absolute !important;
   right: 0% !important;
-  top: 39dvh !important;
+  top: 39vh !important;
   width: 30vw;
   height: 60vh;
   top: 0;
@@ -127,7 +127,7 @@ input[type]:checked ~ span.middle {
     gap: 5.5rem;
   }
   #link-lines {
-    top: -15dvh !important;
+    top: -15vh !important;
   }
 }
 
@@ -139,7 +139,7 @@ input[type]:checked ~ span.middle {
     gap: 4rem;
   }
   #link-lines {
-    top: -13dvh !important;
+    top: -13vh !important;
   }
 }
 

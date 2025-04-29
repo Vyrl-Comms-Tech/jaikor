@@ -60,7 +60,7 @@
 .op-carousel-main-container {
   /* border: 1px solid blueviolet; */
   width: 100%;
-  height: 55dvh;
+  height: 55vh;
   display: flex;
   gap: 30px;
 }
@@ -225,7 +225,7 @@
     padding: 60px 30px;
   }
   .op-carousel-main-container {
-    height: 65dvh;
+    height: 65vh;
   }
   .op-pagination {
     margin-top: 20px;
@@ -271,7 +271,7 @@
 
   .op-slides-container {
     width: 100%;
-    height: 50dvh;
+    height: 50vh;
   }
 
   .op-slide-text-content {
