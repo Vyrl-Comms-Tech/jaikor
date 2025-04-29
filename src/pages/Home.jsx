@@ -26,10 +26,6 @@ const Home = ({ lenis }) => {
       <Homehero Herottesxt={Herottesxt.HomeText}/>
       <Belowhero />
       <Cardsection/>
-    
-      {/* <LargeSection lenis={lenis} /> */}
-      {/* <ConnectSection/> */}
-      {/* <Footer/> */}
       {isMobile ? (
         <LargeSectionMobile />
       ) : (

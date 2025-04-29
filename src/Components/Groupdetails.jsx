@@ -111,7 +111,7 @@ function Groupdetails() {
           <img src="Assets/Line 1.png" alt="" />
           <span>
             <p>01</p>
-            <h6>About</h6>
+            <h6>Groups</h6>
           </span>
         </div>
         <div className="detailscenter">

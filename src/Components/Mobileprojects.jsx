@@ -170,7 +170,7 @@ function Mobileprojects() {
           </svg>
           <span>
             {/* <div className="op-top-ball"></div> */}
-            <h6>01</h6>
+            <h6>0{currentSlide+1}</h6>
           </span>
         </div>
 

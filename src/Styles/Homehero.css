@@ -91,7 +91,8 @@
   width: 17px;
   height: 20px;
   position: relative;
-  left: 10px;
+  left: 8px;
+  top: 6px;
 }
 .herocircle p {
   color: #f5f5f5;
@@ -285,6 +286,10 @@
 }
 
 @media (max-width: 768px) {
+  #arrow img {
+    left: 7px;
+    top: 3px;
+  }
   .herosection{
     height: 106vh !important;
     /* padding: 0px; */

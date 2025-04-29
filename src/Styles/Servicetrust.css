@@ -90,6 +90,9 @@
 }
 
 @media (max-width: 700px) {
+  .scard h5 {
+    font-size: 1.125rem;
+  }
   #main-img {
     width: 100%;
     height: 100%;
@@ -97,7 +100,7 @@
 }
   #left-corner,
   #right-corner {
-    width: 10.75rem;
+    width: 7.75rem;
   }
   .scard {
     width: 100%;
@@ -111,4 +114,7 @@
   .Servicetrust h1 {
     font-size: 2.1rem;
   }
+  #white-circle {
+    width: 0.55rem;
+    height: 0.55rem;}
 }

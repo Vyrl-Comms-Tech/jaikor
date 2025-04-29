@@ -15,8 +15,13 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 145px;
+
     /* align-items: start;
     white-space: nowrap !important; */
+  }
+  .op-top svg{
+    position: relative;
+    right: 90px;
   }
   .Mobileprojects .op-top span {
     display: flex;
@@ -39,11 +44,13 @@
   .Mobileprojects .op-top span h6 {
     color: #273a8c;
     font-family: "Nunito Sans";
-    font-size: 1.0625rem;
+    font-size: 1.1625rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     text-transform: capitalize;
+    position: relative;
+    top: 5px;
   }
   .Mobileprojects .op-top img {
     width: 100%;
@@ -91,10 +98,10 @@
   }
   
   .Mobileprojects .op-slide-text-content h2 {
-    color: #111e57;
+    color: #000;
     font-family: "Nunito Sans";
     /* font-size: clamp(1.875rem, 4vw, 2.0625rem); */
-    font-size: 2.75rem;
+    font-size: 2rem;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
