@@ -20,8 +20,9 @@ const CoreValues = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "top 0%",
-        end: "bottom 40%",
+        start: "top top",
+        // end: "bottom 40%",
+        // end: "bottom 40%",
         scrub: 1,
         pin: true, // Pin the section while animating
         // markers: true,

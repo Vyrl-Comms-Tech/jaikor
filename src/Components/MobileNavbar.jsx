@@ -212,6 +212,19 @@ const MobileNavbar = ({ isOpen, setIsOpen }) => {
             Projects
           </NavLink>
           <NavLink
+            to="/group"
+            className="mobile-menu-link"
+            onClick={closeMenu}
+            style={{
+              opacity: 1,
+              display: "block",
+              color: "inherit",
+              visibility: "visible",
+            }}
+          >
+            Group
+          </NavLink>
+          <NavLink
             to="/services"
             className="mobile-menu-link"
             onClick={closeMenu}
@@ -228,6 +241,12 @@ const MobileNavbar = ({ isOpen, setIsOpen }) => {
             to="/contact"
             className="mobile-menu-link contact-link"
             onClick={closeMenu}
+            style={{
+              opacity: 1,
+              display: "block",
+              color: "inherit",
+              visibility: "visible",
+            }}
           >
             Let's Connect
           </NavLink>

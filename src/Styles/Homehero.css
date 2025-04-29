@@ -286,7 +286,7 @@
 
 @media (max-width: 768px) {
   .herosection{
-    height: 110dvh !important;
+    height: 105dvh !important;
     /* padding: 0px; */
   }
   .bleft{

@@ -2,9 +2,11 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import "../Styles/connect-section.css";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const ConnectSection = () => {
+  const location = useLocation();
+
   const navigate = useNavigate();
   const sectionRef = useRef(null);
   const h1Ref = useRef(null);
@@ -98,6 +100,12 @@ const ConnectSection = () => {
         { strokeDashoffset: 0, duration: 1.5, ease: "power2.inOut" },
         "-=1"
       );
+
+    if (location.pathname === "/services") {
+      document
+        .querySelector(".connect-section-container")
+        .classList.add("service-padding");
+    }
   }, []);
 
   return (

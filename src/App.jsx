@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useEffect, useRef } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Lenis from "lenis";
 import gsap from "gsap";
 import Group from "./pages/Grouppage";
@@ -16,6 +16,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
   const lenisRef = useRef(null);
+  const location = useLocation();
+  const containerRef = useRef(null);
 
   // Set up Lenis smooth scrolling
   useGSAP(() => {
@@ -52,20 +54,42 @@ const App = () => {
       lenisRef.current?.destroy();
     };
   }, []);
+  
+  // Handle page transitions with GSAP
+  useEffect(() => {
+    if (containerRef.current) {
+      // Timeline for page transition
+      const tl = gsap.timeline();
+      
+      // Fade out
+      tl.to(containerRef.current, {
+        opacity: 0,
+        duration: 0.3,
+        onComplete: () => {
+          // Force React to rerender at this point
+          window.scrollTo(0, 0);
+        }
+      });
+      
+      // Fade in
+      tl.to(containerRef.current, {
+        opacity: 1,
+        duration: 0.3
+      });
+    }
+  }, [location.pathname]);
 
   return (
-    <>
-    {/* Removing MobileNavbar from here */}
+    <div ref={containerRef}>
       <Routes>
         <Route path="/" element={<Home lenis={lenisRef.current} />} />
         <Route path="/about" element={<About />} />
         <Route path="/group" element={<Group />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/contact" element={<Contact />} />{" "}
-        {/* Updated from /contact-us */}
+        <Route path="/contact" element={<Contact />} />
       </Routes>
-    </>
+    </div>
   );
 };
 

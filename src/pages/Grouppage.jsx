@@ -29,9 +29,8 @@ function Grouppage() {
         <Homehero Herottesxt={Herottesxt.GroupText} />
         <Groupdetails/>
         {isMobile ? <Mobileprojects/>:<Companyholder/>}
-        {/* <Companyholder/>
         <ConnectSection/>
-        <Footer/> */}
+        <Footer/>
       </div>
 
     </>
