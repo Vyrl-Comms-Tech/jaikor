@@ -31,23 +31,26 @@ function Cardsection() {
     });
 
     // Add animations to the timeline
-    tl.to(lineRef.current, {
+    tl.to(
+      lineRef.current,
+      {
         strokeDashoffset: 0,
         duration: 1.25,
         ease: "power2.inOut",
-      }, 0)
-      .fromTo(
-        belowtop.current,
-        { x: "-50", opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 0.8,
-          stagger: 0.25,
-          ease: "power2.out",
-        },
-        0  // This '0' makes it start at the same time as the line animation
-      );
+      },
+      0
+    ).fromTo(
+      belowtop.current,
+      { x: "-50", opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.25,
+        ease: "power2.out",
+      },
+      0 // This '0' makes it start at the same time as the line animation
+    );
     // Card SVGs animation
     const cardPaths = [
       card1PathRef1,
@@ -140,8 +143,10 @@ function Cardsection() {
                 </h2>
                 <p>
                   Robust end-to-end project execution — from
-                  <br className="rembr" /> excavation to finishing — led by experienced project
-                  <br className="rembr" /> managers and supported by modern machinery.
+                  <br className="rembr" /> excavation to finishing — led by
+                  experienced project
+                  <br className="rembr" /> managers and supported by modern
+                  machinery.
                 </p>
               </div>
             </div>
@@ -213,6 +218,9 @@ function Cardsection() {
             </div>
           </div>
         </div>
+          <div className="card-last-text">
+            <h2> A Legacy of Progress, Innovation & <br className="rembr"/>Trust</h2>
+          </div>
       </div>
     </>
   );

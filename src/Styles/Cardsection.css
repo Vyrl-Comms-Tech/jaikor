@@ -1,7 +1,7 @@
 .cardsection {
   width: 100%;
-  height: 100vh;
-  background: var(--whitebg) !important;  
+  height: min-content;
+  background: var(--whitebg) !important;
   /* border: 1px solid black; */
   padding-inline: 50px;
   overflow: hidden;
@@ -93,7 +93,7 @@
   justify-content: center;
   flex-direction: row-reverse;
 }
-.card h2  {
+.card h2 {
   color: #000;
   font-family: "Nunito Sans";
   font-size: 3rem;
@@ -211,6 +211,25 @@
   top: -20px;
   right: 30px;
 }
+
+.card-last-text {
+  /* background-color: green; */
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-bottom: 50px;
+}
+.card-last-text h2 {
+  color: #111e57;
+  text-align: right;
+  font-family: "Nunito Sans";
+  font-size: clamp(1.5625rem, 3vw, 3.0625rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+}
 @media (max-width: 1580px) {
   .cardsection {
     padding-inline: 20px;
@@ -240,9 +259,6 @@
 }
 
 @media (max-width: 1400px) {
-  .card {
-    /* border: 2px solid black !important; */
-  }
   .card1 svg {
     width: 16.46875rem;
     height: 19.15625rem;
@@ -288,17 +304,17 @@
 }
 
 @media (max-width: 768px) {
-  .cardsection .belowtoprow svg{
+  .cardsection .belowtoprow svg {
     position: relative;
     left: -30px;
     top: 5px;
   }
-  .card4 p{
+  .card4 p {
     width: 55%;
     position: relative;
     right: -5px;
   }
-  .cardsection .belowtoprow span h6{
+  .cardsection .belowtoprow span h6 {
     font-size: 1.25rem !important;
     position: relative;
     /* right: 2px; */
@@ -320,7 +336,16 @@
   .card {
     padding: 20px 12px;
   }
-  .card h2{
+  .card h2 {
     font-size: 1.7rem !important;
+  }
+  .card-last-text {
+    margin-bottom: 0;
+    height: 200px;
+  }
+  .card-last-text h2 {
+    position: relative;
+    top: 30px;
+    width: 300px;
   }
 }
