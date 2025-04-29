@@ -10,9 +10,120 @@ const LargeSectionMobile = () => {
   const containerRef = useRef(null);
   const pathRef = useRef(null);
 
+  const firstContentRef = useRef(null);
+  const secondContentRef = useRef(null);
+  const thirdContentRef = useRef(null);
   useGSAP(() => {
     const path = pathRef.current;
     const length = path.getTotalLength();
+       // Set initial state for circles
+    gsap.set(containerRef.current.querySelectorAll("circle"), {
+      scale: 0.5,
+      opacity: 0,
+    });
+     // Set initial positions for headings and paragraphs
+     gsap.set(firstContentRef.current.querySelector("h1"), {
+      scale: 0.5,
+      opacity: 0.5,
+    });
+    gsap.set(firstContentRef.current.querySelector("p"), {
+      scale: 0.5,
+      opacity: 0.5,
+    });
+    gsap.set(secondContentRef.current.querySelector("h1"), {
+      scale: 0.5,
+      opacity: 0.5,
+    });
+    gsap.set(secondContentRef.current.querySelector("p"), {
+      scale: 0.5,
+      opacity: 0.5,
+    });
+    gsap.set(thirdContentRef.current.querySelector("h1"), {
+      scale: 0.5,
+      opacity: 0.5,
+    });
+    gsap.set(thirdContentRef.current.querySelector("p"), {
+      scale: 0.5,
+      opacity: 0.5,
+    });
+
+    // Create a timeline for sequenced animations
+    const textTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 60%",
+        end: "bottom 60%",
+        scrub: 0.5,
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    textTimeline
+    .to(containerRef.current.querySelectorAll("circle"), {
+      scale: 1,
+      opacity: 1,
+      duration: 0.3,
+      ease: "power2.out",
+      stagger: 0.2
+    }, "-=0.2")
+    // Add animations to the timeline in sequence
+    textTimeline
+      .to(firstContentRef.current.querySelector("h1"), {
+        scale: 1,
+        opacity: 1,
+        duration: 0.3,
+        ease: "power2.out",
+      })
+      .to(
+        firstContentRef.current.querySelector("p"),
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 0.3,
+          ease: "power2.out",
+        },
+        "-=0.1"
+      )
+      .to(
+        secondContentRef.current.querySelector("h1"),
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 0.3,
+          ease: "power2.out",
+        },
+        "-=0.1"
+      )
+      .to(
+        secondContentRef.current.querySelector("p"),
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 0.3,
+          ease: "power2.out",
+        },
+        "-=0.1"
+      )
+      .to(
+        thirdContentRef.current.querySelector("h1"),
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 0.3,
+          ease: "power2.out",
+        },
+        "-=0.2"
+      )
+      .to(
+        thirdContentRef.current.querySelector("p"),
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 0.3,
+          ease: "power2.out",
+        },
+        "-=0.1"
+      );
 
     // Set up the starting position for the path
     gsap.set(path, {
@@ -108,21 +219,21 @@ const LargeSectionMobile = () => {
         </div>
 
         <div className="large-mobile-cc">
-          <div className="large-mobile-con">
+          <div className="large-mobile-con" ref={firstContentRef}>
             <h1>2019</h1>
             <p>
                Launched new divisions and upgraded capabilities across joinery,
               MEP, and interior works.
             </p>
           </div>
-          <div className="large-mobile-con">
+          <div className="large-mobile-con" ref={secondContentRef}>
             <h1>2019</h1>
             <p>
                Launched new divisions and upgraded capabilities across joinery,
               MEP, and interior works.
             </p>
           </div>
-          <div className="large-mobile-con">
+          <div className="large-mobile-con" ref={thirdContentRef}>
             <h1>2019</h1>
             <p>
                Launched new divisions and upgraded capabilities across joinery,
