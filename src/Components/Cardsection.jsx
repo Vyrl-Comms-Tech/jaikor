@@ -15,80 +15,142 @@ function Cardsection() {
   const card4PathRef = useRef(null);
 
   useGSAP(() => {
-    // Create a timeline for synchronized animations
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".cardsection",
-        start: "top center",
-        toggleActions: "play none none reverse",
-      },
-    });
+    const mediaQuery = window.matchMedia("(max-width: 1070px)");
 
-    // Line animation
-    gsap.set(lineRef.current, {
-      strokeDasharray: lineRef.current.getTotalLength(),
-      strokeDashoffset: lineRef.current.getTotalLength(),
-    });
+    const handleMediaQueryChange = (e) => {
+      if (e.matches) {
+        const cards = [".card1", ".card2", ".card3", ".card4"];
+        
+        cards.forEach((card, index) => {
+          gsap.from(card, {
+            opacity: 0,
+            y: 100,
+            scrollTrigger: {
+              trigger: card,
+              start: "top bottom",
+              end: "top center",
+              scrub: 1,
+              toggleActions: "play none none reverse"
+            }
+          });
+        });
 
-    // Add animations to the timeline
-    tl.to(
-      lineRef.current,
-      {
-        strokeDashoffset: 0,
-        duration: 1.25,
-        ease: "power2.inOut",
-      },
-      0
-    ).fromTo(
-      belowtop.current,
-      { x: "-50", opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 0.8,
-        stagger: 0.25,
-        ease: "power2.out",
-      },
-      0 // This '0' makes it start at the same time as the line animation
-    );
-    // Card SVGs animation
-    const cardPaths = [
-      card1PathRef1,
-      card1PathRef2,
-      card2PathRef,
-      card4PathRef,
-    ];
+        gsap.set(lineRef.current, {
+          strokeDasharray: lineRef.current.getTotalLength(),
+          strokeDashoffset: lineRef.current.getTotalLength(),
+        });
 
-    cardPaths.forEach((pathRef) => {
-      gsap.set(pathRef.current, {
-        strokeDasharray: pathRef.current.getTotalLength(),
-        strokeDashoffset: pathRef.current.getTotalLength(),
-      });
+        gsap.to(lineRef.current, {
+          strokeDashoffset: 0,
+          scrollTrigger: {
+            trigger: ".cardsection",
+            start: "top bottom",
+            end: "top center",
+            scrub: 1,
+            toggleActions: "play none none reverse"
+          }
+        });
 
-      gsap.to(pathRef.current, {
-        strokeDashoffset: 0,
-        duration: 1.25,
-        ease: "power2.in",
-        scrollTrigger: {
-          trigger: ".cardsection",
-          start: "top center",
-          toggleActions: "play none none reverse",
-        },
-      });
-    });
+        const cardPaths = [
+          card1PathRef1.current,
+          card1PathRef2.current,
+          card2PathRef.current,
+          card4PathRef.current
+        ];
 
-    // Card animations (unchanged)
-    gsap.from([".card1", ".card2", ".card3", ".card4"], {
-      opacity: 0,
-      y: 100,
-      duration: 0.8,
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: ".cardsection",
-        start: "top center",
-        toggleActions: "play none none reverse",
-      },
-    });
+        cardPaths.forEach((path) => {
+          gsap.set(path, {
+            strokeDasharray: path.getTotalLength(),
+            strokeDashoffset: path.getTotalLength(),
+          });
+
+          gsap.to(path, {
+            strokeDashoffset: 0,
+            scrollTrigger: {
+              trigger: path,
+              start: "top bottom",
+              end: "top center",
+              scrub: 1,
+              toggleActions: "play none none reverse"
+            }
+          });
+        });
+
+      } else {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".cardsection",
+            start: "top center",
+            toggleActions: "play none none reverse",
+          },
+        });
+
+        gsap.set(lineRef.current, {
+          strokeDasharray: lineRef.current.getTotalLength(),
+          strokeDashoffset: lineRef.current.getTotalLength(),
+        });
+
+        tl.to(lineRef.current, {
+          strokeDashoffset: 0,
+          duration: 1.25,
+          ease: "power2.inOut",
+        }, 0)
+        .fromTo(belowtop.current, 
+          { x: "-50", opacity: 0 },
+          {
+            x: 0,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.25,
+            ease: "power2.out",
+          }, 0
+        );
+
+        const cardPaths = [
+          card1PathRef1.current,
+          card1PathRef2.current,
+          card2PathRef.current,
+          card4PathRef.current
+        ];
+
+        cardPaths.forEach((path) => {
+          gsap.set(path, {
+            strokeDasharray: path.getTotalLength(),
+            strokeDashoffset: path.getTotalLength(),
+          });
+
+          gsap.to(path, {
+            strokeDashoffset: 0,
+            duration: 1.25,
+            ease: "power2.in",
+            scrollTrigger: {
+              trigger: ".cardsection",
+              start: "top center",
+              toggleActions: "play none none reverse",
+            },
+          });
+        });
+
+        gsap.from([".card1", ".card2", ".card3", ".card4"], {
+          opacity: 0,
+          y: 100,
+          duration: 0.8,
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: ".cardsection",
+            start: "top center",
+            toggleActions: "play none none reverse",
+          },
+        });
+      }
+    };
+
+    handleMediaQueryChange(mediaQuery);
+    mediaQuery.addListener(handleMediaQueryChange);
+
+    return () => {
+      mediaQuery.removeListener(handleMediaQueryChange);
+    };
   });
 
   return (

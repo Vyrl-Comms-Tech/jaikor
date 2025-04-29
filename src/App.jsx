@@ -24,7 +24,7 @@ const App = () => {
       duration: 1.5,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // تیز تر اور ہموار ایزنگ
       smooth: true,
-      wheelMultiplier: 1.2, // اسکرول کی رفتار میں معمولی اضافہ
+      wheelMultiplier: 0.8, // اسکرول کی رفتار میں معمولی اضافہ
       touchMultiplier: 1.2,
       smoothTouch: true,
       touchInertiaMultiplier: 0.8,

@@ -286,13 +286,8 @@
 
 @media (max-width: 768px) {
   .herosection{
-<<<<<<< Updated upstream
     height: 106vh !important;
-    
-=======
-    height: 105vh !important;
     /* padding: 0px; */
->>>>>>> Stashed changes
   }
   .bleft{
     height: 9vh;
