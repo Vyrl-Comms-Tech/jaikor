@@ -32,7 +32,7 @@
   scale: 1.05;
   object-fit: cover !important;
   /* z-index: 0; */
-  filter: brightness(50%);
+  filter: brightness(70%);
 }
 .herosection {
   width: 100%;
@@ -143,6 +143,7 @@
 
 .lets-talk {
   padding: 3px 10px;
+  /* background-color: green; */
 }
 .bbox h6 {
   color: #fff;
@@ -239,8 +240,8 @@
     padding-inline: 30px;
   }
   #arrow img {
-    width: 13px !important;
-    height: 17px !important;
+    width: 14px !important;
+    height: 22px !important;
   }
   .bleft {
     gap: 6rem;
@@ -249,6 +250,13 @@
     gap: 20px;
   }
 }
+
+
+@media (max-width: 1500px) {
+ 
+  
+}
+
 
 @media (max-width: 1200px) {
   .bleft {

@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import "../Styles/footer.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+
 const Footer = () => {
+  const navigate=useNavigate()
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -50,7 +52,7 @@ const Footer = () => {
               </p>
             </div>
             <div className="footer-button">
-              <button>connect</button>
+              <button onClick={()=>navigate('/contact')}>connect</button>
               <div className="footer-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

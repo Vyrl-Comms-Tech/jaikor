@@ -80,6 +80,7 @@
   backface-visibility: hidden;
   will-change: transform, z-index;
   transform-origin: center right;
+  cursor: pointer;
 }
 /*  */
 /*  */
