@@ -11,7 +11,16 @@
     url("/Assets/contact-us.jpg") lightgray 50% / cover no-repeat;
 }
 
+<<<<<<< Updated upstream
 
+=======
+/* .contact-us-main {
+  width: 100%;
+  height: min-content;
+  min-height: 100vh;
+ 
+} */
+>>>>>>> Stashed changes
 
 .logo {
   width: 168px;

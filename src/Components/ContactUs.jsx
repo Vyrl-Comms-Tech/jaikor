@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import "../Styles/contact-us.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import MobileNavbar from "./MobileNavbar";
 
 const ContactUs = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
   return (
     <>
       <div className="contact-us">
         {/* <div className="contact-us-main"> */}
         <div className="Navbar">
           <div className="logo">
-            <img src="Assets/logo.png" alt="" />
+            <img src="Assets/logo.png" onClick={()=>navigate('/')} alt="" />
           </div>
           <div className="links">
             {/* Navbar */}

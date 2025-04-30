@@ -308,6 +308,7 @@ const MobileNavbar = ({ isOpen, setIsOpen }) => {
         </div>
       </div>
     </div>
+    // </div>
   );
 };
 

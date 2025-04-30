@@ -155,6 +155,8 @@ function Homehero2({ Herottesxt }) {
     const homeHero = document.querySelector(".homehero");
     const mouseFollower = document.querySelector(".herocircle");
     const letsTalk = document.querySelector(".lets-talk");
+    const logo=document.querySelector('.logo img');
+    // console.log(logo)
     // Update the selector to target the actual anchor tags
     const navLinks = document.querySelectorAll(".links a");
     let mouseX = 0;
@@ -166,6 +168,14 @@ function Homehero2({ Herottesxt }) {
     letsTalk.addEventListener("mouseenter", () => {
       mouseFollower.classList.add("small-circle");
     });
+    logo.addEventListener("mouseenter", () => {
+      mouseFollower.classList.add("small-circle");
+    })
+    
+    logo.addEventListener("mouseleave", () => {
+      mouseFollower.classList.remove("small-circle");
+    })
+
     letsTalk.addEventListener("mouseleave", () => {
       mouseFollower.classList.remove("small-circle");
     });
@@ -498,12 +508,15 @@ const renderServicesSVG = () => {
         )}
         {location.pathname === "/" ? (
           <video
+          poster="/Assets/Screenshot (44).png"
             autoPlay
             muted
             loop
             src="/Assets/Dubai.mp4"
             id="heroimg"
           ></video>
+
+
         ) : (
           <img src="/Assets/Rectangle 1.png" alt="" id="heroimg" />
         )}
@@ -514,7 +527,7 @@ const renderServicesSVG = () => {
         </div>
         <div className="Navbar">
           <div className="logo">
-            <img src="Assets/logo.png" alt="" ref={logoRef} />
+            <img src="Assets/logo.png" alt="" ref={logoRef} onClick={()=>navigate('/')} />
           </div>
 
           {/* Second instance of SVG - also needs the windowWidth check */}
@@ -731,4 +744,4 @@ const renderServicesSVG = () => {
   );
 }
 
-export default Homehero2;
+export default Homehero2; 

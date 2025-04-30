@@ -58,14 +58,7 @@ const LargeSectionMobile = () => {
       },
     });
 
-    textTimeline
-    .to(containerRef.current.querySelectorAll("circle"), {
-      scale: 1,
-      opacity: 1,
-      duration: 0.3,
-      ease: "power2.out",
-      stagger: 0.2
-    }, "-=0.2")
+
     // Add animations to the timeline in sequence
     textTimeline
       .to(firstContentRef.current.querySelector("h1"), {
@@ -84,6 +77,14 @@ const LargeSectionMobile = () => {
         },
         "-=0.1"
       )
+      textTimeline
+      .to(containerRef.current.querySelectorAll("circle"), {
+        scale: 1,
+        opacity: 1,
+        duration: 0.3,
+        ease: "power2.out",
+        stagger: 0.2
+      }, "-=0.4")
       .to(
         secondContentRef.current.querySelector("h1"),
         {
@@ -92,7 +93,7 @@ const LargeSectionMobile = () => {
           duration: 0.3,
           ease: "power2.out",
         },
-        "-=0.1"
+        "-=0.4"
       )
       .to(
         secondContentRef.current.querySelector("p"),
@@ -102,7 +103,7 @@ const LargeSectionMobile = () => {
           duration: 0.3,
           ease: "power2.out",
         },
-        "-=0.1"
+        "-=0.2"
       )
       .to(
         thirdContentRef.current.querySelector("h1"),
