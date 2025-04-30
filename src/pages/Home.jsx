@@ -38,3 +38,4 @@ const Home = ({ lenis }) => {
 };
 
 export default Home;
+

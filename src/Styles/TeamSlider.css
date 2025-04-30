@@ -1,6 +1,8 @@
 .TeamSlider {
   padding: 100px 50px;
   background-color: var(--whitebg);
+  position: relative;
+  top: -2px;
 }
 .rak-plus-container {
   width: 100%;

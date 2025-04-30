@@ -130,6 +130,7 @@
   width: 96%;
   height: 100%;
   object-fit: cover;
+  filter: saturate(2) !important;
 }
 
 .op-navigation {

@@ -13,7 +13,7 @@
 .logo img {
   width: 13.5rem;
   height: 3.2375rem;
-  z-index: 9999999;
+  z-index: 9999;
   position: relative;
 }
 .links {
