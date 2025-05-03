@@ -192,11 +192,6 @@
 }
 
 @media (max-width: 768px) {
-  .aboutbox svg {
-    /* border: 1px solid black; */
-    width: 80% !important;
-    height: 100px !important;
-  }
   .belowtoprow {
     overflow: hidden;
     margin-bottom: 10px;

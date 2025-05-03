@@ -1,7 +1,8 @@
 .TeamSlider {
-  padding: 100px 50px;
+  padding: 0px 50px 100px 50px !important;
   background-color: var(--whitebg);
   position: relative;
+  /* border: 2px solid green; */
   top: -2px;
 }
 .rak-plus-container {
