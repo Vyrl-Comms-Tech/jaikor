@@ -94,40 +94,43 @@ function Homehero2({ Herottesxt }) {
         "-=1" // Overlap with previous animation
       );
 
-    gsap.set("#link-lines2 path", {
-      strokeDasharray: function (index, element) {
-        return element.getTotalLength();
-      },
-      strokeDashoffset: function (index, element) {
-        return element.getTotalLength();
-      },
-      fill: "none",
-      stroke: function (index, element) {
-        return element.getAttribute("fill");
-      },
-      strokeWidth: 2,
-    });
-
-    tl.to("#link-lines2 path", {
-      strokeDashoffset: 1,
-      duration: 1.5,
-      stagger: 0.2,
-      opacity: 1,
-      ease: "power2.inOut",
-      yoyo: true,
-      repeat: -1,
-    });
-    tl.to(
-      "#link-lines2 path",
-      {
-        fill: function (index, element) {
+    // Check if #link-lines2 exists before applying animations
+    if (document.querySelector("#link-lines2")) {
+      gsap.set("#link-lines2 path", {
+        strokeDasharray: function (index, element) {
+          return element.getTotalLength();
+        },
+        strokeDashoffset: function (index, element) {
+          return element.getTotalLength();
+        },
+        fill: "none",
+        stroke: function (index, element) {
           return element.getAttribute("fill");
         },
-        duration: 0.5,
+        strokeWidth: 2,
+      });
+
+      tl.to("#link-lines2 path", {
+        strokeDashoffset: 1,
+        duration: 1.5,
         stagger: 0.2,
-      },
-      "-=1"
-    );
+        opacity: 1,
+        ease: "power2.inOut",
+        yoyo: true,
+        repeat: -1,
+      });
+      tl.to(
+        "#link-lines2 path",
+        {
+          fill: function (index, element) {
+            return element.getAttribute("fill");
+          },
+          duration: 0.5,
+          stagger: 0.2,
+        },
+        "-=1"
+      );
+    }
 
     // Add counter animation
     const targetNumbers = [150, 500, 23]; // Projects, Workforce, Years
@@ -155,7 +158,7 @@ function Homehero2({ Herottesxt }) {
     const homeHero = document.querySelector(".homehero");
     const mouseFollower = document.querySelector(".herocircle");
     const letsTalk = document.querySelector(".lets-talk");
-    const logo=document.querySelector('.logo img');
+    const logo = document.querySelector(".logo img");
     // console.log(logo)
     // Update the selector to target the actual anchor tags
     const navLinks = document.querySelectorAll(".links a");
@@ -170,11 +173,11 @@ function Homehero2({ Herottesxt }) {
     });
     logo.addEventListener("mouseenter", () => {
       mouseFollower.classList.add("small-circle");
-    })
-    
+    });
+
     logo.addEventListener("mouseleave", () => {
       mouseFollower.classList.remove("small-circle");
-    })
+    });
 
     letsTalk.addEventListener("mouseleave", () => {
       mouseFollower.classList.remove("small-circle");
@@ -263,126 +266,125 @@ function Homehero2({ Herottesxt }) {
   }, []);
 
   // Function to render services SVG based on window width
- // Function to render services SVG based on window width
-const renderServicesSVG = () => {
-  if (windowWidth > 1150) {
-    return (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="299"
-        height="581"
-        viewBox="0 0 299 581"
-        fill="none"
-        id="link-lines2"
-      >
-        <path
-          d="M118.5 30C118.5 13.7076 131.708 0.5 148 0.5H670.5V458.5H148C131.708 458.5 118.5 445.292 118.5 429V30Z"
-          stroke="url(#paint0_linear_84_40)"
-        />
-        <path
-          d="M59.5 91C59.5 74.7076 72.7076 61.5 89 61.5H611.5V519.5H89C72.7076 519.5 59.5 506.292 59.5 490V91Z"
-          stroke="url(#paint1_linear_84_40)"
-        />
-        <path
-          d="M0.5 152C0.5 135.708 13.7076 122.5 30 122.5H552.5V580.5H30C13.7076 580.5 0.5 567.292 0.5 551V152Z"
-          stroke="url(#paint2_linear_84_40)"
-        />
-        <defs>
-          <linearGradient
-            id="paint0_linear_84_40"
-            x1="394.5"
-            y1="0"
-            x2="394.5"
-            y2="459"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="white" />
-            <stop offset="1" stopColor="#273A8C" />
-          </linearGradient>
-          <linearGradient
-            id="paint1_linear_84_40"
-            x1="335.5"
-            y1="61"
-            x2="335.5"
-            y2="520"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="white" />
-            <stop offset="1" stopColor="#273A8C" />
-          </linearGradient>
-          <linearGradient
-            id="paint2_linear_84_40"
-            x1="276.5"
-            y1="122"
-            x2="276.5"
-            y2="581"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="white" />
-            <stop offset="1" stopColor="#273A8C" />
-          </linearGradient>
-        </defs>
-      </svg>
-    );
-  } else {
-    return (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 529 435"
-        fill="none"
-        id="link-lines"
-      >
-        <path
-          d="M118.5 -145.5H670.5V312.5H148C131.708 312.5 118.5 299.292 118.5 283V-145.5Z"
-          stroke="url(#paint0_linear_10_243)"
-        />
-        <path
-          d="M59.5 -84.5H611.5V373.5H89C72.7076 373.5 59.5 360.292 59.5 344V-84.5Z"
-          stroke="url(#paint1_linear_10_243)"
-        />
-        <path
-          d="M0.5 -23.5H552.5V434.5H30C13.7076 434.5 0.5 421.292 0.5 405V-23.5Z"
-          stroke="url(#paint2_linear_10_243)"
-        />
-        <defs>
-          <linearGradient
-            id="paint0_linear_10_243"
-            x1="394.5"
-            y1="-146"
-            x2="394.5"
-            y2="313"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="white" />
-            <stop offset="1" stopColor="#888888" stopOpacity="0.76" />
-          </linearGradient>
-          <linearGradient
-            id="paint1_linear_10_243"
-            x1="335.5"
-            y1="-85"
-            x2="335.5"
-            y2="374"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="white" />
-            <stop offset="1" stopColor="#888888" stopOpacity="0.76" />
-          </linearGradient>
-          <linearGradient
-            id="paint2_linear_10_243"
-            x1="276.5"
-            y1="-24"
-            x2="276.5"
-            y2="435"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="white" />
-            <stop offset="1" stopColor="#888888" stopOpacity="0.76" />
-          </linearGradient>
-        </defs>
-      </svg>
-    );
-  }
-};
+  const renderServicesSVG = () => {
+    if (windowWidth > 1150) {
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="299"
+          height="581"
+          viewBox="0 0 299 581"
+          fill="none"
+          id="link-lines2"
+        >
+          <path
+            d="M118.5 30C118.5 13.7076 131.708 0.5 148 0.5H670.5V458.5H148C131.708 458.5 118.5 445.292 118.5 429V30Z"
+            stroke="url(#paint0_linear_84_40)"
+          />
+          <path
+            d="M59.5 91C59.5 74.7076 72.7076 61.5 89 61.5H611.5V519.5H89C72.7076 519.5 59.5 506.292 59.5 490V91Z"
+            stroke="url(#paint1_linear_84_40)"
+          />
+          <path
+            d="M0.5 152C0.5 135.708 13.7076 122.5 30 122.5H552.5V580.5H30C13.7076 580.5 0.5 567.292 0.5 551V152Z"
+            stroke="url(#paint2_linear_84_40)"
+          />
+          <defs>
+            <linearGradient
+              id="paint0_linear_84_40"
+              x1="394.5"
+              y1="0"
+              x2="394.5"
+              y2="459"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="white" />
+              <stop offset="1" stopColor="#273A8C" />
+            </linearGradient>
+            <linearGradient
+              id="paint1_linear_84_40"
+              x1="335.5"
+              y1="61"
+              x2="335.5"
+              y2="520"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="white" />
+              <stop offset="1" stopColor="#273A8C" />
+            </linearGradient>
+            <linearGradient
+              id="paint2_linear_84_40"
+              x1="276.5"
+              y1="122"
+              x2="276.5"
+              y2="581"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="white" />
+              <stop offset="1" stopColor="#273A8C" />
+            </linearGradient>
+          </defs>
+        </svg>
+      );
+    } else {
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 529 435"
+          fill="none"
+          id="link-lines"
+        >
+          <path
+            d="M118.5 -145.5H670.5V312.5H148C131.708 312.5 118.5 299.292 118.5 283V-145.5Z"
+            stroke="url(#paint0_linear_10_243)"
+          />
+          <path
+            d="M59.5 -84.5H611.5V373.5H89C72.7076 373.5 59.5 360.292 59.5 344V-84.5Z"
+            stroke="url(#paint1_linear_10_243)"
+          />
+          <path
+            d="M0.5 -23.5H552.5V434.5H30C13.7076 434.5 0.5 421.292 0.5 405V-23.5Z"
+            stroke="url(#paint2_linear_10_243)"
+          />
+          <defs>
+            <linearGradient
+              id="paint0_linear_10_243"
+              x1="394.5"
+              y1="-146"
+              x2="394.5"
+              y2="313"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="white" />
+              <stop offset="1" stopColor="#888888" stopOpacity="0.76" />
+            </linearGradient>
+            <linearGradient
+              id="paint1_linear_10_243"
+              x1="335.5"
+              y1="-85"
+              x2="335.5"
+              y2="374"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="white" />
+              <stop offset="1" stopColor="#888888" stopOpacity="0.76" />
+            </linearGradient>
+            <linearGradient
+              id="paint2_linear_10_243"
+              x1="276.5"
+              y1="-24"
+              x2="276.5"
+              y2="435"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="white" />
+              <stop offset="1" stopColor="#888888" stopOpacity="0.76" />
+            </linearGradient>
+          </defs>
+        </svg>
+      );
+    }
+  };
 
   return (
     <>
@@ -508,15 +510,13 @@ const renderServicesSVG = () => {
         )}
         {location.pathname === "/" ? (
           <video
-          poster="/Assets/Screenshot (44).png"
+            poster="/Assets/Screenshot (44).png"
             autoPlay
             muted
             loop
             src="/Assets/Dubai.mp4"
             id="heroimg"
           ></video>
-
-
         ) : (
           <img src="/Assets/Rectangle 1.png" alt="" id="heroimg" />
         )}
@@ -527,7 +527,7 @@ const renderServicesSVG = () => {
         </div>
         <div className="Navbar">
           <div className="logo">
-            <img src="Assets/logo.png" alt="" ref={logoRef} onClick={()=>navigate('/')} />
+            <img src="Assets/logo.png" alt="" ref={logoRef} onClick={() => navigate('/')} />
           </div>
 
           {/* Second instance of SVG - also needs the windowWidth check */}
@@ -675,7 +675,7 @@ const renderServicesSVG = () => {
               to="/contact"
             >
               let's connect
-            </NavLink>           
+            </NavLink>
             <MobileNavbar isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
             {/* Navbar */}
           </div>
@@ -744,4 +744,4 @@ const renderServicesSVG = () => {
   );
 }
 
-export default Homehero2; 
+export default Homehero2;
