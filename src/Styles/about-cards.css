@@ -58,22 +58,22 @@
 /*  */
 
 .about-cards-main {
-  position: relative;
+  /* position: relative; */
   width: 100%;
   height: 100% !important;
   /* border: 1px solid black; */
   margin-inline: auto !important;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   right: 100px;
   /* padding-inline: 135px; */
 }
 
 .about-card {
   position: relative;
-  width: 440px;
-  height: 500px !important;
+  width: 420px;
+  height: 600px !important;
   padding: 35px 20px;
   display: flex;
   flex-direction: column;
@@ -124,26 +124,22 @@
   margin-top: 20px;
 }
 
-.card-color-1 {
+/* .card-color-1 {
   top: 0;
   left: 15%;
   z-index: 40;
 }
 .card-color-2 {
-  /* top: 0%; */
   left: 10%;
   z-index: 30;
 }
 .card-color-3 {
-  /* top: 0%; */
   left: 4.5%;
   z-index: 20;
 }
 .card-color-4 {
-  /* top: 0%; */
-  /* left: 70%; */
   z-index: 10;
-}
+} */
 .card-color-1,
 .card-color-1 .card-arrow svg,
 .card-color-3,
@@ -168,7 +164,7 @@
 
 @media (max-width: 1300px) {
   .about-card {
-    height: 450px !important;
+    height: 550px !important;
   }
 }
 /* .card-color-1 {
@@ -191,3 +187,23 @@
   left: 65%;
   z-index: 10;
 } */
+
+
+.card-color-1 {
+  z-index: 20;
+  left: 5%;
+  padding: 0 !important;
+}
+.card-color-2 {
+  /* top: 0%; */
+  left: -10%;
+  /* z-index: -1; */
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  background-position: top;
+  object-fit: cover;
+  /* border-radius: inherit; */
+}

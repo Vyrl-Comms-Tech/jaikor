@@ -3417,7 +3417,7 @@ function Belowhero() {
                 />
               </svg>
             </div>
-            <div className="aboutbox2">
+            {/* <div className="aboutbox2">
               <div className="aboutbox3">
                 <h4 ref={(el) => (numberRefs.current[0] = el)}>0+</h4>
                 <p ref={(el) => (textRefs.current[0] = el)}>
@@ -3434,7 +3434,7 @@ function Belowhero() {
                   Operational Divisions
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

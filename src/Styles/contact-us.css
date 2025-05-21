@@ -11,6 +11,13 @@
     url("/Assets/contact-us.jpg") lightgray 50% / cover no-repeat;
 }
 
+
+/* .contact-us-main {
+  width: 100%;
+  height: min-content;
+  min-height: 100vh;
+ 
+} */
 .logo {
   width: 168px;
   height: 37px;
@@ -59,7 +66,7 @@
   position: relative;
   border: none;
   background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(56.29999923706055px);
+  backdrop-filter: blur(50px);
   /* display: flex; */
   /* flex-direction: column; */
   --border-width: 0.5px;

@@ -16,13 +16,13 @@ const LargeSectionMobile = () => {
   useGSAP(() => {
     const path = pathRef.current;
     const length = path.getTotalLength();
-       // Set initial state for circles
+    // Set initial state for circles
     gsap.set(containerRef.current.querySelectorAll("circle"), {
       scale: 0.5,
       opacity: 0,
     });
-     // Set initial positions for headings and paragraphs
-     gsap.set(firstContentRef.current.querySelector("h1"), {
+    // Set initial positions for headings and paragraphs
+    gsap.set(firstContentRef.current.querySelector("h1"), {
       scale: 0.5,
       opacity: 0.5,
     });
@@ -58,7 +58,6 @@ const LargeSectionMobile = () => {
       },
     });
 
-
     // Add animations to the timeline in sequence
     textTimeline
       .to(firstContentRef.current.querySelector("h1"), {
@@ -76,15 +75,19 @@ const LargeSectionMobile = () => {
           ease: "power2.out",
         },
         "-=0.1"
+      );
+    textTimeline
+      .to(
+        containerRef.current.querySelectorAll("circle"),
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 0.3,
+          ease: "power2.out",
+          stagger: 0.2,
+        },
+        "-=0.4"
       )
-      textTimeline
-      .to(containerRef.current.querySelectorAll("circle"), {
-        scale: 1,
-        opacity: 1,
-        duration: 0.3,
-        ease: "power2.out",
-        stagger: 0.2
-      }, "-=0.4")
       .to(
         secondContentRef.current.querySelector("h1"),
         {

@@ -217,7 +217,7 @@ const MobileNavbar = ({ isOpen, setIsOpen }) => {
           >
             Projects
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to="/group"
             className="mobile-menu-link"
             onClick={closeMenu}
@@ -228,8 +228,8 @@ const MobileNavbar = ({ isOpen, setIsOpen }) => {
               visibility: "visible",
             }}
           >
-            Group
-          </NavLink>
+            The Group
+          </NavLink> */}
           <NavLink
             to="/services"
             className="mobile-menu-link"

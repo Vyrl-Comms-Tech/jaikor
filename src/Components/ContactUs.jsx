@@ -22,6 +22,7 @@ const ContactUs = () => {
             </NavLink>
             <NavLink to="/about">about</NavLink>
             <NavLink to="/projects">projects</NavLink>
+            <NavLink to="/group">The Group</NavLink>
             <NavLink to="/services">services</NavLink>
             <NavLink id="border" to="/contact">
               let's connect
@@ -34,7 +35,7 @@ const ContactUs = () => {
         <div className="contact-us-main-container">
           <div className="contact-us-main-content">
             <div className="contact-us-icon">
-              <img src="Assets/fb.svg" alt="fb logo" />
+              <img src="Assets/fb.svg" alt="fb logo" />   
               <img src="Assets/x.svg" alt="fb logo" />
               <img src="Assets/insta.svg" alt="fb logo" />
             </div>

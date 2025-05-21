@@ -79,12 +79,13 @@ const Footer = () => {
           <div className="footer-bottom-left">
             <h4>+971 4 326 2777</h4>
             <h4>info@jeikor.com</h4>
-            <h4>Twitter</h4>
+          <h4>Twitter</h4>
           </div>
           <div className="footer-bottom-right">
             <Link to={"/"}>Home</Link>
             <Link to={"/about"}>About</Link>
             <Link to={"/projects"}>Projects</Link>
+            <Link to={"/group"}>The Group</Link>
             <Link to={"/services"}>Services</Link>
           </div>
         </div>

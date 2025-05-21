@@ -11,6 +11,7 @@ import { useGSAP } from "@gsap/react";
 import "./Styles/Global.css";
 import Contact from "./pages/Contact";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Dynamic from "./pages/Dynamic";
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
@@ -85,6 +86,8 @@ const App = () => {
         <Route path="/" element={<Home lenis={lenisRef.current} />} />
         <Route path="/about" element={<About />} />
         <Route path="/group" element={<Group />} />
+        <Route path="/dynamic" element={<Dynamic />} />
+        <Route path="/dynamic/:projectId" element={<Dynamic />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />

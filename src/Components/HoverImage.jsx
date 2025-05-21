@@ -1,10 +1,12 @@
-import {  useRef } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import "../Styles/hover-image.css";
 import { useGSAP } from "@gsap/react";
+import { useNavigate } from "react-router-dom";
 
 export default function HoverImage() {
   const hoverImageRef = useRef(null);
+  const navigate = useNavigate();
 
   useGSAP(() => {
     const hoverImage = hoverImageRef.current;
@@ -96,47 +98,55 @@ export default function HoverImage() {
     });
 }, []);
 
+  // Project data with matching IDs from DynamicSection
+  const projectData = [
+    {
+      id: "innovative-design",
+      title: "Innovative Design",
+      description: "Welcome To Jaikor GP, A Leading Name In Construction Company, Dedicated To Delivering Exceptional Infrastructure Solutions",
+      image: "/Assets/hm1.jpg"
+    },
+    {
+      id: "urban-development", 
+      title: "Urban Development",
+      description: "Welcome To Jaikor GP, A Leading Name In Construction Company, Dedicated To Delivering Exceptional Infrastructure Solutions",
+      image: "/Assets/hm2.jpg"
+    },
+    {
+      id: "sustainable-projects",
+      title: "Sustainable Projects", 
+      description: "Welcome To Jaikor GP, A Leading Name In Construction Company, Dedicated To Delivering Exceptional Infrastructure Solutions",
+      image: "/Assets/hm3.jpg"
+    },
+    {
+      id: "structural-excellence",
+      title: "Structural Excellence",
+      description: "Welcome To Jaikor GP, A Leading Name In Construction Company, Dedicated To Delivering Exceptional Infrastructure Solutions", 
+      image: "/Assets/carousel-img.png"
+    }
+  ];
+
   return (
     <>
       <div className="hover-image-main-container">
         <div className="hover-image-container" ref={hoverImageRef}>
-          <div className="hover-image-item">
-            <img
-              src="/Assets/hm1.jpg"
-              alt="Modern building with curved architecture"
-            />
-            <div className="hover-image-text">
-              <h2>Innovative Design</h2>
-              <p>Pushing boundaries with cutting-edge architectural concepts</p>
+          {projectData.map((project, index) => (
+            <div 
+              key={index} 
+              className="hover-image-item"
+              onClick={() => navigate(`/dynamic/${project.id}`)}
+              style={{cursor: 'pointer'}}
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+              />
+              <div className="hover-image-text">
+                <h2>{project.title}</h2>
+                <p>{project.description}</p>
+              </div>
             </div>
-          </div>
-          <div className="hover-image-item">
-            <img src="/Assets/hm2.jpg" alt="Urban skyscraper at dusk" />
-            <div className="hover-image-text">
-              <h2>Urban Development</h2>
-              <p>Creating skylines that define modern metropolitan areas</p>
-            </div>
-          </div>
-          <div className="hover-image-item">
-            <img
-              src="/Assets/hm3.jpg"
-              alt="Modern building with water reflection"
-            />
-            <div className="hover-image-text">
-              <h2>Sustainable Projects</h2>
-              <p>Harmonizing infrastructure with environmental consciousness</p>
-            </div>
-          </div>
-          <div className="hover-image-item">
-            <img
-              src="/Assets/carousel-img.png"
-              alt="Skyscraper with geometric patterns"
-            />
-            <div className="hover-image-text">
-              <h2>Structural Excellence</h2>
-              <p>Engineering precision that stands the test of time</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </>

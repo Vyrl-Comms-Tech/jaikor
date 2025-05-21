@@ -25,8 +25,14 @@
 }
 /*!  */
 
+.about-card-main{
+  /* height: 700px !important; */
+  /* width: 100% !important; */
+  /* background-color: orange; */
+}
 .card-mobile-number {
   color: #fff;
+  /* background-color: green; */
   font-family: "Nunito Sans";
   font-size: 2.25rem;
   font-style: normal;
@@ -114,18 +120,60 @@
   color: #fff;
 }
 
-/* Add these styles to your existing CSS file */
+/* Add these new styles to your existing CSS file */
+
+.mobile-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 35px 20px;
+}
+
+.mobile-image-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.mobile-text-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mobile-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mobile-card-arrow {
+  text-align: right;
+  font-size: 24px;
+  margin-top: 20px;
+}
 
 /* Card color styles */
 .card-color-dark {
-  background-color: #111e57;
+  background-color: #1a237e;
 }
 
-.card-color-light {
-  background-color: #e0e0e0;
+/* Make sure these styles are properly applied */
+.card-color-light .card-mobile-number,
+.card-color-light .card-mobile-content p {
+  color: #111e57 !important;
 }
 
-/* SVG fill colors */
+/* Ensure the SVG colors are correct */
 .svg-light path {
   fill: white;
 }
@@ -135,7 +183,18 @@
 }
 
 /* Text colors for light cards */
-.card-color-light .card-mobile-number,
+/* Update the light card background color */
+.card-color-light {
+  background-color: #E0E0E0;
+}
 .card-color-light .card-mobile-content p {
   color: #111e57 !important;
+}
+
+/* Add this to your existing CSS */
+.mobile-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
 }

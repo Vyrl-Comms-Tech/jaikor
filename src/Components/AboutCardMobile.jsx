@@ -28,41 +28,40 @@ export default function AboutCardMobile() {
   // Card content data
   const cardContents = [
     {
-      number: "01",
-      text: `"Since 2000, I laid the foundation of what would later become Jeikor Group — not with luxury or certainty, but with deep conviction and relentless effort.`,
+      img: "http://localhost:5173/Assets/Rectangle%20301.png",
     },
     {
       number: "02",
       text: `I Was Not Born In Comfort. It Was Born From Honest Hands And A Belief That Purpose And Persistence Could Shape More Than Stones — They Could Shape A Future.`,
     },
-    {
-      number: "03",
-      text: `Over Time, Jeikor Evolved. What Began As A Modest Construction Venture Became A Diverse Group Of Companies, Operating Across Regions And Industries.`,
-    },
-    {
-      number: "04",
-      text: `Today, Jeikor Group Is More Than A Business. It's A Journey Shared By Those Who Believed, Contributed, And Grew With Us.`,
-    },
-    {
-      number: "05",
-      text: `Our commitment to excellence drives every project we undertake, ensuring quality that stands the test of time.`,
-    },
-    {
-      number: "06",
-      text: `Innovation is at the heart of our approach, allowing us to deliver solutions that exceed expectations.`,
-    },
-    {
-      number: "07",
-      text: `We value partnerships built on trust and mutual respect, working collaboratively to achieve shared goals.`,
-    },
-    {
-      number: "08",
-      text: `Sustainability guides our practices, as we strive to create a positive impact on communities and the environment.`,
-    },
-    {
-      number: "09",
-      text: `Looking ahead, we remain dedicated to growth and expansion while staying true to the values that define Jeikor Group.`,
-    },
+    // {
+    //   number: "03",
+    //   text: `Over Time, Jeikor Evolved. What Began As A Modest Construction Venture Became A Diverse Group Of Companies, Operating Across Regions And Industries.`,
+    // },
+    // {
+    //   number: "04",
+    //   text: `Today, Jeikor Group Is More Than A Business. It's A Journey Shared By Those Who Believed, Contributed, And Grew With Us.`,
+    // },
+    // {
+    //   number: "05",
+    //   text: `Our commitment to excellence drives every project we undertake, ensuring quality that stands the test of time.`,
+    // },
+    // {
+    //   number: "06",
+    //   text: `Innovation is at the heart of our approach, allowing us to deliver solutions that exceed expectations.`,
+    // },
+    // {
+    //   number: "07",
+    //   text: `We value partnerships built on trust and mutual respect, working collaboratively to achieve shared goals.`,
+    // },
+    // {
+    //   number: "08",
+    //   text: `Sustainability guides our practices, as we strive to create a positive impact on communities and the environment.`,
+    // },
+    // {
+    //   number: "09",
+    //   text: `Looking ahead, we remain dedicated to growth and expansion while staying true to the values that define Jeikor Group.`,
+    // },
   ];
 
   return (
@@ -79,25 +78,35 @@ export default function AboutCardMobile() {
             {cardContents.map((content, index) => (
               <SwiperSlide key={index}>
                 <div
-                  className={`about-card ${index % 2 === 0 ? 'card-color-dark' : 'card-color-light'}`}
+                  className={`mobile-card ${
+                    index % 2 === 0 ? "card-color-dark" : "card-color-light"
+                  }`}
                   data-index={index + 1}
                 >
-                  <h2 className="card-mobile-number">{content.number}</h2>
-                  <div className="card-mobile-content">
-                    <p>{content.text}</p>
-                  </div>
-                  <div className="card-arrow">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="31"
-                      height="35"
-                      viewBox="0 0 31 35"
-                      fill="none"
-                      className={index % 2 === 0 ? 'svg-light' : 'svg-dark'}
-                    >
-                      <path d="M3.62871 0.8051L24.484 29.4957L27.9592 8.17653L30.8561 8.43328L26.5536 34.8284L0.118801 30.7764L0.768474 27.9416L22.1196 31.2144L1.2643 2.5238L3.62871 0.8051Z" />
-                    </svg>
-                  </div>
+                  {content.img ? (
+                    <div className="mobile-image-container">
+                      <img src={content.img} alt="Card image" className="mobile-card-image" />
+                    </div>
+                  ) : (
+                    <div className="mobile-text-container">
+                      <h2 className="card-mobile-number">{content.number}</h2>
+                      <div className="card-mobile-content">
+                        <p>{content.text}</p>
+                      </div>
+                      <div className="mobile-card-arrow">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="31"
+                          height="35"
+                          viewBox="0 0 31 35"
+                          fill="none"
+                          className={index % 2 === 0 ? "svg-light" : "svg-dark"}
+                        >
+                          <path d="M3.62871 0.8051L24.484 29.4957L27.9592 8.17653L30.8561 8.43328L26.5536 34.8284L0.118801 30.7764L0.768474 27.9416L22.1196 31.2144L1.2643 2.5238L3.62871 0.8051Z" />
+                        </svg>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </SwiperSlide>
             ))}

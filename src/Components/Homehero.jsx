@@ -94,43 +94,40 @@ function Homehero2({ Herottesxt }) {
         "-=1" // Overlap with previous animation
       );
 
-    // Check if #link-lines2 exists before applying animations
-    if (document.querySelector("#link-lines2")) {
-      gsap.set("#link-lines2 path", {
-        strokeDasharray: function (index, element) {
-          return element.getTotalLength();
-        },
-        strokeDashoffset: function (index, element) {
-          return element.getTotalLength();
-        },
-        fill: "none",
-        stroke: function (index, element) {
+    gsap.set("#link-lines2 path", {
+      strokeDasharray: function (index, element) {
+        return element.getTotalLength();
+      },
+      strokeDashoffset: function (index, element) {
+        return element.getTotalLength();
+      },
+      fill: "none",
+      stroke: function (index, element) {
+        return element.getAttribute("fill");
+      },
+      strokeWidth: 2,
+    });
+
+    tl.to("#link-lines2 path", {
+      strokeDashoffset: 1,
+      duration: 1.5,
+      stagger: 0.2,
+      opacity: 1,
+      ease: "power2.inOut",
+      yoyo: true,
+      repeat: -1,
+    });
+    tl.to(
+      "#link-lines2 path",
+      {
+        fill: function (index, element) {
           return element.getAttribute("fill");
         },
-        strokeWidth: 2,
-      });
-
-      tl.to("#link-lines2 path", {
-        strokeDashoffset: 1,
-        duration: 1.5,
+        duration: 0.5,
         stagger: 0.2,
-        opacity: 1,
-        ease: "power2.inOut",
-        yoyo: true,
-        repeat: -1,
-      });
-      tl.to(
-        "#link-lines2 path",
-        {
-          fill: function (index, element) {
-            return element.getAttribute("fill");
-          },
-          duration: 0.5,
-          stagger: 0.2,
-        },
-        "-=1"
-      );
-    }
+      },
+      "-=1"
+    );
 
     // Add counter animation
     const targetNumbers = [150, 500, 23]; // Projects, Workforce, Years
@@ -265,6 +262,7 @@ function Homehero2({ Herottesxt }) {
     };
   }, []);
 
+  // Function to render services SVG based on window width
   // Function to render services SVG based on window width
   const renderServicesSVG = () => {
     if (windowWidth > 1150) {
@@ -510,14 +508,22 @@ function Homehero2({ Herottesxt }) {
         )}
         {location.pathname === "/" ? (
           <video
-            poster="/Assets/frame.jpg"
+            poster="/Assets/Screenshot (44).png"
             autoPlay
             muted
             loop
-            src="/Assets/Dubai.mp4"
+            src="/Assets/Dubai_Music.mp4"
             id="heroimg"
           ></video>
         ) : (
+          //   <video
+          //   poster="/video_frame.avif"
+          //   playsInline
+          //   preload="metadata"
+          //   autoPlay
+          //   muted
+          //   loop
+          // ></video>
           <img src="/Assets/Rectangle 1.png" alt="" id="heroimg" />
         )}
 
@@ -527,7 +533,12 @@ function Homehero2({ Herottesxt }) {
         </div>
         <div className="Navbar">
           <div className="logo">
-            <img src="Assets/logo.png" alt="" ref={logoRef} onClick={() => navigate('/')} />
+            <img
+              src="Assets/logo.png"
+              alt=""
+              ref={logoRef}
+              onClick={() => navigate("/")}
+            />
           </div>
 
           {/* Second instance of SVG - also needs the windowWidth check */}
@@ -664,7 +675,7 @@ function Homehero2({ Herottesxt }) {
               projects
             </NavLink>
             <NavLink ref={(el) => (linksRef.current[3] = el)} to="/group">
-              group
+              the group
             </NavLink>
             <NavLink ref={(el) => (linksRef.current[4] = el)} to="/services">
               services
@@ -695,8 +706,8 @@ function Homehero2({ Herottesxt }) {
             <h3
               className="lets-talk"
               ref={(el) => (heroTextRefs.current[2] = el)}
-              onClick={() => navigate('/contact')}
-              style={{ cursor: 'pointer' }}
+              onClick={() => navigate("/contact")}
+              style={{ cursor: "pointer" }}
             >
               {btntext}
               <span id="arrow">

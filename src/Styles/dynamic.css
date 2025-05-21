@@ -1,0 +1,18 @@
+.dynamic-header {
+  justify-content: space-evenly !important;
+}
+
+.dynamic-detail-center h1 span{
+font-weight: 600 !important;
+}
+.dynamic-detail-center h5 {
+  display: block;
+}
+
+.dynamic-detail-bottom {
+  height: 50% !important;
+}
+
+.dynamic-retangle {
+  bottom: -80px !important ;
+}
