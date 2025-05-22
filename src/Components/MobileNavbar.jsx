@@ -217,7 +217,7 @@ const MobileNavbar = ({ isOpen, setIsOpen }) => {
           >
             Projects
           </NavLink>
-          {/* <NavLink
+          <NavLink
             to="/group"
             className="mobile-menu-link"
             onClick={closeMenu}
@@ -229,7 +229,7 @@ const MobileNavbar = ({ isOpen, setIsOpen }) => {
             }}
           >
             The Group
-          </NavLink> */}
+          </NavLink>
           <NavLink
             to="/services"
             className="mobile-menu-link"

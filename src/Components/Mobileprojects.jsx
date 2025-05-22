@@ -273,9 +273,6 @@ function Mobileprojects() {
         </div>
         {currentSlide + 1}/{slides.length}
       </div>
-
-
-
     </div>
       </div>
     </>

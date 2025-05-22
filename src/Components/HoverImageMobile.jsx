@@ -2,9 +2,39 @@ import React, { useEffect, useRef } from 'react';
 import "../Styles/hover-image-mobile.css";
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import { useNavigate } from 'react-router-dom';
 
 const HoverImageMobile = () => {
   const containerRef = useRef(null);
+  const navigate = useNavigate();
+
+  // Project data with matching IDs from DynamicSection
+  const projectData = [
+    {
+      id: "innovative-design",
+      title: "Innovative Design",
+      description: "Welcome To Jaikor GP, A Leading Name In Construction Company, Dedicated To Delivering Exceptional Infrastructure Solutions",
+      image: "/Assets/hm1.jpg"
+    },
+    {
+      id: "urban-development", 
+      title: "Urban Development",
+      description: "Welcome To Jaikor GP, A Leading Name In Construction Company, Dedicated To Delivering Exceptional Infrastructure Solutions",
+      image: "/Assets/hm2.jpg"
+    },
+    {
+      id: "sustainable-projects",
+      title: "Sustainable Projects", 
+      description: "Welcome To Jaikor GP, A Leading Name In Construction Company, Dedicated To Delivering Exceptional Infrastructure Solutions",
+      image: "/Assets/hm3.jpg"
+    },
+    {
+      id: "structural-excellence",
+      title: "Structural Excellence",
+      description: "Welcome To Jaikor GP, A Leading Name In Construction Company, Dedicated To Delivering Exceptional Infrastructure Solutions", 
+      image: "/Assets/carousel-img.png"
+    }
+  ];
 
   useGSAP(() => {
     const items = containerRef.current.querySelectorAll('.hover-image-mobile-item');
@@ -32,49 +62,27 @@ const HoverImageMobile = () => {
   return (
     <>
       <div className="hover-image-mobile-container" ref={containerRef}>
-        <div className="hover-image-mobile-item">
-          <img
-            src="/Assets/hm1.jpg"
-            alt="Modern building with curved architecture"
-          />
-          <div className="hover-image-mobile-text">
-            <h2>Lorem Ipsum Dolor Sit</h2>
-            <p>Welcome To Jaikor GP, A Leading Name In Construction Company, Dedicated To Delivering Exceptional Infrastructure Solutions</p>
+        {projectData.map((project, index) => (
+          <div 
+            key={index} 
+            className="hover-image-mobile-item"
+            onClick={() => {
+              setTimeout(() => {
+                navigate(`/dynamic/${project.id}`);
+              }, 600);
+            }}
+            style={{cursor: 'pointer'}}
+          >
+            <img
+              src={project.image}
+              alt={project.title}
+            />
+            <div className="hover-image-mobile-text">
+              <h2>{project.title}</h2>
+              <p>{project.description}</p>
+            </div>
           </div>
-        </div>
-
-        <div className="hover-image-mobile-item">
-          <img
-            src="/Assets/hm2.jpg"
-            alt="Urban skyscraper at dusk"
-          />
-          <div className="hover-image-mobile-text">
-            <h2>Lorem Ipsum Dolor Sit</h2>
-            <p>Welcome To Jaikor GP, A Leading Name In Construction Company, Dedicated To Delivering Exceptional Infrastructure Solutions</p>
-          </div>
-        </div>
-
-        <div className="hover-image-mobile-item">
-          <img
-            src="/Assets/hm3.jpg"
-            alt="Modern building with water reflection"
-          />
-          <div className="hover-image-mobile-text">
-            <h2>Lorem Ipsum Dolor Sit</h2>
-            <p>Welcome To Jaikor GP, A Leading Name In Construction Company, Dedicated To Delivering Exceptional Infrastructure Solutions</p>
-          </div>
-        </div>
-
-        <div className="hover-image-mobile-item">
-          <img
-            src="/Assets/carousel-img.png"
-            alt="Skyscraper with geometric patterns"
-          />
-          <div className="hover-image-mobile-text">
-            <h2>Lorem Ipsum Dolor Sit</h2>
-            <p>Welcome To Jaikor GP, A Leading Name In Construction Company, Dedicated To Delivering Exceptional Infrastructure Solutions</p>
-          </div>
-        </div>
+        ))}
       </div>
     </>
   );

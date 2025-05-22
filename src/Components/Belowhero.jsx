@@ -172,19 +172,19 @@ function Belowhero() {
         },
         0
       )
-      .fromTo(
-        ".aboutbox2",
-        { y: 100, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          delay: 0.85,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: "power2.out",
-        },
-        0
-      )
+      // .fromTo(
+      //   ".aboutbox2",
+      //   { y: 100, opacity: 0 },
+      //   {
+      //     y: 0,
+      //     opacity: 1,
+      //     delay: 0.85,
+      //     duration: 0.8,
+      //     stagger: 0.2,
+      //     ease: "power2.out",
+      //   },
+      //   0
+      // )
       .fromTo(
         textRefs.current,
         { y: 50, opacity: 0 },

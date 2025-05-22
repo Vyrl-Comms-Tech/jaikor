@@ -134,7 +134,11 @@ export default function HoverImage() {
             <div 
               key={index} 
               className="hover-image-item"
-              onClick={() => navigate(`/dynamic/${project.id}`)}
+              onClick={() => {
+                setTimeout(() => {
+                  navigate(`/dynamic/${project.id}`);
+                }, 600);
+              }}
               style={{cursor: 'pointer'}}
             >
               <img

@@ -7,6 +7,7 @@ import MobileNavbar from "./MobileNavbar";
 import { useGSAP } from "@gsap/react";
 
 function Homehero2({ Herottesxt }) {
+  // const [isMuted, setIsMuted] = useState(second)
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { paragraph, mainheading, btntext } = Herottesxt;
@@ -32,7 +33,22 @@ function Homehero2({ Herottesxt }) {
 
   useGSAP(() => {
     // Create a GSAP timeline
-    const tl = gsap.timeline();
+    const tl = gsap.timeline({
+      onComplete: () => {
+        // Find video element and unmute it after animation completes
+        const videoElement = document.querySelector("#heroimg");
+        if (videoElement && videoElement.tagName === 'VIDEO') {
+          videoElement.muted = false;
+          // Ensure video continues playing
+          const playPromise = videoElement.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(error => {
+              console.error("Video play error:", error);
+            });
+          }
+        }
+      }
+    });
 
     // First, set initial state for all SVG paths
     gsap.set("#link-lines path", {
@@ -94,40 +110,43 @@ function Homehero2({ Herottesxt }) {
         "-=1" // Overlap with previous animation
       );
 
-    gsap.set("#link-lines2 path", {
-      strokeDasharray: function (index, element) {
-        return element.getTotalLength();
-      },
-      strokeDashoffset: function (index, element) {
-        return element.getTotalLength();
-      },
-      fill: "none",
-      stroke: function (index, element) {
-        return element.getAttribute("fill");
-      },
-      strokeWidth: 2,
-    });
-
-    tl.to("#link-lines2 path", {
-      strokeDashoffset: 1,
-      duration: 1.5,
-      stagger: 0.2,
-      opacity: 1,
-      ease: "power2.inOut",
-      yoyo: true,
-      repeat: -1,
-    });
-    tl.to(
-      "#link-lines2 path",
-      {
-        fill: function (index, element) {
+    // Check if #link-lines2 exists before applying animations
+    if (document.querySelector("#link-lines2")) {
+      gsap.set("#link-lines2 path", {
+        strokeDasharray: function (index, element) {
+          return element.getTotalLength();
+        },
+        strokeDashoffset: function (index, element) {
+          return element.getTotalLength();
+        },
+        fill: "none",
+        stroke: function (index, element) {
           return element.getAttribute("fill");
         },
-        duration: 0.5,
+        strokeWidth: 2,
+      });
+
+      tl.to("#link-lines2 path", {
+        strokeDashoffset: 1,
+        duration: 1.5,
         stagger: 0.2,
-      },
-      "-=1"
-    );
+        opacity: 1,
+        ease: "power2.inOut",
+        yoyo: true,
+        repeat: -1,
+      });
+      tl.to(
+        "#link-lines2 path",
+        {
+          fill: function (index, element) {
+            return element.getAttribute("fill");
+          },
+          duration: 0.5,
+          stagger: 0.2,
+        },
+        "-=1"
+      );
+    }
 
     // Add counter animation
     const targetNumbers = [150, 500, 23]; // Projects, Workforce, Years
@@ -508,7 +527,7 @@ function Homehero2({ Herottesxt }) {
         )}
         {location.pathname === "/" ? (
           <video
-            poster="/Assets/Screenshot (44).png"
+            // poster="/Assets/frame.jpg"
             autoPlay
             muted
             loop
@@ -534,8 +553,8 @@ function Homehero2({ Herottesxt }) {
         <div className="Navbar">
           <div className="logo">
             <img
-              src="Assets/logo.png"
-              alt=""
+              src="/Assets/logo.png"
+              alt="logo"
               ref={logoRef}
               onClick={() => navigate("/")}
             />

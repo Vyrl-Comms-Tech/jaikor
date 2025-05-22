@@ -93,7 +93,7 @@ function Companyholder() {
             <React.Fragment key={index}>
               <div className="gsapholder">
                 <div className="belowtoprow">
-                  <img src="Assets/Line 10.png" alt="" />
+                  <img src="/Assets/Line 10.png" alt="" />
                   <span>
                     <p className="aboutp">{item.sno}</p>
                   </span>

@@ -4,8 +4,6 @@
   min-height: 2300px !important;
   width: 100%;
   background: url(/Assets/large-image.png);
-  background-repeat: no-repeat;
-  background-size: cover;
   padding: 10px 215px;
   padding-top: 150px;
   /* border: 10px solid green; */
