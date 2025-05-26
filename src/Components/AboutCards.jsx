@@ -16,7 +16,7 @@ const AboutCards = () => {
     // },
     {
       // number: "02",
-      img:"http://localhost:5173/Assets/Rectangle%20301.png"
+      img:"Assets/Rectangle 301.png"
       // text: `I Was Not Born In Comfort. It Was Born From Honest Hands And A Belief That Purpose And Persistence Could Shape More Than Stones — They Could Shape A Future. As A Small Team With Big Values: Quality, And Unity.`,
     },
     {

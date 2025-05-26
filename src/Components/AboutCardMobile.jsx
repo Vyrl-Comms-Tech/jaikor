@@ -28,7 +28,7 @@ export default function AboutCardMobile() {
   // Card content data
   const cardContents = [
     {
-      img: "http://localhost:5173/Assets/Rectangle%20301.png",
+      img: "Assets/Rectangle 301.png",
     },
     {
       number: "02",
