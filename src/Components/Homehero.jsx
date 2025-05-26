@@ -527,7 +527,7 @@ function Homehero2({ Herottesxt }) {
         )}
         {location.pathname === "/" ? (
           <video
-            poster="/Assets/frame.jpg"
+            poster="/Assets/frame.jpeg"
             autoPlay
             muted
             loop
