@@ -527,11 +527,11 @@ function Homehero2({ Herottesxt }) {
         )}
         {location.pathname === "/" ? (
           <video
-            poster="/Assets/frame.jpeg"
+            poster="/Assets/poster.png"
             autoPlay
             muted
             loop
-            src="/Assets/Dubai_Music.mp4"
+            src="/Assets/Dubai_1.mp4"
             id="heroimg"
           ></video>
         ) : (

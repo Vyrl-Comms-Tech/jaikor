@@ -7,6 +7,7 @@ import Aboutcounter from "../Components/Aboutcounter";
 import TeamSlider from "../Components/TeamSlider";
 import CoreValues from "../Components/CoreValues";
 import Footer from "../Components/Footer";
+import AboutNote from "../Components/AboutNote";
 
 export const About = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 980);
@@ -26,7 +27,7 @@ export const About = () => {
     <>
       <div className="aboutpage">
         <Homehero Herottesxt={Herottesxt.AboutText} />
-        {isMobile ? <AboutCardMobile /> : <AboutCards />}
+        {isMobile ? <AboutCardMobile /> : <AboutNote />}
         <Aboutcounter />
         <CoreValues />
         <TeamSlider />

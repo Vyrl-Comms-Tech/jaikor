@@ -191,6 +191,9 @@
     top: 100px;
     width: 100%;
   }
+  .belowleft h3{
+    width: 100%;
+  }
   .belowright {
     width: 100%;
   }

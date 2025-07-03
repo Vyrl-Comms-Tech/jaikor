@@ -20,7 +20,7 @@ function Cardsection() {
     const handleMediaQueryChange = (e) => {
       if (e.matches) {
         const cards = [".card1", ".card2", ".card3", ".card4"];
-        
+
         cards.forEach((card, index) => {
           gsap.from(card, {
             opacity: 0,
@@ -30,8 +30,8 @@ function Cardsection() {
               start: "top bottom",
               end: "top center",
               scrub: 1,
-              toggleActions: "play none none reverse"
-            }
+              toggleActions: "play none none reverse",
+            },
           });
         });
 
@@ -47,15 +47,15 @@ function Cardsection() {
             start: "top bottom",
             end: "top center",
             scrub: 1,
-            toggleActions: "play none none reverse"
-          }
+            toggleActions: "play none none reverse",
+          },
         });
 
         const cardPaths = [
           card1PathRef1.current,
           card1PathRef2.current,
           card2PathRef.current,
-          card4PathRef.current
+          card4PathRef.current,
         ];
 
         cardPaths.forEach((path) => {
@@ -71,11 +71,10 @@ function Cardsection() {
               start: "top bottom",
               end: "top center",
               scrub: 1,
-              toggleActions: "play none none reverse"
-            }
+              toggleActions: "play none none reverse",
+            },
           });
         });
-
       } else {
         const tl = gsap.timeline({
           scrollTrigger: {
@@ -90,12 +89,16 @@ function Cardsection() {
           strokeDashoffset: lineRef.current.getTotalLength(),
         });
 
-        tl.to(lineRef.current, {
-          strokeDashoffset: 0,
-          duration: 1.25,
-          ease: "power2.inOut",
-        }, 0)
-        .fromTo(belowtop.current, 
+        tl.to(
+          lineRef.current,
+          {
+            strokeDashoffset: 0,
+            duration: 1.25,
+            ease: "power2.inOut",
+          },
+          0
+        ).fromTo(
+          belowtop.current,
           { x: "-50", opacity: 0 },
           {
             x: 0,
@@ -103,14 +106,15 @@ function Cardsection() {
             duration: 0.8,
             stagger: 0.25,
             ease: "power2.out",
-          }, 0
+          },
+          0
         );
 
         const cardPaths = [
           card1PathRef1.current,
           card1PathRef2.current,
           card2PathRef.current,
-          card4PathRef.current
+          card4PathRef.current,
         ];
 
         cardPaths.forEach((path) => {
@@ -212,6 +216,35 @@ function Cardsection() {
                 </p>
               </div>
             </div>
+            <div className="card card4">
+              <div className="card4row1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="402"
+                  height="141"
+                  viewBox="0 0 402 141"
+                  fill="none"
+                >
+                  <path
+                    ref={card4PathRef}
+                    d="M1 0.5V140.5H168V41.5H401.5V0.5"
+                    stroke="black"
+                  />
+                </svg>
+              </div>
+              <div className="card4row2">
+                <h2>
+                  General <br /> Contracting
+                </h2>
+                <p>
+                  Robust end-to-end project execution — from
+                  <br className="rembr" /> excavation to finishing — led by
+                  experienced project
+                  <br className="rembr" /> managers and supported by modern
+                  machinery.
+                </p>
+              </div>
+            </div>
             <div className="card card2">
               <div className="cardimage">
                 <svg
@@ -237,11 +270,63 @@ function Cardsection() {
                 </p>
               </div>
             </div>
+            <div className="card card4">
+              <div className="card4row1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="402"
+                  height="141"
+                  viewBox="0 0 402 141"
+                  fill="none"
+                >
+                  <path
+                    ref={card4PathRef}
+                    d="M1 0.5V140.5H168V41.5H401.5V0.5"
+                    stroke="black"
+                  />
+                </svg>
+              </div>
+              <div className="card4row2">
+               <h2>
+                  Interior <br />
+                  Works
+                </h2>
+                 <p>
+                  Design-driven interiors that reflect functional beauty —<br />
+                  tailored for both residential and commercial spaces.
+                </p>
+              </div>
+            </div>
           </div>
           <div className="cardrow2">
             <div className="card card3">
               <img src="/Assets/Rectangle 23.png" alt="" />
               <div className="cardcontent">
+                <h2>Joinery Works</h2>
+                <p>
+                  Expert integration of mechanical, electrical, and <br />{" "}
+                  plumbing systems to optimize performance, safety, <br /> and
+                  sustainability.
+                </p>
+              </div>
+            </div>
+            <div className="card card4" id="row2card4">
+              <div className="card4row1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="402"
+                  height="141"
+                  viewBox="0 0 402 141"
+                  fill="none"
+                >
+                  <path
+                    ref={card4PathRef}
+                    d="M1 0.5V140.5H168V41.5H401.5V0.5"
+                    stroke="black"
+                  />
+                </svg>
+              </div>
+              <div className="card4row2">
                 <h2>Joinery Works</h2>
                 <p>
                   Expert integration of mechanical, electrical, and <br />{" "}
@@ -280,9 +365,12 @@ function Cardsection() {
             </div>
           </div>
         </div>
-          <div className="card-last-text">
-            <h2> A Legacy of Progress, Innovation & <br className="rembr"/>Trust</h2>
-          </div>
+        <div className="card-last-text">
+          <h2>
+             A Legacy of Progress, Innovation & <br className="rembr" />
+            Trust
+          </h2>
+        </div>
       </div>
     </>
   );

@@ -67,6 +67,12 @@
   display: flex;
   flex-direction: column;
 }
+.cardrow1 .card4{
+  display: none;
+}
+.cardrow2 #row2card4{
+  display: none;
+}
 .cardrow2 {
   /* border: 1px solid black; */
   width: 50%;
@@ -289,6 +295,20 @@
 }
 
 @media (max-width: 1070px) {
+
+  
+.cardrow1 .card4{
+  display: block;
+}
+.cardrow1 .card1,.cardrow1 .card2{
+  display: none;
+}
+.cardrow2 #row2card4{
+  display: none;
+}
+.cardrow2 #row2card4{
+  display: none;
+}
   .cardholder {
     flex-direction: column;
     gap: 20px;
