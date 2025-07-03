@@ -149,7 +149,7 @@ function Homehero2({ Herottesxt }) {
     }
 
     // Add counter animation
-    const targetNumbers = [150, 500, 23]; // Projects, Workforce, Years
+    const targetNumbers = [200, 570, 23]; // Projects, Workforce, Years
 
     const animateCounter = (index, target) => {
       let current = 0;
