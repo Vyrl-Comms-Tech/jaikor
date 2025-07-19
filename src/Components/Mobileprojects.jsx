@@ -19,55 +19,55 @@ function Mobileprojects() {
       title:
         "Jeikor Contracting – UAE",
       description:
-        "As the flagship division of Jeikor Group, Jeikor Contracting UAE has completed 200+ projects across the residential, commercial, industrial, and hospitality sectors.",
+        "As the flagship division of Jeikor Group, Jeikor Contracting UAE has completed 200+ projects across the residential, commercial, industrial, and hospitality sector.",
       description2:
-        "As the flagship division of Jeikor Group, Jeikor Contracting UAE has completed 200+ projects across the residential, commercial, industrial, and hospitality sectors.",
+        "With over two decades of experience, a skilled workforce, and a reputation for timely delivery, it remains one of the most trusted names in the UAE’s construction landscape.",
     },
     {
       id: 2,
       image: "/Assets/img22.jpg",
-      title: "Sed Do Eiusmod Tempor",
+      title: "Jeikor Carpentry – UAE",
       description:
-        "Specializing In Large-Scale Infrastructure Projects With A Focus On Quality, Safety, And Innovation",
+        "Jeikor Carpentry is the group’s specialized woodworks division, delivering high-end joinery solutions for luxury interiors and custom projects",
         description2:
-        "As the flagship division of Jeikor Group, Jeikor Contracting UAE has completed 200+ projects across the residential, commercial, industrial, and hospitality sectors.",
+        "With an in-house workshop and expert craftsmen, the division produces everything from doors and wardrobes to decorative panelling and bespoke furniture.",
     },
     {
       id: 3,
       image: "/Assets/img23.jpg",
-      title: "Duis Aute Irure Dolor",
+      title: "Jeikor Aluminum Factory – UAE",
       description:
-        "Building The Future With Excellence And Integrity Since 1985, Committed To Sustainable Development",
+        "This division manufactures and installs aluminum and glass solutions for facades, windows, curtain walls, and cladding.",
         description2:
-        "As the flagship division of Jeikor Group, Jeikor Contracting UAE has completed 200+ projects across the residential, commercial, industrial, and hospitality sectors.",
+        "Combining precision engineering with modern aesthetics, Jeikor Aluminum ensures safety, durability, and sleek architectural finishes across builds.",
     },
     {
       id: 4,
       image: "/Assets/carousel-img.png",
       title:
-        "Lorem Ipsum Dolor Sit Amet,",
+        "Jeikor Contracting – Iraq",
       description:
-        "Welcome To Isikor GP, A Leading Heavy Civil Construction Company Dedicated To Delivering Exceptional Infrastructure Solutions",
+        "Expanding Jeikor’s legacy into Iraq, this branch offers comprehensive construction solutions tailored to regional needs.",
         description2:
-        "As the flagship division of Jeikor Group, Jeikor Contracting UAE has completed 200+ projects across the residential, commercial, industrial, and hospitality sectors.",
+        "Backed by Jeikor Group’s proven systems and experience, the Iraq team delivers reliable civil, industrial, and infrastructure projects with efficiency and quality.",
     },
     {
       id: 5,
       image: "/Assets/img22.jpg",
-      title: "Sed Do Eiusmod Tempor",
+      title: "Five Stars International – Montenegro, Turkey",
       description:
-        "Specializing In Large-Scale Infrastructure Projects With A Focus On Quality, Safety, And Innovation",
+        "Five Stars International handles Jeikor Group’s overseas commercial development construction consultancy, and trade operations in Montenegro and Turkey.",
         description2:
-        "As the flagship division of Jeikor Group, Jeikor Contracting UAE has completed 200+ projects across the residential, commercial, industrial, and hospitality sectors.",
+        "The company bridges regional expertise with international standards, enabling seamless cross-border project execution.",
     },
     {
       id: 6,
       image: "/Assets/img23.jpg",
-      title: "Duis Aute Irure Dolor",
+      title: "Aeternum Solar Energy – UAE",
       description:
-        "Building The Future With Excellence And Integrity Since 1985, Committed To Sustainable Development",
+        "Aeternum represents the group’s commitment to sustainable innovation. Specialized in solar energy solutions, Aeternum offers consultation, installation.",
         description2:
-        "As the flagship division of Jeikor Group, Jeikor Contracting UAE has completed 200+ projects across the residential, commercial, industrial, and hospitality sectors.",
+        "and integration of renewable systems — helping businesses and governments move toward a greener, energy-independent future.",
     },
   ];
 
