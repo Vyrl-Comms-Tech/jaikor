@@ -28,7 +28,7 @@ export default function AboutCardMobile() {
   // Card content data
   const cardContents = [
     {
-      img: "Assets/Rectangle 301.png",
+      img: "http://localhost:5173/Assets/Rectangle%20301.png",
     },
     {
       number: "02",
@@ -68,7 +68,7 @@ export default function AboutCardMobile() {
     <>
       <div className="about-card-mobile">
         <div className="about-card-mobile-content">
-          <Swiper
+          {/* <Swiper
             effect={"cards"}
             grabCursor={true}
             modules={[EffectCards]}
@@ -139,6 +139,30 @@ export default function AboutCardMobile() {
                 <path d="M9 18l6-6-6-6" />
               </svg>
             </div>
+          </div> */}
+
+          <div className="about-card-mobile-image-container">
+            <img
+              src="/Assets/Rectangle 301.png"
+              alt="Our expertise"
+              className="about-mobile-image"
+            />
+          </div>
+          <div className="about-card-mobile-text-content">
+            <h2 className="main-heading">
+              Founder's Note
+            </h2>
+            <p className="paragraph">
+              Over Time, Jeikor Evolved. What Began As A Modest Construction Venture Became A Diverse Group Of Companies, Operating Across Regions And Industries. Yet Our Essence Remains The Same Spirit That Guided Our First Project.
+            </p>
+            <p className="paragraph">
+              Thank you for being part of this journey with me.
+            </p>
+            <p className="signature">Sincerely,</p>
+            <p className="signature">Mohannad Alanni</p>
+            <p className="signature-title">
+              Founder & CEO, Jeikor
+            </p>
           </div>
         </div>
       </div>
