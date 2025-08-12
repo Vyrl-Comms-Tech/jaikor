@@ -30,7 +30,7 @@ export const About = () => {
         {isMobile ? <AboutCardMobile /> : <AboutNote />}
         <Aboutcounter />
         <CoreValues />
-        <TeamSlider />
+        {/* <TeamSlider /> */}
         <Footer />
       </div>
     </>

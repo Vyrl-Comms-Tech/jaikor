@@ -16,47 +16,45 @@ export default function OurProjects() {
   const slides = [
     {
       id: 1,
-      image: "/Assets/carousel-img.png",
-      title:
-        "Lorem Ipsum Dolor Sit Amet, Consectetur Ullamco Laboris Nisi Ut Aliqu",
-      description:
-        "Welcome To Isikor GP, A Leading Heavy Civil Construction Company Dedicated To Delivering Exceptional Infrastructure Solutions",
+      image: "/Assets/Resedential/Projects/131.JPG",
+      title: "B+G+5+R Residential Building",
+      description: "MIMAR EMIRATES ENG. CONSULTANTS",
+      location: "INTERNATIONAL CITY PH. 3,DUBAI",
     },
     {
       id: 2,
-      image: "/Assets/img22.jpg",
-      title: "Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna",
-      description:
-        "Specializing In Large-Scale Infrastructure Projects With A Focus On Quality, Safety, And Innovation",
+      image: "/Assets/Resedential/Projects/136.jpeg",
+      title: "B+G+4+R Residential Building",
+      description: `ZAABEEL CONSULTANTS`,
+      location: "INTERNATIONAL CITY PH. 3,DUBAI",
     },
     {
       id: 3,
-      image: "/Assets/img23.jpg",
-      title: "Duis Aute Irure Dolor In Reprehenderit In Voluptate",
-      description:
-        "Building The Future With Excellence And Integrity Since 1985, Committed To Sustainable Development",
+      image: "/Assets/Commercial/Projects/160.jpeg",
+      title: "B+G+P+9 COMMERCIAL BUILDING",
+      description: "Model Engineering Consultants Architects",
+      location: "Dubai Hills, DUBAI, UAE",
     },
     {
       id: 4,
-      image: "/Assets/carousel-img.png",
-      title:
-        "Lorem Ipsum Dolor Sit Amet, Consectetur Ullamco Laboris Nisi Ut Aliqu",
-      description:
-        "Welcome To Isikor GP, A Leading Heavy Civil Construction Company Dedicated To Delivering Exceptional Infrastructure Solutions",
+      image: "/Assets/Commercial/Projects/143.png",
+      title: "B+G+3+Roof floor Commercial Building",
+      description: "X ARCHITECTS ENGINEERING CONSULTANTS",
+      location: "DWarsan 4th ,DUBAI",
     },
     {
       id: 5,
-      image: "/Assets/img22.jpg",
-      title: "Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna",
-      description:
-        "Specializing In Large-Scale Infrastructure Projects With A Focus On Quality, Safety, And Innovation",
+      image: "/Assets/Hotels/h2.JPG",
+      title: "Hotel BLDG",
+      description: "DESIGN CENTER",
+      location: "AL BARAHA, DUBAI",
     },
     {
       id: 6,
-      image: "/Assets/img23.jpg",
-      title: "Duis Aute Irure Dolor In Reprehenderit In Voluptate",
-      description:
-        "Building The Future With Excellence And Integrity Since 1985, Committed To Sustainable Development",
+      image: "/Assets/Villas/138.JPG",
+      title: "Amlak Villas",
+      description: "BH.NS ENGINEERING CONSULTANTS",
+      location:'MIRDIF,DUBAI'
     },
   ];
 
@@ -81,8 +79,8 @@ export default function OurProjects() {
         scrollTrigger: {
           trigger: ".our-projects",
           start: "top center",
-          toggleActions: "play none none reverse"
-        }
+          toggleActions: "play none none reverse",
+        },
       });
     });
 
@@ -108,29 +106,34 @@ export default function OurProjects() {
       yPercent: textDirection * 100,
       opacity: 0,
       duration: 0.4,
-      ease: "power2.in"
+      ease: "power2.in",
     })
-    // Update the slide index
-    .call(() => setCurrentSlide(newIndex))
-    // Then bring new text in
-    .fromTo(".op-slide-text-content",
-      {
-        yPercent: textDirection * -100,
-        opacity: 0,
-      },
-      {
-        yPercent: 0,
-        opacity: 1,
-        duration: 0.4,
-        ease: "power2.out"
-      }
-    )
-    // Finally animate the slides horizontally
-    .to(".op-slide", {
-      xPercent: (i) => (i - newIndex) * 100,
-      duration: 0.6,
-      ease: "power2.out"
-    }, "-=0.8"); // Slight overlap with text animation
+      // Update the slide index
+      .call(() => setCurrentSlide(newIndex))
+      // Then bring new text in
+      .fromTo(
+        ".op-slide-text-content",
+        {
+          yPercent: textDirection * -100,
+          opacity: 0,
+        },
+        {
+          yPercent: 0,
+          opacity: 1,
+          duration: 0.4,
+          ease: "power2.out",
+        }
+      )
+      // Finally animate the slides horizontally
+      .to(
+        ".op-slide",
+        {
+          xPercent: (i) => (i - newIndex) * 100,
+          duration: 0.6,
+          ease: "power2.out",
+        },
+        "-=0.8"
+      ); // Slight overlap with text animation
   };
 
   return (
@@ -198,7 +201,10 @@ export default function OurProjects() {
           <div className="op-text-section" ref={textRef}>
             <div className="op-slide-text-content">
               <h2>{slides[currentSlide].title}</h2>
-              <p>{slides[currentSlide].description}</p>
+              <div>
+                <h5>{slides[currentSlide].description}</h5>
+                <h5>{slides[currentSlide].location}</h5>
+              </div>
             </div>
           </div>
 
@@ -216,8 +222,7 @@ export default function OurProjects() {
       </div>
 
       <div className="op-pagination">
-
-      <div className="op-navigation-btm">
+        <div className="op-navigation-btm">
           <button
             className="op-nav-button prev"
             onClick={() => goToSlide("prev")}
@@ -253,14 +258,8 @@ export default function OurProjects() {
             </svg>
           </button>
         </div>
-
-
-
         {currentSlide + 1}/{slides.length}
       </div>
-
-
-
     </div>
   );
 }

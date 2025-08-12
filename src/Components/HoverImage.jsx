@@ -101,28 +101,28 @@ export default function HoverImage() {
   // Project data with matching IDs from DynamicSection
   const projectData = [
     {
-      id: "CommercialProjects",
-      title: "Commercial Projects",
+      id: "Commercial",
+      title: "Commercial",
       description: "Welcome To Jaikor GP, A Leading Name In Construction Company, Dedicated To Delivering Exceptional Infrastructure Solutions",
       image: "/Assets/Commercial/c1.jpg"
     },
     {
-      id: "ResedentialProjects", 
-      title: "Resedential Projects",
+      id: "Residential", 
+      title: "Residential",
       description: "Welcome To Jaikor GP, A Leading Name In Construction Company, Dedicated To Delivering Exceptional Infrastructure Solutions",
       image: "/Assets/Resedential/r1.JPG"
     },
     {
-      id: "sustainable-projects",
+      id: "Hotel",
       title: "Hotels", 
       description: "Welcome To Jaikor GP, A Leading Name In Construction Company, Dedicated To Delivering Exceptional Infrastructure Solutions",
-      image: "/Assets/Hotels/h1.jpeg"
+      image: "/Assets/Hotels/h2.JPG"
     },
     {
-      id: "structural-excellence",
-      title: "Structural Excellence",
+      id: "Villas",
+      title: "Villas",
       description: "Welcome To Jaikor GP, A Leading Name In Construction Company, Dedicated To Delivering Exceptional Infrastructure Solutions", 
-      image: "/Assets/carousel-img.png"
+      image: "/Assets/Villas/138.JPG"
     }
   ];
 

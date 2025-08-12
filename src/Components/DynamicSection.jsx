@@ -31,7 +31,7 @@ const DynamicSection = () => {
       projectdetails: `MIMAR EMIRATES ENG. CONSULTANTS`,
       projectdetails2: `AL QUOZ THIRD,DUBAI`,
       img: "/Assets/Commercial/c1.jpg",
-      category: "CommercialProjects"
+      category: "Commercial"
     },
     {
       id: "jeikor-mep-division",
@@ -40,7 +40,7 @@ const DynamicSection = () => {
       projectdetails: `Model Engineering Consultants Architects`,
       projectdetails2: `Dubai Hills, DUBAI, UAE`,
       img: "/Assets/Commercial/Projects/160.jpeg",
-      category: "CommercialProjects"
+      category: "Commercial"
     },
     {
       id: "jeikor-mep-division",
@@ -49,7 +49,7 @@ const DynamicSection = () => {
       projectdetails: `X ARCHITECTS ENGINEERING CONSULTANTS`,
       projectdetails2: `DWarsan 4th ,DUBAI`,
       img: "/Assets/Commercial/Projects/143.png",
-      category: "CommercialProjects"
+      category: "Commercial"
     },
 
     // Resedential Projects
@@ -59,7 +59,7 @@ const DynamicSection = () => {
       projectname: "B+G+5+R RESIDENTIAL BUILDING",
       projectdetails: `MIMAR EMIRATES ENG. CONSULTANTS`,
       img: "/Assets/Resedential/r1.JPG",
-      category: "ResedentialProjects"
+      category: "Residential"
     },
     {
       id: "jeikor-international",
@@ -68,16 +68,16 @@ const DynamicSection = () => {
       projectdetails: `MIMAR EMIRATES ENG. CONSULTANTS`,
       projectdetails2: `INTERNATIONAL CITY PH. 3,DUBAI`,
       img: "/Assets/Resedential/Projects/131.JPG",
-      category: "ResedentialProjects"
+      category: "Residential"
     },
     {
       id: "jeikor-international",
       sno: "03",
       projectname: "B+G+4+R Residential Building",
-      projectdetails: `ZAABEEL CONSULTANTS `,
+      projectdetails: `ZAABEEL CONSULTANTS`,
       projectdetails2: `INTERNATIONAL CITY PH. 3,DUBAI`,
       img: "/Assets/Resedential/Projects/136.jpeg",
-      category: "ResedentialProjects"
+      category: "Residential"
     },
     {
       id: "jeikor-international",
@@ -86,7 +86,7 @@ const DynamicSection = () => {
       projectdetails: `NA ARCHITECTS ENGINEERING CONSULTANTS`,
       projectdetails2: `MIRDIF,DUBAI`,
       img: "/Assets/Resedential/Projects/143.jpeg",
-      category: "ResedentialProjects"
+      category: "Residential"
     },
     {
       id: "jeikor-international",
@@ -95,7 +95,7 @@ const DynamicSection = () => {
       projectdetails: `X ARCHITECTS ENGINEERING CONSULTANTS`,
       projectdetails2: `Warsan 4th ,DUBAI`,
       img: "/Assets/Resedential/Projects/146.png",
-      category: "ResedentialProjects"
+      category: "Residential"
     },
     {
       id: "jeikor-international",
@@ -104,43 +104,47 @@ const DynamicSection = () => {
       projectdetails: `Model Engineering Consultants Architects`,
       projectdetails2: `Dubai Hills, DUBAI, UAE`,
       img: "/Assets/Resedential/Projects/160.jpeg",
-      category: "ResedentialProjects"
+      category: "Residential"
     },
+
+    // Hotel Projects
     {
       id: "eiffel-accommodation",
       sno: "05",
-      projectname: "Eiffel Accomodation 2",
-      projectdetails: `Merging form and function, our architectural concepts push boundaries <br/>to reimagine the future of space and aesthetics.`,
+      projectname: "Hotel BLDG",
+      projectdetails: `AL BARAHA, DUBAI`,
       projectdetails2: `Designs are guided by innovation, sustainability, and the user <br/>experience at every touchpoint.`,
-      img: "/Assets/Commercial/c1.jpg",
-      category: "urban-development"
+      img: "/Assets/Hotels/h2.JPG",
+      category: "Hotel"
     },
+
+    // Villas
     {
       id: "urban-revival-project-1",
       sno: "06",
-      projectname: "Urban Revival Projects",
-      projectdetails: `We lead urban transformation with integrated planning that revives <br/>communities and enhances liveability in city spaces.`,
+      projectname: "Amlak Villas",
+      projectdetails: `MIRDIF,DUBAI`,
       projectdetails2: `Smart zoning and infrastructure solutions guide these <br/>sustainable, people-focused developments.`,
-      img: "/Assets/hm2.jpg",
-      category: "urban-development"
+      img: "/Assets/Villas/138.JPG",
+      category: "Villas"
     },
     {
       id: "eco-conscious-construction-1",
-      sno: "07",
-      projectname: "Eco-Conscious Constructions",
-      projectdetails: `Embedding environmental values into every brick, our sustainable <br/>builds champion energy efficiency and low-impact design.`,
-      projectdetails2: `We use solar integration, water recycling systems, and green <br/>materials to meet today's environmental demands.`,
-      img: "/Assets/hm3.jpg",
-      category: "sustainable-projects"
+      sno: "01",
+      projectname: "G+1+KВ",
+      projectdetails: `FAKHREY ENGINEERING`,
+      projectdetails2: `Um Saqim`,
+      img: "/Assets/Villas/Projects/v1.JPG",
+      category: "Villas"
     },
     {
       id: "green-building-initiative",
-      sno: "08",
-      projectname: "Green Building Initiative",
-      projectdetails: `Revolutionary sustainable architecture combining renewable energy <br/>systems with cutting-edge green building technologies.`,
-      projectdetails2: `LEED Platinum certified designs with net-zero energy consumption <br/>and carbon-neutral footprint.`,
-      img: "/Assets/carousel-img.png",
-      category: "sustainable-projects"
+      sno: "02",
+      projectname: "VILLA G+1",
+      projectdetails: `M.E. ENGINEERING CONSULTANTS`,
+      projectdetails2: `Dubai`,
+      img: "/Assets/Villas/Projects/89.jpg",
+      category: "Villas"
     },
     {
       id: "structural-engineering-1",
@@ -395,9 +399,9 @@ const DynamicSection = () => {
   }, [selectedItem, relatedItems]);
 
   // Handle click on related items to navigate to specific project
-  const handleRelatedItemClick = (itemId) => {
-    navigate(`/Projects/${currentCategory}/${itemId}`);
-  };
+  // const handleRelatedItemClick = (itemId) => {
+  //   navigate(`/Projects/${currentCategory}/${itemId}`);
+  // };
 
   return (
     <>
@@ -500,8 +504,8 @@ const DynamicSection = () => {
             <React.Fragment key={item.id}>
               <div
                 className="gsapholder"
-                onClick={() => handleRelatedItemClick(item.id)}
-                style={{cursor: 'pointer'}}
+                // onClick={() => handleRelatedItemClick(item.id)}
+                // style={{cursor: 'pointer'}}
               >
                 <div className="belowtoprow">
                   <img src="/Assets/Line 10.png" alt="" />

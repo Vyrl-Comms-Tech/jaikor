@@ -693,9 +693,9 @@ function Homehero2({ Herottesxt }) {
             <NavLink ref={(el) => (linksRef.current[2] = el)} to="/projects">
               projects
             </NavLink>
-            <NavLink ref={(el) => (linksRef.current[3] = el)} to="/group">
+            {/* <NavLink ref={(el) => (linksRef.current[3] = el)} to="/group">
               the group
-            </NavLink>
+            </NavLink> */}
             <NavLink ref={(el) => (linksRef.current[4] = el)} to="/services">
               services
             </NavLink>

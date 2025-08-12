@@ -232,7 +232,7 @@ const LargeSection = ({ lenis }) => {
         <div className="large-section-blur"></div>
         <div className="large-section-content">
           <div className="large-section-content-left" ref={leftContentRef}>
-            <h1 className="left-h1">2019</h1>
+            <h1 className="left-h1">2005</h1>
             <p className="left-p">
                Successfully completed key developments including hotels,
               residential buildings, and commercial towers in Dubai.
@@ -260,13 +260,13 @@ const LargeSection = ({ lenis }) => {
                Launched new divisions and upgraded capabilities across joinery,
               MEP, and interior works.
             </p>
-            <h1 className="right-h1">2020</h1>
+            <h1 className="right-h1">2012</h1>
           </div>
         </div>
 
         <div className="large-section-last-content" ref={lastContentRef}>
           <div className="large-section-last-content-h1">
-            <h1 className="last-h1">2021</h1>
+            <h1 className="last-h1">2022</h1>
           </div>
           <div className="large-section-last-content-p">
             <p className="last-p">
