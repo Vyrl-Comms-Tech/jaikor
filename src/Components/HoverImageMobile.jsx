@@ -10,29 +10,30 @@ const HoverImageMobile = () => {
 
   // Project data with matching IDs from DynamicSection
   const projectData = [
-    {
-      id: "innovative-design",
-      title: "Innovative Design",
+  
+      {
+      id: "Commercial",
+      title: "Commercial",
       description: "Welcome To Jaikor GP, A Leading Name In Construction Company, Dedicated To Delivering Exceptional Infrastructure Solutions",
-      image: "/Assets/hm1.jpg"
+      image: "/Assets/Commercial/c1.jpg"
     },
     {
-      id: "urban-development", 
-      title: "Urban Development",
+      id: "Residential", 
+      title: "Residential",
       description: "Welcome To Jaikor GP, A Leading Name In Construction Company, Dedicated To Delivering Exceptional Infrastructure Solutions",
-      image: "/Assets/hm2.jpg"
+      image: "/Assets/Resedential/r1.JPG"
     },
     {
-      id: "sustainable-projects",
-      title: "Sustainable Projects", 
+      id: "Hotel",
+      title: "Hotels", 
       description: "Welcome To Jaikor GP, A Leading Name In Construction Company, Dedicated To Delivering Exceptional Infrastructure Solutions",
-      image: "/Assets/hm3.jpg"
+      image: "/Assets/Hotels/h2.JPG"
     },
     {
-      id: "structural-excellence",
-      title: "Structural Excellence",
+      id: "Villas",
+      title: "Villas",
       description: "Welcome To Jaikor GP, A Leading Name In Construction Company, Dedicated To Delivering Exceptional Infrastructure Solutions", 
-      image: "/Assets/carousel-img.png"
+      image: "/Assets/Villas/138.JPG"
     }
   ];
 
@@ -67,11 +68,11 @@ const HoverImageMobile = () => {
             key={index} 
             className="hover-image-mobile-item"
             onClick={() => {
-              setTimeout(() => {
-                navigate(`/dynamic/${project.id}`);
-              }, 600);
-            }}
-            style={{cursor: 'pointer'}}
+                setTimeout(() => {
+                  navigate(`/Projects/${project.id}`);
+                }, 600);
+              }}
+            // style={{cursor: 'pointer'}}
           >
             <img
               src={project.image}

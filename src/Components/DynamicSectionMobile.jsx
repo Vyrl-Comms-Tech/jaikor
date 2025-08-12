@@ -17,161 +17,213 @@ const DynamicSectionMobile = () => {
     const slidesRef = useRef(null);
     const textRef = useRef(null);
 
-    // Define data array (same as DynamicSection)
+    // Define data array (UPDATED with correct data from main component)
     const data = [
+      // Commercial Projects
       {
         id: "jeikor-contracting-uae",
         sno: "01",
-        projectname: "Jeikor Contracting – UAE",
-        projectdetails: `Leading the Jeikor Group portfolio, this division has delivered over 200 projects spanning <br/>residential, commercial, and industrial sectors across the UAE.`,
-        projectdetails2: `Renowned for reliability and quality, Jeikor Contracting continues to shape the region's <br/>infrastructure with excellence and precision.`,
-        img: "/Assets/Rectangle 22.png",
+        projectname: "Eiffel Accomodations 2",
+        projectdetails: `MIMAR EMIRATES ENG. CONSULTANTS`,
+        projectdetails2: `AL QUOZ THIRD,DUBAI`,
+        img: "/Assets/Commercial/c1.jpg",
+        category: "Commercial"
       },
       {
         id: "jeikor-mep-division",
         sno: "02",
-        projectname: "Jeikor MEP Services",
-        projectdetails: `Specialized in Mechanical, Electrical & Plumbing solutions, this division supports <br/>core infrastructure across commercial and industrial developments.`,
-        projectdetails2: `Efficient, code-compliant systems ensure long-term functionality, energy savings, <br/>and environmental responsibility.`,
-        img: "/Assets/Rectangle 22.png",
+        projectname: "B+G+P+9 COMMERCIAL BUILDING",
+        projectdetails: `Model Engineering Consultants Architects`,
+        projectdetails2: `Dubai Hills, DUBAI, UAE`,
+        img: "/Assets/Commercial/Projects/160.jpeg",
+        category: "Commercial"
       },
       {
-        id: "jeikor-joinery",
+        id: "jeikor-mep-division-2",
         sno: "03",
-        projectname: "Jeikor Joinery & Interiors",
-        projectdetails: `Craftsmanship meets innovation in our joinery division, offering <br/>custom-made furniture, cabinetry, and interior woodwork solutions.`,
-        projectdetails2: `We blend tradition with modern design to create timeless, functional spaces <br/>tailored to each client's vision.`,
-        img: "/Assets/Rectangle 22.png",
+        projectname: "B+G+3+Roof floor Commercial Building",
+        projectdetails: `X ARCHITECTS ENGINEERING CONSULTANTS`,
+        projectdetails2: `DWarsan 4th ,DUBAI`,
+        img: "/Assets/Commercial/Projects/143.png",
+        category: "Commercial"
+      },
+
+      // Residential Projects
+      {
+        id: "jeikor-joinery",
+        sno: "01",
+        projectname: "B+G+5+R RESIDENTIAL BUILDING",
+        projectdetails: `MIMAR EMIRATES ENG. CONSULTANTS`,
+        projectdetails2: `INTERNATIONAL CITY PH. 3,DUBAI`,
+        img: "/Assets/Resedential/r1.JPG",
+        category: "Residential"
       },
       {
         id: "jeikor-international",
+        sno: "02",
+        projectname: "B+G+5+R Residential Building",
+        projectdetails: `MIMAR EMIRATES ENG. CONSULTANTS`,
+        projectdetails2: `INTERNATIONAL CITY PH. 3,DUBAI`,
+        img: "/Assets/Resedential/Projects/131.JPG",
+        category: "Residential"
+      },
+      {
+        id: "jeikor-international-2",
+        sno: "03",
+        projectname: "B+G+4+R Residential Building",
+        projectdetails: `ZAABEEL CONSULTANTS`,
+        projectdetails2: `INTERNATIONAL CITY PH. 3,DUBAI`,
+        img: "/Assets/Resedential/Projects/136.jpeg",
+        category: "Residential"
+      },
+      {
+        id: "jeikor-international-3",
         sno: "04",
-        projectname: "Jeikor International Ventures",
-        projectdetails: `Expanding beyond borders, Jeikor International handles overseas <br/>projects, from residential compounds to large-scale mixed-use developments.`,
-        projectdetails2: `Backed by global partnerships, we ensure seamless execution <br/>across different regulatory and cultural environments.`,
-        img: "/Assets/Rectangle 22.png",
+        projectname: "2B+G+3+Roof floor Residential Building",
+        projectdetails: `NA ARCHITECTS ENGINEERING CONSULTANTS`,
+        projectdetails2: `MIRDIF,DUBAI`,
+        img: "/Assets/Resedential/Projects/143.jpeg",
+        category: "Residential"
       },
       {
-        id: "innovative-design",
+        id: "jeikor-international-4",
         sno: "05",
-        projectname: "Avant-Garde Architecture",
-        projectdetails: `Merging form and function, our architectural concepts push boundaries <br/>to reimagine the future of space and aesthetics.`,
-        projectdetails2: `Designs are guided by innovation, sustainability, and the user <br/>experience at every touchpoint.`,
-        img: "/Assets/hm1.jpg",
+        projectname: "B+G+3+Roof floor Residential Building",
+        projectdetails: `X ARCHITECTS ENGINEERING CONSULTANTS`,
+        projectdetails2: `Warsan 4th ,DUBAI`,
+        img: "/Assets/Resedential/Projects/146.png",
+        category: "Residential"
       },
       {
-        id: "urban-development",
+        id: "jeikor-international-5",
         sno: "06",
-        projectname: "Urban Revival Projects",
-        projectdetails: `We lead urban transformation with integrated planning that revives <br/>communities and enhances liveability in city spaces.`,
+        projectname: "B+G+P+9 Residential Building",
+        projectdetails: `Model Engineering Consultants Architects`,
+        projectdetails2: `Dubai Hills, DUBAI, UAE`,
+        img: "/Assets/Resedential/Projects/160.jpeg",
+        category: "Residential"
+      },
+
+      // Hotel Projects
+      {
+        id: "eiffel-accommodation",
+        sno: "01",
+        projectname: "Hotel BLDG",
+        projectdetails: `AL BARAHA, DUBAI`,
+        projectdetails2: `Designs are guided by innovation, sustainability, and the user <br/>experience at every touchpoint.`,
+        img: "/Assets/Hotels/h2.JPG",
+        category: "Hotel"
+      },
+
+      // Villas
+      {
+        id: "urban-revival-project-1",
+        sno: "01",
+        projectname: "Amlak Villas",
+        projectdetails: `MIRDIF,DUBAI`,
         projectdetails2: `Smart zoning and infrastructure solutions guide these <br/>sustainable, people-focused developments.`,
-        img: "/Assets/hm2.jpg",
+        img: "/Assets/Villas/138.JPG",
+        category: "Villas"
       },
       {
-        id: "sustainable-projects",
-        sno: "07",
-        projectname: "Eco-Conscious Constructions",
-        projectdetails: `Embedding environmental values into every brick, our sustainable <br/>builds champion energy efficiency and low-impact design.`,
-        projectdetails2: `We use solar integration, water recycling systems, and green <br/>materials to meet today's environmental demands.`,
-        img: "/Assets/hm3.jpg",
+        id: "eco-conscious-construction-1",
+        sno: "02",
+        projectname: "G+1+KВ",
+        projectdetails: `FAKHREY ENGINEERING`,
+        projectdetails2: `Um Saqim`,
+        img: "/Assets/Villas/Projects/v1.JPG",
+        category: "Villas"
       },
       {
-        id: "structural-excellence",
-        sno: "08",
+        id: "green-building-initiative",
+        sno: "03",
+        projectname: "VILLA G+1",
+        projectdetails: `M.E. ENGINEERING CONSULTANTS`,
+        projectdetails2: `Dubai`,
+        img: "/Assets/Villas/Projects/89.jpg",
+        category: "Villas"
+      },
+
+      // Additional Projects for structural-excellence category
+      {
+        id: "structural-engineering-1",
+        sno: "01",
         projectname: "Engineering Marvels",
         projectdetails: `Precision-driven engineering underpins our landmark structures, <br/>ensuring strength, safety, and long-term performance.`,
         projectdetails2: `Every project adheres to the highest standards through innovation, <br/>testing, and rigorous quality assurance.`,
-        img: "/Assets/carousel-img.png",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Dubai_Marina_Skyline.jpg/1200px-Dubai_Marina_Skyline.jpg",
+        category: "structural-excellence"
       },
       {
-        id: "smart-infrastructure",
-        sno: "09",
+        id: "smart-infrastructure-1",
+        sno: "02",
         projectname: "Smart Infrastructure",
         projectdetails: `Integrating IoT and automation, our infrastructure projects redefine <br/>how cities operate efficiently and sustainably.`,
         projectdetails2: `Real-time monitoring and AI-driven management systems lead <br/>to smarter, more responsive urban environments.`,
-        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Dubai_Marina_Skyline.jpg/1200px-Dubai_Marina_Skyline.jpg",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW9cW4weZsldFFMt9BzoQ4PeN3xxKxLRKT_NNpmbtKvpA0tk6UXNw42ArOhSFAUnEiAOE&usqp=CAU",
+        category: "structural-excellence"
       },
       {
-        id: "hospitality-design",
-        sno: "10",
+        id: "hospitality-design-1",
+        sno: "03",
         projectname: "Hospitality Design Solutions",
         projectdetails: `Creating luxurious, welcoming environments for hotels and resorts <br/>with a focus on comfort, elegance, and functionality.`,
         projectdetails2: `Our interiors reflect brand identity and cultural narratives <br/>to deliver exceptional guest experiences.`,
-        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW9cW4weZsldFFMt9BzoQ4PeN3xxKxLRKT_NNpmbtKvpA0tk6UXNw42ArOhSFAUnEiAOE&usqp=CAU",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyzpztEZ2ykCnjQGcdYsKIMaj4Skvv_w9PPQ&s",
+        category: "hospitality"
       },
       {
-        id: "modular-construction",
-        sno: "11",
+        id: "modular-construction-1",
+        sno: "04",
         projectname: "Modular Construction",
         projectdetails: `Our modular systems reduce build times and costs, while maintaining <br/>the highest construction standards and aesthetics.`,
         projectdetails2: `Flexible, scalable, and sustainable solutions tailored for modern needs.`,
-        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyzpztEZ2ykCnjQGcdYsKIMaj4Skvv_w9PPQ&s",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSqmVQoYWHr4IojTkgp2F8X6YchVHiHJRA1w&s",
+        category: "hospitality"
       },
       {
-        id: "educational-facilities",
-        sno: "12",
+        id: "educational-facilities-1",
+        sno: "05",
         projectname: "Educational Infrastructure",
         projectdetails: `Designing learning environments that foster creativity and growth, <br/>from schools to university campuses.`,
         projectdetails2: `Functionality, safety, and inspiration are at the core of our designs.`,
-        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSqmVQoYWHr4IojTkgp2F8X6YchVHiHJRA1w&s",
+        img: "https://i.pinimg.com/736x/94/f9/9f/94f99f532a6a73fb087e42487c7bde6a.jpg",
+        category: "hospitality"
       },
       {
-        id: "healthcare-projects",
-        sno: "13",
+        id: "healthcare-projects-1",
+        sno: "06",
         projectname: "Healthcare Facilities",
         projectdetails: `We develop advanced healthcare spaces that prioritize <br/>hygiene, patient comfort, and operational efficiency.`,
         projectdetails2: `Every design aligns with medical regulations and best practices <br/>for optimum healing environments.`,
-        img: "https://i.pinimg.com/736x/94/f9/9f/94f99f532a6a73fb087e42487c7bde6a.jpg",
-      },
-      {
-        id: "transport-hubs",
-        sno: "14",
-        projectname: "Transport Infrastructure",
-        projectdetails: `Developing next-gen transport hubs, from metro stations <br/>to intercity terminals, with user experience in focus.`,
-        projectdetails2: `Designs streamline flow, accessibility, and multimodal connectivity.`,
         img: "https://mldvwwasb8tu.i.optimole.com/cb:esbD~6200b/w:1100/h:733/q:90/f:best/ig:avif/http://travelaway.me/wp-content/uploads/2018/07/contemporary-architecture-vienna.jpg",
-      },
-      {
-        id: "public-spaces",
-        sno: "15",
-        projectname: "Community & Public Spaces",
-        projectdetails: `Designing inclusive, vibrant public areas that serve as <br/>social, cultural, and recreational hubs.`,
-        projectdetails2: `We enhance public life with urban parks, plazas, and civic centers.`,
-        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg6cVcSFeN5iG6Drg2LHbOxAwK2Lk5ub9RXA&s",
-      },
-      {
-        id: "industrial-complexes",
-        sno: "16",
-        projectname: "Industrial Complex Development",
-        projectdetails: `Robust facilities tailored for manufacturing, logistics, and processing, <br/>meeting the needs of modern industries.`,
-        projectdetails2: `Optimized for performance, safety, and expansion flexibility.`,
-        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyuH_02j4Xrnu_2fW5VYRzNBBbdnhynB11tw&s",
+        category: "hospitality"
       }
     ];
 
-    // Project ID to data range mapping
-    const projectIdToDataRange = {
-        "innovative-design": { start: 0, end: 4 },
-        "urban-development": { start: 4, end: 8 },
-        "sustainable-projects": { start: 8, end: 12 },
-        "structural-excellence": { start: 12, end: 16 }
+    // Updated Project ID to category mapping
+    const projectIdToCategoryMapping = {
+        "Commercial": "Commercial",
+        "Residential": "Residential", 
+        "Hotel": "Hotel",
+        "Villas": "Villas",
+        "structural-excellence": "structural-excellence",
+        "hospitality": "hospitality"
     };
 
     useEffect(() => {
         if (projectId) {
-            const selected = data.find(item => item.id === projectId);
-            setSelectedItem(selected || null);
-            
-            if (selected) {
-                // Check if the project is from the HoverImage mapping
-                const range = projectIdToDataRange[projectId];
+            // Check if projectId is a category
+            if (projectIdToCategoryMapping[projectId]) {
+                // Filter projects by category
+                const categoryProjects = data.filter(item => item.category === projectId);
                 
-                if (range) {
-                    // If it's a HoverImage project, show the corresponding range of items
-                    const relatedProjectRange = data.slice(range.start, range.end);
+                if (categoryProjects.length > 0) {
+                    // Set the first project of the category as selected item
+                    setSelectedItem(categoryProjects[0]);
                     
-                    // Create proper slides array instead of mutating the existing one
-                    const newSlides = relatedProjectRange.map(item => ({
+                    // Create slides from all projects in this category
+                    const newSlides = categoryProjects.map(item => ({
                         id: item.id,
                         image: item.img,
                         title: item.projectname,
@@ -179,9 +231,7 @@ const DynamicSectionMobile = () => {
                         description2: item.projectdetails2
                     }));
                     
-                    // Set slides first
                     setSlides(newSlides);
-                    // Then set current slide to 0 (first slide)
                     setCurrentSlide(0);
                     
                     // Initialize slide positions after a short delay to ensure DOM is updated
@@ -193,7 +243,59 @@ const DynamicSectionMobile = () => {
                         }
                     }, 100);
                 }
+            } else {
+                // If projectId is a specific project ID, find it and show related projects
+                const selected = data.find(item => item.id === projectId);
+                
+                if (selected) {
+                    setSelectedItem(selected);
+                    
+                    // Show other projects from the same category
+                    const relatedProjects = data.filter(item => 
+                        item.category === selected.category && item.id !== selected.id
+                    );
+                    
+                    // Create slides including the selected project first, then related ones
+                    const newSlides = [selected, ...relatedProjects].map(item => ({
+                        id: item.id,
+                        image: item.img,
+                        title: item.projectname,
+                        description: item.projectdetails,
+                        description2: item.projectdetails2
+                    }));
+                    
+                    setSlides(newSlides);
+                    setCurrentSlide(0);
+                    
+                    setTimeout(() => {
+                        if (slidesRef.current) {
+                            gsap.set(".op-slide", {
+                                xPercent: (i) => i * 100,
+                            });
+                        }
+                    }, 100);
+                }
             }
+        } else {
+            // Default: show first few projects
+            const defaultSlides = data.slice(0, 6).map(item => ({
+                id: item.id,
+                image: item.img,
+                title: item.projectname,
+                description: item.projectdetails,
+                description2: item.projectdetails2
+            }));
+            
+            setSlides(defaultSlides);
+            setCurrentSlide(0);
+            
+            setTimeout(() => {
+                if (slidesRef.current) {
+                    gsap.set(".op-slide", {
+                        xPercent: (i) => i * 100,
+                    });
+                }
+            }, 100);
         }
     }, [projectId]);
 
@@ -206,25 +308,27 @@ const DynamicSectionMobile = () => {
         });
   
         // Line drawing animation
-        gsap.set(lineRef.current, {
-          strokeDasharray: lineRef.current.getTotalLength(),
-          strokeDashoffset: lineRef.current.getTotalLength(),
-        });
+        if (lineRef.current) {
+          gsap.set(lineRef.current, {
+            strokeDasharray: lineRef.current.getTotalLength(),
+            strokeDashoffset: lineRef.current.getTotalLength(),
+          });
   
-        gsap.to(lineRef.current, {
-          strokeDashoffset: 0,
-          duration: 1.25,
-          ease: "power2.inOut",
-          scrollTrigger: {
-            trigger: ".our-projects",
-            start: "top center",
-            toggleActions: "play none none reverse",
-          },
-        });
+          gsap.to(lineRef.current, {
+            strokeDashoffset: 0,
+            duration: 1.25,
+            ease: "power2.inOut",
+            scrollTrigger: {
+              trigger: ".our-projects",
+              start: "top center",
+              toggleActions: "play none none reverse",
+            },
+          });
+        }
       });
   
       return () => ctx.revert();
-    }, []);
+    }, [slides]); // Added slides dependency
 
     const goToSlide = (direction) => {
       if (!slidesRef.current || !textRef.current) return;
@@ -299,7 +403,7 @@ const DynamicSectionMobile = () => {
                 </svg>
                 <span>
                   {/* <div className="op-top-ball"></div> */}
-                  <h6>0{currentSlide+1}</h6>
+                  <h6>{slides.length > 0 ? `0${currentSlide + 1}` : '01'}</h6>
                 </span>
               </div>
     
@@ -307,6 +411,7 @@ const DynamicSectionMobile = () => {
                 <button
                   className="op-nav-button prev"
                   onClick={() => goToSlide("prev")}
+                  disabled={slides.length <= 1}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -321,6 +426,7 @@ const DynamicSectionMobile = () => {
                 <button
                   className="op-nav-button next"
                   onClick={() => goToSlide("next")}
+                  disabled={slides.length <= 1}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -349,7 +455,7 @@ const DynamicSectionMobile = () => {
     
                 <div className="op-slides-container" ref={slidesRef}>
                   {slides.map((slide, index) => (
-                    <div key={slide.id} className="op-slide">
+                    <div key={`${slide.id}-${index}`} className="op-slide">
                       <img
                         src={slide.image || "/placeholder.svg"}
                         alt={`Slide ${slide.id}`}
@@ -365,6 +471,7 @@ const DynamicSectionMobile = () => {
                 <button
                   className="op-nav-button prev"
                   onClick={() => goToSlide("prev")}
+                  disabled={slides.length <= 1}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -379,6 +486,7 @@ const DynamicSectionMobile = () => {
                 <button
                   className="op-nav-button next"
                   onClick={() => goToSlide("next")}
+                  disabled={slides.length <= 1}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

@@ -286,7 +286,7 @@
   
     .Mobileprojects .op-slides-container {
       width: 100%;
-      height: 50vh;
+      height: 35vh;
     }
   
     .Mobileprojects .op-slide-text-content {
@@ -320,7 +320,8 @@
   
   @media (max-width: 768px) {
     .Mobileprojects .our-projects {
-      padding: 60px 10px;
+      /* padding: 60px 10px; */
+      padding: 60px 10px 20px 10px;
     }
     .Mobileprojects .op-nav-button {
       width: 2.5rem;

@@ -277,7 +277,7 @@
 
   .op-slide-text-content {
     height: auto;
-    gap: 1.5rem; /* Add gap between title and description */
+    gap: 0rem !important; /* Add gap between title and description */
   }
 
   .op-slide-text-content p {

@@ -101,7 +101,7 @@
 }
 @media (max-width: 880px) {
   .connect-section-container {
-    height: 50vh;
+    height: 35vh;
     justify-content: center;
     /* border: 1px solid orange; */
   }
