@@ -221,12 +221,16 @@
 }
 
 .about-card-mobile-text-content h2{
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   font-weight: 600;
 }
 .about-card-mobile-text-content .paragraph{
   margin-bottom: 15px;
   /* border: 1px solid red; */
+}
+.paragraph,.signature,.signature-title{
+  font-size: 1rem !important;
+
 }
 
 
