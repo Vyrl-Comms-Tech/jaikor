@@ -24,7 +24,12 @@ body {
   --font-size-h6: 1rem;
   --font-size-p: 1rem;
 }
-
+.flex{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* justify-content: center; */
+}
 .transition-container {
   position: relative;
   width: 100%;

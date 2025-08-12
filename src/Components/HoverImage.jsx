@@ -101,22 +101,22 @@ export default function HoverImage() {
   // Project data with matching IDs from DynamicSection
   const projectData = [
     {
-      id: "innovative-design",
-      title: "Innovative Design",
+      id: "CommercialProjects",
+      title: "Commercial Projects",
       description: "Welcome To Jaikor GP, A Leading Name In Construction Company, Dedicated To Delivering Exceptional Infrastructure Solutions",
-      image: "/Assets/hm1.jpg"
+      image: "/Assets/Commercial/c1.jpg"
     },
     {
-      id: "urban-development", 
-      title: "Urban Development",
+      id: "ResedentialProjects", 
+      title: "Resedential Projects",
       description: "Welcome To Jaikor GP, A Leading Name In Construction Company, Dedicated To Delivering Exceptional Infrastructure Solutions",
-      image: "/Assets/hm2.jpg"
+      image: "/Assets/Resedential/r1.JPG"
     },
     {
       id: "sustainable-projects",
-      title: "Sustainable Projects", 
+      title: "Hotels", 
       description: "Welcome To Jaikor GP, A Leading Name In Construction Company, Dedicated To Delivering Exceptional Infrastructure Solutions",
-      image: "/Assets/hm3.jpg"
+      image: "/Assets/Hotels/h1.jpeg"
     },
     {
       id: "structural-excellence",
@@ -136,7 +136,7 @@ export default function HoverImage() {
               className="hover-image-item"
               onClick={() => {
                 setTimeout(() => {
-                  navigate(`/dynamic/${project.id}`);
+                  navigate(`/Projects/${project.id}`);
                 }, 600);
               }}
               style={{cursor: 'pointer'}}

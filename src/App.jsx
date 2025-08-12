@@ -86,9 +86,9 @@ const App = () => {
         <Route path="/" element={<Home lenis={lenisRef.current} />} />
         <Route path="/about" element={<About />} />
         <Route path="/group" element={<Group />} />
-        <Route path="/dynamic" element={<Dynamic />} />
-        <Route path="/dynamic/:projectId" element={<Dynamic />} />
-        <Route path="/projects" element={<Projects />} />
+        {/* <Route path="/dynamic" element={<Dynamic />} /> */}
+        <Route path="/Projects/:projectId" element={<Dynamic />} />
+        <Route path="/Projects" element={<Projects />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
