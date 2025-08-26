@@ -177,13 +177,17 @@ export default function AboutCardMobile() {
               continues — grounded in our past, committed to our people, and
               inspired by the city that first welcomed our dream.
             </p>
+
+
+
+
             <p className="paragraph">
               Thank you for being part of this journey with me.
             </p>
             <p className="signature">Sincerely,</p>
-            <p className="signature">Mohammad Alanni</p>
-            <p className="signature-title">Founder & CEO, Jeikor</p>
-          </div>
+            <p className="signature">Eng Ali Al Maliki</p>
+            <p className="signature-title">
+              Founder and CEO, Jeikor Group</p>          </div>
         </div>
       </div>
     </>
