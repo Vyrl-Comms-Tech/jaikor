@@ -181,7 +181,7 @@ export default function AboutCardMobile() {
               Thank you for being part of this journey with me.
             </p>
             <p className="signature">Sincerely,</p>
-            <p className="signature">Mohannad Alanni</p>
+            <p className="signature">Mohammad Alanni</p>
             <p className="signature-title">Founder & CEO, Jeikor</p>
           </div>
         </div>
