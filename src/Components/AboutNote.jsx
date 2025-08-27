@@ -8,7 +8,7 @@ const AboutNote = () => {
         <div className="container">
           <div className="grid">
             <div className="text-content">
-              <h2 className="main-heading">Founder's Note</h2>
+              <h2 className="main-heading">Founder's Message</h2>
               <p className="paragraph">
                 {/* Over Time, Jeikor Evolved. What Began As A Modest Construction Venture Became A Diverse Group Of Companies, Operating Across Regions And Industries. Yet Our Essence Remains The Same Spirit That Guided Our First Project. */}
                 In 2000, I laid the foundation of what would later become Jeikor

@@ -238,14 +238,12 @@ function Belowhero() {
             className="textbold"
             ref={(el) => (belowLeftRefs.current[2] = el)}
           >
-            Welcome to Jeikor GP, a leading heavy civil <br /> construction
+            Welcome to Jeikor, a leading heavy civil <br /> construction
           </h3>
         </div>
         <div className="belowright">
-          <h1>
-            Your Partner in Heavy & Civil Construction <br />
-            Dubai, UAE
-          </h1>
+          <h1>your 360 degree  construction solution partner</h1>
+          {/* <h1>Your Partner in Heavy & Civil Construction Dubai, UAE</h1> */}
           <div className="flex">
             <div className="aboutbox">
               {/* <img src="Assets/Rectangle 21.png" alt="" /> */}

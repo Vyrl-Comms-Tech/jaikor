@@ -149,7 +149,7 @@ export default function AboutCardMobile() {
             />
           </div>
           <div className="about-card-mobile-text-content">
-            <h2 className="main-heading">Founder's Note</h2>
+            <h2 className="main-heading">Founder's Message</h2>
             <p className="paragraph">
               In 2000, I laid the foundation of what would later become Jeikor
               Group — not with luxury or certainty, but with deep conviction and

@@ -5,7 +5,7 @@
   height: 100vh !important;
   position: relative;
   overflow: hidden;
-  cursor: none;
+  /* cursor: none; */
   /* border: 3px solid yellowgreen; */
 }
 .heroleft h1,
@@ -129,6 +129,7 @@
   opacity: 1;
   transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease,
     transform 0.3s ease;
+    display: none;
 }
 
 .herocircle.small-circle {

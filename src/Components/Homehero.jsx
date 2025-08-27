@@ -211,43 +211,43 @@ function Homehero2({ Herottesxt }) {
 
     // Smooth mouse following
     const handleMouseMove = (e) => {
-      const rect = homeHero.getBoundingClientRect();
+      // const rect = homeHero.getBoundingClientRect();
 
-      // Check if mouse is within container bounds
-      if (
-        e.clientX >= rect.left &&
-        e.clientX <= rect.right &&
-        e.clientY >= rect.top &&
-        e.clientY <= rect.bottom
-      ) {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        mouseFollower.style.opacity = "1";
-        mouseFollower.style.transform = `translate(-50%, -50%) scale(1)`;
-      } else {
-        mouseFollower.style.opacity = "0";
-        mouseFollower.style.transform = `translate(-50%, -50%) scale(0)`;
-      }
+      // // Check if mouse is within container bounds
+      // if (
+      //   e.clientX >= rect.left &&
+      //   e.clientX <= rect.right &&
+      //   e.clientY >= rect.top &&
+      //   e.clientY <= rect.bottom
+      // ) {
+      //   mouseX = e.clientX;
+      //   mouseY = e.clientY;
+      //   mouseFollower.style.opacity = "1";
+      //   mouseFollower.style.transform = `translate(-50%, -50%) scale(1)`;
+      // } else {
+      //   mouseFollower.style.opacity = "0";
+      //   mouseFollower.style.transform = `translate(-50%, -50%) scale(0)`;
+      // }
     };
 
     const smoothMouseFollow = () => {
-      currentX += (mouseX - currentX) * 0.25;
-      currentY += (mouseY - currentY) * 0.25;
+      // currentX += (mouseX - currentX) * 0.25;
+      // currentY += (mouseY - currentY) * 0.25;
 
-      mouseFollower.style.left = `${currentX}px`;
-      mouseFollower.style.top = `${currentY}px`;
+      // mouseFollower.style.left = `${currentX}px`;
+      // mouseFollower.style.top = `${currentY}px`;
 
-      requestAnimationFrame(smoothMouseFollow);
+      // requestAnimationFrame(smoothMouseFollow);
     };
 
     const handleMouseEnter = () => {
-      mouseFollower.style.opacity = "1";
-      mouseFollower.style.transform = "scale(1)";
+      // mouseFollower.style.opacity = "1";
+      // mouseFollower.style.transform = "scale(1)";
     };
 
     const handleMouseLeave = () => {
-      mouseFollower.style.opacity = "0";
-      mouseFollower.style.transform = "scale(0)";
+      // mouseFollower.style.opacity = "0";
+      // mouseFollower.style.transform = "scale(0)";
     };
 
     homeHero.addEventListener("mousemove", handleMouseMove);

@@ -7,7 +7,7 @@ const Herottesxt = {
     btntext: `let's talk`,
   },
   GroupText: {
-    paragraph: `Welcome to Jeikor GP., a leading heavy civil construction <br/> company dedicated to delivering exceptional infrastructure <br />solutions`,
+    paragraph: `Welcome to Jeikor, a leading heavy civil construction <br/> company dedicated to delivering exceptional infrastructure <br />solutions`,
     mainheading: `One Group. Many<br /> Strengths.`,
     btntext: `let's talk`,
   },
@@ -22,7 +22,7 @@ const Herottesxt = {
     btntext: `let's talk`,
   },
   ProjectText:{
-    paragraph:`Welcome to Jeikor GP., a leading heavy civil construction <br/>company dedicated to delivering exceptional infrastructure<br/> solutions`,
+    paragraph:`Welcome to Jeikor, a leading heavy civil construction <br/>company dedicated to delivering exceptional infrastructure<br/> solutions`,
     mainheading:`Our projects`,
     btntext:`let's talk`,
   }
