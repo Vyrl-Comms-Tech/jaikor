@@ -77,7 +77,7 @@ const AboutNote = () => {
 
             <div className="image-container">
               <img
-                src="/Assets/ch.jpeg"
+                src="/Assets/ch3.jpeg"
                 alt="Our expertise"
                 className="about-image"
               />
